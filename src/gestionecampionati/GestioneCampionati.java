@@ -16,10 +16,17 @@ public class GestioneCampionati {
      */
     public static void main(String[] args) {
         MyFrame f = new MyFrame("Gestione Campionati");
-        MyPanel p = new MyPanel();
+        MyPanel p = new MyPanel(f);
+  
         
+       
         f.add(p);
+       
         f.setVisible(true);
+        
+        
+        
+        
         
     }
     

@@ -12,6 +12,14 @@ import javax.swing.*;
 public class MyFrame extends JFrame{
     private int Width = 800;
     private int Heigth =600;
+
+    public int getWidth() {
+        return Width;
+    }
+
+    public int getHeigth() {
+        return Heigth;
+    }
     private String title;
     
     public MyFrame(String title){

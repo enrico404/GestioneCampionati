@@ -9,28 +9,12 @@ package gestionecampionati;
  *
  * @author enrico
  */
-public class Punteggio {
-    private Squadra a;
-    private Squadra b;
+public class Punteggio  {
+   
+    
     private int pa;
     private int pb;
-    private Data data;
-
-    public Squadra getA() {
-        return a;
-    }
-
-    public void setA(Squadra a) {
-        this.a = a;
-    }
-
-    public Squadra getB() {
-        return b;
-    }
-
-    public void setB(Squadra b) {
-        this.b = b;
-    }
+   
 
     public int getPa() {
         return pa;
@@ -48,20 +32,18 @@ public class Punteggio {
         this.pb = pb;
     }
 
-    public Data getData() {
-        return data;
+   
+    public Punteggio(){
+        this.pa = 0;
+        this.pb = 0;
+    
     }
 
-    public void setData(Data data) {
-        this.data = data;
-    }
-
-    public Punteggio(Squadra a, Squadra b, int pa, int pb, Data data) {
-        this.a = a;
-        this.b = b;
+    public Punteggio(int pa, int pb) {
+  
         this.pa = pa;
         this.pb = pb;
-        this.data = data;
+   
     }
     
     

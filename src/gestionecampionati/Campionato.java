@@ -15,10 +15,19 @@ public class Campionato {
     
     /** identificatore univoco del campionato */
     private int id;
+    /** variabile in cui è salvato il tipo di sport */
+    private String sport;
     /** Array delle squadre partecipanti al campionato */
     private Vector<Squadra> squadre;
-    /** Array dei punteggi del campionato */
-    private Vector<Punteggio> punteggi;
+    /** calendario associato al campionato */
+    private Calendario c;
+
+    public Campionato(int id, String sport, Vector<Squadra> squadre, Calendario c) {
+        this.id = id;
+        this.sport = sport;
+        this.squadre = squadre;
+        this.c = c;
+    }
 
     public int getId() {
         return id;
@@ -28,14 +37,31 @@ public class Campionato {
         this.id = id;
     }
 
-   
-
-    public Campionato(int id, Vector<Squadra> squadre, Vector<Punteggio> punteggi) {
-        this.id = id;
-        this.squadre = squadre;
-        this.punteggi = punteggi;
+    public String getSport() {
+        return sport;
     }
-    
+
+    public void setSport(String sport) {
+        this.sport = sport;
+    }
+
+    public Vector<Squadra> getSquadre() {
+        return squadre;
+    }
+
+    public void setSquadre(Vector<Squadra> squadre) {
+        this.squadre = squadre;
+    }
+
+    public Calendario getC() {
+        return c;
+    }
+
+    public void setC(Calendario c) {
+        this.c = c;
+    }
+
+   
     
     public boolean inserisci(Squadra sq){
         

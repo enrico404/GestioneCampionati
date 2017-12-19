@@ -38,6 +38,13 @@ public class Data {
         this.anno = anno;
     }
     
+    public Data(){
+        this.giorno = 0;
+        this.mese = 0;
+        this.anno = 0;
+    
+    
+    }
     
     public Data(int giorno, int mese, int anno){
         if(is_valid(giorno,mese,anno)){
@@ -53,6 +60,9 @@ public class Data {
     
     
     public boolean is_valid(int giorno, int mese, int anno){
+        
+        
+        //da implementare riconoscimento giorno valido
         return true;
     
     

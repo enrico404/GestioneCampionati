@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Pannello contenente la home page del software
  */
 package gestionecampionati;
 import java.awt.AlphaComposite;
@@ -44,7 +42,7 @@ public class MyPanel extends JPanel implements ActionListener{
         public MyPanel(JFrame fr){
           
             
-            
+            super();
             
             this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
             

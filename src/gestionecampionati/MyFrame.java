@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* Frame principale per la gestione dell'intero software
  */
 package gestionecampionati;
 import javax.swing.*;
@@ -10,8 +8,8 @@ import javax.swing.*;
  * @author enrico
  */
 public class MyFrame extends JFrame{
-    private int Width = 800;
-    private int Heigth =600;
+    private static final int Width = 800;
+    private static final int Heigth =600;
 
     public int getWidth() {
         return Width;
@@ -27,7 +25,7 @@ public class MyFrame extends JFrame{
         this.setSize(Width, Heigth);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(this);
-        
+      
     }
     
     

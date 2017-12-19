@@ -44,7 +44,7 @@ public class MyPanel extends JPanel implements ActionListener{
         public MyPanel(JFrame fr){
           
             
-            
+            super();
             
             this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
             

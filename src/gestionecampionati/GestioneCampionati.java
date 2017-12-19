@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Classe main del sotware
  */
 package gestionecampionati;
 
@@ -23,6 +21,10 @@ public class GestioneCampionati {
         f.add(p);
        
         f.setVisible(true);
+        
+        
+        
+        
         
         
         

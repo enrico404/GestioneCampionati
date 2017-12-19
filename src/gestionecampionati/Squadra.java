@@ -44,6 +44,7 @@ public class Squadra {
             this.logo = ImageIO.read(new File("../GestioneCampionati/media/loghi/"+ nome + ".jpg"));
         } catch (IOException ex) {
             try {
+                
                 this.logo = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
             } catch (IOException ex1) {
                 Logger.getLogger(Squadra.class.getName()).log(Level.SEVERE, null, ex1);
@@ -51,6 +52,31 @@ public class Squadra {
         }
     
     
+    }
+    
+    
+     public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCitta() {
+        return citta;
+    }
+
+    public void setCitta(String citta) {
+        this.citta = citta;
+    }
+
+    public BufferedImage getLogo() {
+        return logo;
+    }
+
+    public void setLogo(BufferedImage logo) {
+        this.logo = logo;
     }
     
     

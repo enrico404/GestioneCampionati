@@ -50,6 +50,7 @@ public class Squadra {
                 Logger.getLogger(Squadra.class.getName()).log(Level.SEVERE, null, ex1);
             }
         }
+        
     
     
     }

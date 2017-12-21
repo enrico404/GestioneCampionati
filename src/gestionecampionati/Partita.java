@@ -10,8 +10,9 @@ package gestionecampionati;
  * @author enrico
  */
 class Partita {
-    private Squadra a;
-    private Squadra b;
+    
+    /** squadre contendenti */
+    private Pair coppia;
     private Punteggio p;
     /** variabile booleana che indica se la partita è stata giocata o no */
     private boolean giocata;
@@ -19,25 +20,24 @@ class Partita {
     
     
     
-    
-    public Partita(Squadra a, Squadra b, Punteggio p, Data d){
-        this.a = a;
-        this.b = b;
+    /**
+    public Partita(Pair coppia, Punteggio p, Data d){
+        this.coppia = coppia;
         this.p = p;
         this.giocata = true;
         this.d = d;
     
     }
+    * */
     
     
-    public boolean inserisci_part(Data d, Squadra a, Squadra b){
+    public Partita(Data d, Pair coppia){
            
         this.d = d;
         this.giocata = false;
-        this.a = a;
-        this.b = b;
+        this.coppia = coppia;
         this.p = new Punteggio();
-        return true;
+    
     
     }
     
@@ -55,24 +55,16 @@ class Partita {
         
 
     }
+
+    public Pair getCoppia() {
+        return coppia;
+    }
+
+    public void setCoppia(Pair coppia) {
+        this.coppia = coppia;
+    }
     
     
-
-    public Squadra getA() {
-        return a;
-    }
-
-    public void setA(Squadra a) {
-        this.a = a;
-    }
-
-    public Squadra getB() {
-        return b;
-    }
-
-    public void setB(Squadra b) {
-        this.b = b;
-    }
 
     public Punteggio getP() {
         return p;
@@ -98,7 +90,7 @@ class Partita {
         this.d = d;
     }
     
-    
+  
     
     
     

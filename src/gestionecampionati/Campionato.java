@@ -5,7 +5,8 @@
  */
 package gestionecampionati;
 
-import java.util.Vector;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -18,11 +19,11 @@ public class Campionato {
     /** variabile in cui è salvato il tipo di sport */
     private String sport;
     /** Array delle squadre partecipanti al campionato */
-    private Vector<Squadra> squadre;
+    private ArrayList<Squadra> squadre = new ArrayList<Squadra>();
     /** calendario associato al campionato */
     private Calendario c;
 
-    public Campionato(int id, String sport, Vector<Squadra> squadre, Calendario c) {
+    public Campionato(int id, String sport, ArrayList<Squadra> squadre, Calendario c) {
         this.id = id;
         this.sport = sport;
         this.squadre = squadre;
@@ -45,11 +46,11 @@ public class Campionato {
         this.sport = sport;
     }
 
-    public Vector<Squadra> getSquadre() {
+    public ArrayList<Squadra> getSquadre() {
         return squadre;
     }
 
-    public void setSquadre(Vector<Squadra> squadre) {
+    public void setSquadre(ArrayList<Squadra> squadre) {
         this.squadre = squadre;
     }
 
@@ -78,7 +79,7 @@ public class Campionato {
         
         if(squadre.contains(sq)){
         
-            this.squadre.removeElement(sq);
+            this.squadre.remove(sq);
             return true;
         }else return false;
     
@@ -87,7 +88,7 @@ public class Campionato {
     
     public boolean modifica(int i, Squadra sq){
         if(i < squadre.size()){
-            squadre.setElementAt(sq, i);
+            squadre.set(i, sq);
             return true;
         
         

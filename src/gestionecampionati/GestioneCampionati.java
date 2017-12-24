@@ -1,5 +1,8 @@
-/*
- * Classe main del sotware
+/**
+ * Classe main del sotware. Nel progetto sono state usate strutture dati del tipo
+* ArrayList poichè non vengono utilizzati thread aggiuntivi e non c'è bisogno che 
+* i metodi siano synchronized. Si è preferita quindi utilizzare una struttura dati 
+* non thread-safe, ma con maggiori performance.
  */
 package gestionecampionati;
 
@@ -38,10 +41,16 @@ public class GestioneCampionati {
         
         //for(int i = 0; i< squadre.size(); i++) System.out.println(squadre.get(i).getNome());
         
-        Calendario c2 = new Calendario(squadre);
+        Calendario c2 = new Calendario();
         
-        c2.genera_calendario();
-        c2.stampa_calendario();
+        Campionato ca = new Campionato(0, "calcio", squadre, c2);
+        
+        ca.carica_calendario("calendario");
+        
+  //      c2.genera_calendario();
+        ca.getC().stampa_calendario();
+        
+//        c2.salva("calendario");
         
         
         

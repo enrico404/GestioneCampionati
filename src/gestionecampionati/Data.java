@@ -5,11 +5,13 @@
  */
 package gestionecampionati;
 
+import java.io.Serializable;
+
 /**
  *
  * @author enrico
  */
-public class Data {
+public class Data implements Serializable{
     private int giorno;
     private int mese;
     private int anno;

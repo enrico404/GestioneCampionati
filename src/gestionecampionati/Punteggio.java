@@ -5,11 +5,13 @@
  */
 package gestionecampionati;
 
+import java.io.Serializable;
+
 /**
  *
  * @author enrico
  */
-public class Punteggio  {
+public class Punteggio implements Serializable  {
    
     
     private int pa;

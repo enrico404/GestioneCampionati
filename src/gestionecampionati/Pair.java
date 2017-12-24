@@ -4,11 +4,13 @@
  */
 package gestionecampionati;
 
+import java.io.Serializable;
+
 /**
  *
  * @author enrico
  */
-public class Pair {
+public class Pair implements Serializable{
     private Squadra a;
     private Squadra b;
     

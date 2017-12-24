@@ -5,11 +5,13 @@
  */
 package gestionecampionati;
 
+import java.io.Serializable;
+
 /**
  *
  * @author enrico
  */
-class Partita {
+class Partita implements Serializable{
     
     /** squadre contendenti */
     private Pair coppia;

@@ -41,19 +41,20 @@ public class GestioneCampionati {
         
         //for(int i = 0; i< squadre.size(); i++) System.out.println(squadre.get(i).getNome());
         
-        Calendario c2 = new Calendario();
+        Calendario c2 = new Calendario(squadre);
+    
+        
         
         Campionato ca = new Campionato(0, "calcio", squadre, c2);
         
-        ca.carica_calendario("calendario");
+ 
         
-  //      c2.genera_calendario();
-        ca.getC().stampa_calendario();
-        
-//        c2.salva("calendario");
-        
-        
-        
+       // ca.getC().genera_calendario();
+        //ca.getC().stampa_calendario();
+       
+       // ca.getC().salva("calendario2");
+           ca.carica_calendario("calendario2");
+         ca.getC().stampa_calendario();
         
         
         

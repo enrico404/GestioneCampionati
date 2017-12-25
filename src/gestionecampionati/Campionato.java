@@ -115,9 +115,12 @@ public class Campionato {
         ObjectInputStream is;
         
         try {
-            f = new FileInputStream("../GestioneCampionati/saves"+nomeFile+".dat");
+            f = new FileInputStream("../GestioneCampionati/saves/"+nomeFile+".dat");
             is = new ObjectInputStream(f);
             this.c = (Calendario) is.readObject();
+            
+            is.close();
+            f.close();
             
             
             

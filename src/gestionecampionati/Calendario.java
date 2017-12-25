@@ -24,8 +24,7 @@ public class Calendario implements Serializable {
     /** Array delle partite,  */
     private ArrayList<Partita> partite = new ArrayList<Partita>();
 
-    public Calendario() {
-    }
+  
     
    
     
@@ -148,7 +147,7 @@ public class Calendario implements Serializable {
         ObjectOutputStream os;
         
         try {
-            f = new FileOutputStream("../GestioneCampionati/saves"+nomeFile+".dat");
+            f = new FileOutputStream("../GestioneCampionati/saves/"+nomeFile+".dat");
             os = new ObjectOutputStream(f);
             os.writeObject(this);
             os.flush();

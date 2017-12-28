@@ -126,9 +126,7 @@ public class Campionato {
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Calendario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(Calendario.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(Calendario.class.getName()).log(Level.SEVERE, null, ex);
         }
         

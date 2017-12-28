@@ -8,6 +8,7 @@ package gestionecampionati;
 
 import java.util.ArrayList;
 
+
 /**
  *
  * @author enrico
@@ -49,15 +50,15 @@ public class GestioneCampionati {
         
  
         
-       // ca.getC().genera_calendario();
-        //ca.getC().stampa_calendario();
+        ca.getC().genera_calendario();
+        ca.getC().stampa_calendario();
        
        // ca.getC().salva("calendario2");
-           ca.carica_calendario("calendario2");
-         ca.getC().stampa_calendario();
-        
-        
-        
+        //   ca.carica_calendario("calendario2");
+         //ca.getC().stampa_calendario();
+         
+         
+         
         
     }
     

@@ -19,18 +19,18 @@ public class Squadra implements Serializable{
     
     private String nome;
     private String citta;
-   // private BufferedImage logo; //se non esiste carica logo di default
+    transient private BufferedImage logo; //se non esiste carica logo di default, non va serializzato
     
     public Squadra(){
         this.nome = "";
         this.citta  = "";
-      /*
+      
         try {
             this.logo = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
         } catch (IOException ex) {
             Logger.getLogger(Squadra.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
+       
     
     }
     
@@ -40,7 +40,7 @@ public class Squadra implements Serializable{
         
         
         //carico logo squadra, se non esiste carico logo di default
-     /*   
+      
         try {
             this.logo = ImageIO.read(new File("../GestioneCampionati/media/loghi/"+ nome + ".jpg"));
         } catch (IOException ex) {
@@ -51,7 +51,7 @@ public class Squadra implements Serializable{
                 Logger.getLogger(Squadra.class.getName()).log(Level.SEVERE, null, ex1);
             }
         }
-        */
+        
     
     
     }
@@ -80,6 +80,6 @@ public class Squadra implements Serializable{
     public void setLogo(BufferedImage logo) {
         this.logo = logo;
     }
-    */
+   */ 
     
 }

@@ -6,9 +6,12 @@ package gestionecampionati;
 import java.util.ArrayList;
 
 import java.io.*;
+import java.sql.Time;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Random;
 
 
 /**
@@ -42,11 +45,35 @@ public class Calendario implements Serializable {
     
     
     public boolean genera_calendario(){
+        Random rand = new Random();
+        Calendar cal = Calendar.getInstance();
+        Calendar tmp = Calendar.getInstance();
+      
+        int g,m,an;
+        
+        
+        
+        
         if(!genera_coppie()) System.out.println("Errore nella generazione delle coppie");
         for(int i=0; i<coppie.size(); i++){
-        
-            partite.add(new Partita(new Data(8, 2, 1990), coppie.get(i)));
-        
+            
+            Data d;
+            //array locale per controllare che le date non vengano prese più volte
+            ArrayList<Data> prese = new ArrayList<Data>();
+           
+            
+            
+            do{
+            
+            d = new Data(g= rand.nextInt(32)+1,  m = rand.nextInt(12), an= rand.nextInt(cal.get(Calendar.YEAR)+2));
+            tmp.set(d.getAnno(), d.getMese(), d.getGiorno());
+          
+            }while(!d.is_valid() || prese.contains(d) || cal.after(tmp) ); //controllo che la data del calendario di oggi non sia dopo la data della partita
+             
+             prese.add(d);
+             
+            partite.add(new Partita(d , coppie.get(i)));
+             
         
         }
         
@@ -78,7 +105,7 @@ public class Calendario implements Serializable {
     public void stampa_calendario(){
         for(int i=0; i< partite.size(); i++){
             System.out.println(partite.get(i).getCoppia().getA().getNome()+ " vs "+ partite.get(i).getCoppia().getB().getNome()+ " "
-                    + "Data: "+ partite.get(i).getD().getAnno());
+                    + "Data: "+ partite.get(i).getD().getAnno()+" mese: "+ ((partite.get(i).getD().getMese())+1) + " giorno : "+ partite.get(i).getD().getGiorno());
         
         }
     

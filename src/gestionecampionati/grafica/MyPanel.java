@@ -1,7 +1,7 @@
 /*
  * Pannello contenente la home page del software
  */
-package gestionecampionati;
+package gestionecampionati.grafica;
 import java.awt.AlphaComposite;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -35,11 +35,13 @@ public class MyPanel extends JPanel implements ActionListener{
         private Dimension button;
         private JLabel text;
         private Font f; 
-        private JFrame fr; 
+        private MyFrame fr; 
         private BufferedImage sfondo;
+        private JPanel calcioPanel;
+        
     
     
-        public MyPanel(JFrame fr){
+        public MyPanel(MyFrame fr, JPanel calcioPanel){
           
             
             super();
@@ -49,12 +51,13 @@ public class MyPanel extends JPanel implements ActionListener{
             int W = fr.getWidth();
             int H = fr.getHeight();
             
-            
+            this.calcioPanel = calcioPanel; 
             button = new Dimension(200, 50);
             calcio = new JButton("Calcio");
             rugby = new JButton("Rugby");
             pallavolo = new JButton("Pallavolo");
             text = new JLabel("Scegli lo sport: ");
+            this.fr = fr;
           
             text.setAlignmentX(CENTER_ALIGNMENT);
             
@@ -134,9 +137,17 @@ public class MyPanel extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == calcio) System.out.println("calcio");
-        if(e.getSource() == rugby) System.out.println("rugby");
-        if(e.getSource() == pallavolo) System.out.println("pallavolo");
+        if(e.getSource() == calcio) {
+            
+                                    System.out.println("calcio"); 
+                                    fr.clean(); //rimuovo il vecchio pannello
+                                    fr.setContentPane(calcioPanel); //aggiungo il pannello selezionato
+                                    fr.validate(); // rendo valido il frame e faccio lavorare il layout manager per settarmi le coordinate dei component
+                                  
+                                    repaint();
+                                    }
+        if(e.getSource() == rugby) {System.out.println("rugby"); this.setVisible(false);}
+        if(e.getSource() == pallavolo) {System.out.println("pallavolo"); this.setVisible(false);}
         
         
         

@@ -6,7 +6,12 @@
  */
 package gestionecampionati;
 
+import gestionecampionati.grafica.MyPanel;
+import gestionecampionati.grafica.MyFrame;
+import gestionecampionati.grafica.calcioPanel;
+import java.awt.Font;
 import java.util.ArrayList;
+import javax.swing.UIManager;
 
 
 /**
@@ -20,14 +25,18 @@ public class GestioneCampionati {
      */
     public static void main(String[] args) {
         MyFrame f = new MyFrame("Gestione Campionati");
-        MyPanel p = new MyPanel(f);
+        
+        calcioPanel cal = new calcioPanel(f);
+        MyPanel p = new MyPanel(f, cal);
   
-        
+        f.add(p);
+        f.setVisible(true);
+
+
        
-        //f.add(p);
-       
-        //f.setVisible(true);
         
+        
+       /* 
         ArrayList<Squadra> squadre;
         squadre = new ArrayList<Squadra>();
         Squadra a = new Squadra("a", "roma");
@@ -53,13 +62,20 @@ public class GestioneCampionati {
         ca.getC().genera_calendario();
         ca.getC().stampa_calendario();
        
+        
+       
+        
+                
+        
        // ca.getC().salva("calendario2");
         //   ca.carica_calendario("calendario2");
          //ca.getC().stampa_calendario();
          
          
          
-        
+*/        
     }
+
+
     
 }

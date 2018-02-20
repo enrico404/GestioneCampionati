@@ -6,12 +6,15 @@
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Data.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_rugby.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/CalcolaClassifica.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Punteggio.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Squadra.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Partita.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Pair.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Calendario.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/MyPanel.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_pallavolo.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/MyFrame.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/GestioneCampionati.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Calendario.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_calcio.java</file>
         </group>
     </open-files>
 </project-private>

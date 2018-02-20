@@ -1,15 +1,15 @@
 /*
 * Frame principale per la gestione dell'intero software
  */
-package gestionecampionati;
+package gestionecampionati.grafica;
 import javax.swing.*;
 /**
  *
  * @author enrico
  */
 public class MyFrame extends JFrame{
-    private static final int Width = 800;
-    private static final int Heigth =600;
+    private static final int Width = 1280;
+    private static final int Heigth =720;
 
     public int getWidth() {
         return Width;
@@ -27,6 +27,15 @@ public class MyFrame extends JFrame{
         this.setLocationRelativeTo(this);
       
     }
+    
+    public void clean(){
+                                    getContentPane().removeAll();
+                                  
+                                    repaint();
+    
+    
+    }
+    
     
     
     

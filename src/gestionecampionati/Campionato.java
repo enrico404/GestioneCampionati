@@ -22,7 +22,7 @@ public class Campionato {
     private int id;
     /** variabile in cui è salvato il tipo di sport */
     private String sport;
-    /** Array delle squadre partecipanti al campionato */
+    /** Array delle squadre partecipanti al campionato, utile solo in fase di creazione del campionato */
     private ArrayList<Squadra> squadre = new ArrayList<Squadra>();
     /** calendario associato al campionato */
     private Calendario c;
@@ -33,6 +33,10 @@ public class Campionato {
         this.squadre = squadre;
         this.c = c;
     }
+
+ 
+
+ 
 
     public int getId() {
         return id;
@@ -106,16 +110,15 @@ public class Campionato {
     
     /**
      *
-     * @param nomeFile
      * @return
      */
-    public boolean carica_calendario(String nomeFile){
+    public boolean carica_calendario(String path){
     
         FileInputStream f;
         ObjectInputStream is;
         
         try {
-            f = new FileInputStream("../GestioneCampionati/saves/"+nomeFile+".dat");
+            f = new FileInputStream(path);
             is = new ObjectInputStream(f);
             this.c = (Calendario) is.readObject();
             

@@ -18,8 +18,7 @@ import java.util.logging.Logger;
  */
 public class Campionato {
     
-    /** identificatore univoco del campionato */
-    private int id;
+
     /** variabile in cui è salvato il tipo di sport */
     private String sport;
     /** Array delle squadre partecipanti al campionato, utile solo in fase di creazione del campionato */
@@ -27,24 +26,25 @@ public class Campionato {
     /** calendario associato al campionato */
     private Calendario c;
 
-    public Campionato(int id, String sport, ArrayList<Squadra> squadre, Calendario c) {
-        this.id = id;
+    public Campionato(String sport, ArrayList<Squadra> squadre, Calendario c) {
+        
+        
         this.sport = sport;
         this.squadre = squadre;
         this.c = c;
     }
 
+    public Campionato(String calcio) {
+        this.sport = calcio;
+        this.squadre = null;
+        this.c = null;
+        
+        
+    }
+
  
 
  
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getSport() {
         return sport;
@@ -116,7 +116,7 @@ public class Campionato {
     
         FileInputStream f;
         ObjectInputStream is;
-        
+        System.out.println(path);
         try {
             f = new FileInputStream(path);
             is = new ObjectInputStream(f);

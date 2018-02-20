@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gestionecampionati.grafica;
+import gestionecampionati.Campionato;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,12 +18,12 @@ public class MenuBar extends JMenuBar{
     private JMenu file;
     private JMenu edit; 
     private JMenu help;
-    
-    
-    public MenuBar() {
-        
+    private Campionato c;
+    private MyFrame fr;
+    public MenuBar(Campionato c, MyFrame fr) {
+        this.c = c;
    
-        
+        this.fr = fr;
         Font f = new Font("sans-serif", Font.PLAIN, 12);
         file = new JMenu("File");
         file.setFont(f);
@@ -33,15 +34,15 @@ public class MenuBar extends JMenuBar{
         
         help = new JMenu("Help");
         help.setFont(f);
-        
+    /*    
         JMenuItem nuovo = new JMenuItem("Crea campionato");
         nuovo.setFont(f);
-        
+      */  
         JMenuItem apri = new JMenuItem("Apri.. "); //insieme al calendario devo caricare il file dei risultati
         apri.setFont(f);
         
-        JMenuItem expCal = new JMenuItem("Salva"); //salvo sia calendario, sia risultati su file diversi
-        expCal.setFont(f);
+        JMenuItem salva = new JMenuItem("Salva"); //salvo sia calendario, sia risultati su file diversi
+        salva.setFont(f);
         
         JMenuItem insSq = new JMenuItem("Inserisci squadre");
         insSq.setFont(f);
@@ -70,14 +71,13 @@ public class MenuBar extends JMenuBar{
         
         
         exit.addActionListener(new exitActionListener());
-        apri.addActionListener(new apriActionListener());
-  
+        apri.addActionListener(new apriActionListener(c,fr));
+        salva.addActionListener(new SalvaActionListener(c,fr));
         
         
-        
-        file.add(nuovo);
+       
         file.add(apri);
-        file.add(expCal);
+        file.add(salva);
         file.add(insSq);
         file.add(insRis);
         file.add(visClass);

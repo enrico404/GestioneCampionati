@@ -18,19 +18,34 @@ import javax.swing.JFileChooser;
  */
 class apriActionListener implements ActionListener {
     private Campionato c;
-  
+    private MyFrame fr;
+
+    public apriActionListener(Campionato c, MyFrame fr){
+        this.c = c;
+        this.fr = fr;
+    
+    
+    }
+                    
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(chooser);
+        JFileChooser chooser = new JFileChooser("../GestioneCampionati/saves/");
+        chooser.showOpenDialog(fr);
         File f = chooser.getSelectedFile();
-        String path = f.getAbsolutePath();
+         try{
+            String path = f.getAbsolutePath();
         
+            c.carica_calendario(path);
+            c.setSquadre(c.getC().getSquadre());
+            if(c.getC() != null ) {System.out.println("Calendario caricato correttamente!");
+            c.getC().stampa_calendario();
+            }
         
-        
-        
-        c = new Campionato();
+        }catch(NullPointerException ex){
+            System.out.println("Calendario non caricato ");
+        }
+       
         
         
         

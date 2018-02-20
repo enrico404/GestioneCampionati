@@ -32,11 +32,11 @@ public class GestioneCampionati {
         f.add(p);
         f.setVisible(true);
 
-
+/*
        
         
         
-       /* 
+       
         ArrayList<Squadra> squadre;
         squadre = new ArrayList<Squadra>();
         Squadra a = new Squadra("a", "roma");
@@ -55,7 +55,7 @@ public class GestioneCampionati {
     
         
         
-        Campionato ca = new Campionato(0, "calcio", squadre, c2);
+        Campionato ca = new Campionato( "calcio", squadre, c2);
         
  
         
@@ -67,13 +67,15 @@ public class GestioneCampionati {
         
                 
         
-       // ca.getC().salva("calendario2");
+        ca.getC().salva("calendario3");
+        
+        */
         //   ca.carica_calendario("calendario2");
          //ca.getC().stampa_calendario();
          
          
          
-*/        
+     
     }
 
 

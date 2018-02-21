@@ -9,6 +9,6 @@ package gestionecampionati.grafica;
  *
  * @author enrico
  */
-public class rugbyPanel {
+public class PallavoloPanel {
     
 }

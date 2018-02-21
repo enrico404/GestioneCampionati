@@ -7,9 +7,9 @@ import javax.swing.*;
  *
  * @author enrico
  */
-public class MyFrame extends JFrame{
-    private static final int Width = 1280;
-    private static final int Heigth =720;
+public class MainFrame extends JFrame{
+    private static final int Width = 800;
+    private static final int Heigth =600;
 
     public int getWidth() {
         return Width;
@@ -20,7 +20,7 @@ public class MyFrame extends JFrame{
     }
     private String title;
     
-    public MyFrame(String title){
+    public MainFrame(String title){
         this.setTitle(title);
         this.setSize(Width, Heigth);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);

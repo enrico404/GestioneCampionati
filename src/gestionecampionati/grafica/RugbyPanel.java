@@ -5,18 +5,10 @@
  */
 package gestionecampionati.grafica;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 /**
  *
  * @author enrico
  */
-public class exitActionListener implements ActionListener{
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.exit(0);
-    }
+public class RugbyPanel {
     
 }

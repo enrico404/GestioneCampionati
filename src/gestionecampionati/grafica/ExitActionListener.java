@@ -5,10 +5,18 @@
  */
 package gestionecampionati.grafica;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author enrico
  */
-public class pallavoloPanel {
+public class ExitActionListener implements ActionListener{
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.exit(0);
+    }
     
 }

@@ -20,7 +20,7 @@ import java.util.Random;
  */
 public class Calendario implements Serializable {
 
-    /** Array delle squadre partecipanti al campionato  */
+    /** Array delle squadre partecipanti al campionato, utile per salvare i dati delle squadre */
     private ArrayList<Squadra> squadre = new ArrayList<Squadra>();
     private ArrayList<Pair> coppie = new ArrayList<Pair>();
     

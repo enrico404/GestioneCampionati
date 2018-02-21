@@ -23,10 +23,10 @@ import javax.swing.JFileChooser;
  */
 class SalvaActionListener implements ActionListener {
     private Campionato c;
-    private MyFrame fr;
+    private MainFrame fr;
     
     
-    public SalvaActionListener(Campionato c, MyFrame fr) {
+    public SalvaActionListener(Campionato c, MainFrame fr) {
        this.c = c;
        this.fr = fr;
         

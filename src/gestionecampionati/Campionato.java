@@ -140,6 +140,13 @@ public class Campionato {
     }
     
     
+    public int get_numSquadre(){
+        return squadre.size();
+    
+    
+    }
+    
+    
     
     
     

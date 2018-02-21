@@ -6,9 +6,9 @@
  */
 package gestionecampionati;
 
-import gestionecampionati.grafica.MyPanel;
-import gestionecampionati.grafica.MyFrame;
-import gestionecampionati.grafica.calcioPanel;
+import gestionecampionati.grafica.HomePanel;
+import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.CalcioPanel;
 import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.UIManager;
@@ -24,10 +24,10 @@ public class GestioneCampionati {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MyFrame f = new MyFrame("Gestione Campionati");
+        MainFrame f = new MainFrame("Gestione Campionati");
         
-        calcioPanel cal = new calcioPanel(f);
-        MyPanel p = new MyPanel(f, cal);
+        CalcioPanel cal = new CalcioPanel(f);
+        HomePanel p = new HomePanel(f, cal);
   
         f.add(p);
         f.setVisible(true);

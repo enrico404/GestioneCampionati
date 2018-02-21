@@ -27,7 +27,7 @@ import javax.swing.*;
  *
  * @author enrico
  */
-public class MyPanel extends JPanel implements ActionListener{
+public class HomePanel extends JPanel implements ActionListener{
     
         private JButton calcio;
         private JButton rugby;
@@ -35,13 +35,13 @@ public class MyPanel extends JPanel implements ActionListener{
         private Dimension button;
         private JLabel text;
         private Font f; 
-        private MyFrame fr; 
+        private MainFrame fr; 
         private BufferedImage sfondo;
         private JPanel calcioPanel;
         
     
     
-        public MyPanel(MyFrame fr, JPanel calcioPanel){
+        public HomePanel(MainFrame fr, JPanel calcioPanel){
           
             
             super();
@@ -64,8 +64,13 @@ public class MyPanel extends JPanel implements ActionListener{
             try {
                 sfondo = ImageIO.read(new File("../GestioneCampionati/media/HomeBackground.png"));
             } catch (IOException ex) {
-                Logger.getLogger(MyPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(HomePanel.class.getName()).log(Level.SEVERE, null, ex);
             }
+        
+           // JLabel back = new JLabel(new ImageIcon("../GestioneCampionati/media/HomeBackground.png"));
+   
+           // this.add(back);
+            //fr.setContentPane(back);
         
            // JLabel back = new JLabel(new ImageIcon("../GestioneCampionati/media/HomeBackground.png"));
    

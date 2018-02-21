@@ -5,6 +5,7 @@
  */
 package gestionecampionati.grafica;
 import gestionecampionati.Campionato;
+import gestionecampionati.Squadra;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,10 +20,15 @@ public class MenuBar extends JMenuBar{
     private JMenu edit; 
     private JMenu help;
     private Campionato c;
-    private MyFrame fr;
-    public MenuBar(Campionato c, MyFrame fr) {
+    private MainFrame fr;
+    private CalcioPanel panel;
+    private DefaultListModel<Squadra> lista;
+    
+    
+    public MenuBar(Campionato c, MainFrame fr, CalcioPanel panel, DefaultListModel lista) {
         this.c = c;
-   
+        this.lista = lista;
+        this.panel = panel;
         this.fr = fr;
         Font f = new Font("sans-serif", Font.PLAIN, 12);
         file = new JMenu("File");
@@ -70,8 +76,8 @@ public class MenuBar extends JMenuBar{
         
         
         
-        exit.addActionListener(new exitActionListener());
-        apri.addActionListener(new apriActionListener(c,fr));
+        exit.addActionListener(new ExitActionListener());
+        apri.addActionListener(new ApriActionListener(c,fr, panel, lista));
         salva.addActionListener(new SalvaActionListener(c,fr));
         
         

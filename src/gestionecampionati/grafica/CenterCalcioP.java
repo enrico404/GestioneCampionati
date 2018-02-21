@@ -16,42 +16,51 @@ import javax.swing.JPanel;
  * @author enrico
  */
 public class CenterCalcioP extends JPanel {
-   private JButton GestCal; 
-   private JButton InsRis;
-   private JButton VisClass;
-    
-   public CenterCalcioP(){
+   private JButton gestCal; 
+   private JButton insRis;
+   private JButton visClass;
+   private JButton insSq;
+   private MainFrame f;
+   public CenterCalcioP(MainFrame f){
        super();
        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
        
+       this.f = f;
        
        Dimension button = new Dimension(200, 50);
-            GestCal = new JButton("Gestione calendario");
-            InsRis = new JButton("Inserisci risultati");
-            VisClass = new JButton("Visualizza classifica");
+            gestCal = new JButton("Gestione calendario");
+            insRis = new JButton("Inserisci risultati");
+            insSq = new JButton("Inserisci squadre");
+            visClass = new JButton("Visualizza classifica");
        
-                GestCal.setAlignmentX(CENTER_ALIGNMENT);
-            GestCal.setPreferredSize(button);
-            GestCal.setMaximumSize(button);
-             GestCal.setMinimumSize(button);
-            InsRis.setAlignmentX(CENTER_ALIGNMENT);
-            InsRis.setPreferredSize(button);
-            InsRis.setMaximumSize(button);
-            InsRis.setMinimumSize(button);
-            VisClass.setAlignmentX(CENTER_ALIGNMENT);
-            VisClass.setPreferredSize(button);
-            VisClass.setMinimumSize(button);
-            VisClass.setMaximumSize(button);
+            gestCal.setAlignmentX(CENTER_ALIGNMENT);
+            gestCal.setPreferredSize(button);
+            gestCal.setMaximumSize(button);
+            gestCal.setMinimumSize(button);
+            insRis.setAlignmentX(CENTER_ALIGNMENT);
+            insRis.setPreferredSize(button);
+            insRis.setMaximumSize(button);
+            insRis.setMinimumSize(button);
+            visClass.setAlignmentX(CENTER_ALIGNMENT);
+            visClass.setPreferredSize(button);
+            visClass.setMinimumSize(button);
+            visClass.setMaximumSize(button);
+            insSq.setAlignmentX(CENTER_ALIGNMENT);
+            insSq.setPreferredSize(button);
+            insSq.setMaximumSize(button);
             
             
-            
-            add(Box.createRigidArea(new Dimension(0, 80)));
-            add(Box.createRigidArea(new Dimension(0, 40)));
-            add(GestCal);
+            add(Box.createRigidArea(new Dimension(0, 100)));
+            add(insSq);
             add(Box.createRigidArea(new Dimension(0, 20)));
-            add(VisClass);
+            add(gestCal);
             add(Box.createRigidArea(new Dimension(0, 20)));
-            add(InsRis);
+            add(insRis);
+            add(Box.createRigidArea(new Dimension(0, 20)));
+            add(visClass);
+            
+            
+            insSq.addActionListener(new InsSqActionLitener(f, this));
       
    
    

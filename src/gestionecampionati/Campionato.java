@@ -59,7 +59,15 @@ public class Campionato {
     }
 
     public void setSquadre(ArrayList<Squadra> squadre) {
+        
         this.squadre = squadre;
+        
+       /* 
+        for(int i=0; i<squadre.size(); i++){
+         this.squadre.get(i).setNome(squadre.get(i).getNome());
+         this.squadre.get(i).setCitta(squadre.get(i).getCitta());
+        }
+       */
     }
 
     public Calendario getC() {

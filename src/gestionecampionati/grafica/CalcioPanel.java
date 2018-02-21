@@ -33,7 +33,7 @@ public class CalcioPanel extends JPanel {
         JLabel sq = new JLabel("Squadre: ");
         Font font = new Font("sans-serif", Font.PLAIN, 12);
         DefaultListModel<String> listmodel = new DefaultListModel<>();
-        centP = new CenterCalcioP();
+        centP = new CenterCalcioP(f);
         
         c = new Campionato("calcio");
           

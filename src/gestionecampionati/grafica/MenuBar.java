@@ -74,7 +74,8 @@ public class MenuBar extends JMenuBar{
         JMenuItem about = new JMenuItem("About");
         about.setFont(f);
         
-        
+        JMenuItem gestCal = new JMenuItem("Gestione calendario");
+        gestCal.setFont(f);
         
         exit.addActionListener(new ExitActionListener());
         apri.addActionListener(new ApriActionListener(c,fr, panel, lista));
@@ -85,10 +86,12 @@ public class MenuBar extends JMenuBar{
         file.add(apri);
         file.add(salva);
         file.add(insSq);
+        file.add(gestCal);
         file.add(insRis);
         file.add(visClass);
         file.addSeparator();
         file.add(exit);
+        
         
         edit.add(modRis);
         edit.add(RemSq);

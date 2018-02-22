@@ -27,16 +27,23 @@ public class CalcioPanel extends JPanel {
     private MenuBar menu;
     private Campionato c;
     private CenterCalcioP centP;
+    private DefaultListModel<String> listmodel;
+
+    
     
     public CalcioPanel(MainFrame f) {
         super();
         JLabel sq = new JLabel("Squadre: ");
-        Font font = new Font("sans-serif", Font.PLAIN, 12);
-        DefaultListModel<String> listmodel = new DefaultListModel<>();
-        centP = new CenterCalcioP(f);
+        Font font = new Font("sans-serif", Font.PLAIN, 15);
+        listmodel = new DefaultListModel<>();
         
-        c = new Campionato("calcio");
+      
+      
+        
+        
+        c = new Campionato("calcio" );
           
+        centP = new CenterCalcioP(f, c, listmodel);
     
         listmodel.add(0, sq.getText());
         
@@ -45,7 +52,7 @@ public class CalcioPanel extends JPanel {
         
         
         
-        menu = new MenuBar(c, f, this, listmodel );
+        menu = new MenuBar(c, f, this, listmodel, centP );
         this.f = f;
         
         this.setLayout(new BorderLayout());

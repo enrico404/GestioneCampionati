@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,9 +6,11 @@
  */
 package gestionecampionati.grafica;
 
+import gestionecampionati.Campionato;
 import java.awt.Dimension;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -21,10 +24,16 @@ public class CenterCalcioP extends JPanel {
    private JButton visClass;
    private JButton insSq;
    private MainFrame f;
-   public CenterCalcioP(MainFrame f){
+   private Campionato c;
+   private DefaultListModel<String> listmodel;
+   
+   
+   public CenterCalcioP(MainFrame f, Campionato c, DefaultListModel<String> listmodel){
        super();
        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
        
+       this.listmodel = listmodel;
+       this.c = c;
        this.f = f;
        
        Dimension button = new Dimension(200, 50);
@@ -60,7 +69,7 @@ public class CenterCalcioP extends JPanel {
             add(visClass);
             
             
-            insSq.addActionListener(new InsSqActionLitener(f, this));
+            insSq.addActionListener(new InsSqActionLitener(f, this, c, listmodel));
       
    
    

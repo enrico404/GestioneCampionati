@@ -23,12 +23,14 @@ public class MenuBar extends JMenuBar{
     private MainFrame fr;
     private CalcioPanel panel;
     private DefaultListModel<Squadra> lista;
+    private CenterCalcioP centerPanel;
     
     
-    public MenuBar(Campionato c, MainFrame fr, CalcioPanel panel, DefaultListModel lista) {
+    public MenuBar(Campionato c, MainFrame fr, CalcioPanel panel, DefaultListModel lista, CenterCalcioP centerPanel ) {
         this.c = c;
         this.lista = lista;
         this.panel = panel;
+        this.centerPanel = centerPanel;
         this.fr = fr;
         Font f = new Font("sans-serif", Font.PLAIN, 12);
         file = new JMenu("File");
@@ -60,6 +62,16 @@ public class MenuBar extends JMenuBar{
         JMenuItem visClass = new JMenuItem("Visualizza classifica");
         visClass.setFont(f);
         
+        
+        JMenuItem expSq = new JMenuItem("Esporta squadre su file");
+        expSq.setFont(f);
+        
+        JMenuItem impSq = new JMenuItem("Importa squadre da file");
+        impSq.setFont(f);
+        
+        
+        
+        
         JMenuItem exit = new JMenuItem("Esci");
         exit.setFont(f);
         
@@ -78,14 +90,18 @@ public class MenuBar extends JMenuBar{
         gestCal.setFont(f);
         
         exit.addActionListener(new ExitActionListener());
-        apri.addActionListener(new ApriActionListener(c,fr, panel, lista));
-        salva.addActionListener(new SalvaActionListener(c,fr));
-        
+        apri.addActionListener(new ApriActionListener(c,fr, panel, lista, 0));
+        salva.addActionListener(new SalvaActionListener(c,fr, 0));
+        impSq.addActionListener(new ApriActionListener(c, fr, panel, lista, 1));
+        expSq.addActionListener(new SalvaActionListener(c, fr, 1));
+        insSq.addActionListener(new InsSqActionLitener(fr, centerPanel , c, lista));
         
        
         file.add(apri);
         file.add(salva);
         file.add(insSq);
+        file.add(impSq);
+        file.add(expSq);
         file.add(gestCal);
         file.add(insRis);
         file.add(visClass);

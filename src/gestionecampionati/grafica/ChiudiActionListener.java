@@ -5,8 +5,10 @@
  */
 package gestionecampionati.grafica;
 
+import gestionecampionati.Campionato;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -14,17 +16,22 @@ import java.awt.event.ActionListener;
  */
 class ChiudiActionListener implements ActionListener {
 
-    MainFrame f;
-    InsSqPanel old;
-    public ChiudiActionListener(MainFrame f, InsSqPanel old) {
+    private MainFrame f;
+    private InsSqPanel old;
+    private Campionato c;
+    private DefaultListModel<String> listmodel;
+    
+    public ChiudiActionListener(MainFrame f, InsSqPanel old, Campionato c, DefaultListModel<String> listmodel) {
         this.old = old;
         this.f = f;
+        this.c = c;
+        this.listmodel = listmodel;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        CenterCalcioP panel = new CenterCalcioP(f);
+        CenterCalcioP panel = new CenterCalcioP(f, c, listmodel);
         f.remove(old);
         f.add(panel);
         f.validate();

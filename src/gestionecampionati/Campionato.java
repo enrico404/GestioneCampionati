@@ -5,8 +5,10 @@ package gestionecampionati;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,9 +38,7 @@ public class Campionato {
 
     public Campionato(String calcio) {
         this.sport = calcio;
-        this.squadre = null;
-        this.c = null;
-        
+       
         
     }
 
@@ -146,6 +146,33 @@ public class Campionato {
     
     return true;
     }
+    
+    
+ 
+    
+    public boolean importa_squadre(String path){
+    
+        FileInputStream f;
+        ObjectInputStream is;
+        try{
+        f = new FileInputStream(path);
+        is = new ObjectInputStream(f);
+        this.squadre = (ArrayList<Squadra>) is.readObject();
+        is.close();
+        f.close();
+        
+        
+        }catch(IOException ex){
+            System.out.println("File da caricare non trovato!! (Squadre) ");
+        
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Campionato.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    
+        return true;
+    }
+    
     
     
     public int get_numSquadre(){

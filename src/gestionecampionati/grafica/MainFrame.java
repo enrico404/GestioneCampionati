@@ -8,8 +8,8 @@ import javax.swing.*;
  * @author enrico
  */
 public class MainFrame extends JFrame{
-    private static final int Width = 800;
-    private static final int Heigth =600;
+    private static final int Width = 1000;
+    private static final int Heigth =700;
 
     public int getWidth() {
         return Width;

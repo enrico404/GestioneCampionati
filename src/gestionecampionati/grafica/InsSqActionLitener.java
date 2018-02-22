@@ -5,8 +5,11 @@
  */
 package gestionecampionati.grafica;
 
+import gestionecampionati.Campionato;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,15 +19,19 @@ class InsSqActionLitener implements ActionListener {
 
     private MainFrame f;
     private CenterCalcioP panelOld;
-    public InsSqActionLitener(MainFrame f, CenterCalcioP panelOld) {
+    private Campionato c;
+    private DefaultListModel<String> listmodel;
+    public InsSqActionLitener(MainFrame f, CenterCalcioP panelOld, Campionato c, DefaultListModel<String> listmodel) {
         this.f = f;
         this.panelOld = panelOld;
+        this.c  = c;
+        this.listmodel = listmodel;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
      
-        InsSqPanel panel = new InsSqPanel(f);
+        InsSqPanel panel = new InsSqPanel(f, c, listmodel );
         f.remove(panelOld);
         f.add(panel);
         f.validate();

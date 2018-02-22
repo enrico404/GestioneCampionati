@@ -5,12 +5,14 @@
  */
 package gestionecampionati.grafica;
 
+import gestionecampionati.Campionato;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.TextField;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -30,12 +32,17 @@ class InsSqPanel extends JPanel{
     private JButton esci;
     private Dimension text;
     private Dimension text2;
-    MainFrame f;
+    private Campionato c;
+    private MainFrame f;
+    private DefaultListModel<String> listmodel;
     
-    public InsSqPanel(MainFrame f) {
+    
+    public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel) {
         super();
-        
+        this.c = c;
         this.f = f;
+        this.listmodel = listmodel;
+        
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         
         text=new Dimension(140, 40);
@@ -76,6 +83,8 @@ class InsSqPanel extends JPanel{
         esci.setMaximumSize(text);
         esci.setMinimumSize(text);
         
+        
+        add(Box.createRigidArea(new Dimension(0, 80)));
         this.add(nome, BorderLayout.NORTH);
         this.add(Tnome );
         this.add(citta);
@@ -86,13 +95,32 @@ class InsSqPanel extends JPanel{
         this.add(esci);
         
         
-        esci.addActionListener(new ChiudiActionListener(f, this));
-        
+        esci.addActionListener(new ChiudiActionListener(f, this, c, listmodel));
+        ins.addActionListener(new InsActionListener(c, this, listmodel));
         
         
         
         
     }
+    
+       public TextField getTnome() {
+        return Tnome;
+    }
+
+    public void setTnome(TextField Tnome) {
+        this.Tnome = Tnome;
+    }
+
+    public TextField getTcitta() {
+        return Tcitta;
+    }
+
+    public void setTcitta(TextField Tcitta) {
+        this.Tcitta = Tcitta;
+    }
+    
+    
+    
     
     
     

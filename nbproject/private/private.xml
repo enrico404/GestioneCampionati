@@ -5,15 +5,16 @@
         <group>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MainFrame.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MenuBar.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/InsSqActionLitener.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/JPanel.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/CalcioPanel.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/SalvaActionListener.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/InsActionListener.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/InsSqPanel.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/HomePanel.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/ChiudiActionListener.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/ApriActionListener.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/CenterCalcioP.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/HomePanel.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Calendario.java</file>
         </group>
     </open-files>

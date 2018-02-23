@@ -62,23 +62,25 @@ class SalvaActionListener implements ActionListener {
            
             
             if(tipo == 0){
-              
-                f = new FileOutputStream(fileToSave.getPath() + ".dat");
-                os = new ObjectOutputStream(f);
-                os.writeObject(c.getC());
-                System.out.println("Calendario salvato");
-                os.flush();
-                os.close();
+                if(c.getC() != null){
+                    f = new FileOutputStream(fileToSave.getPath() + ".dat");
+                    os = new ObjectOutputStream(f);
+                    os.writeObject(c.getC());
+                    System.out.println("Calendario salvato");
+                    os.flush();
+                    os.close();
+                }else System.out.println("Calendario non ancora generato!"); //err frame
             
             }
             if(tipo == 1){
-               
-                f = new FileOutputStream(fileToSave.getPath() + ".sq");
-                os = new ObjectOutputStream(f);
-                os.writeObject(c.getSquadre());
-                System.out.println("Squadre salvate");
-                os.flush();
-                os.close();
+               if(!(c.getSquadre().isEmpty())){
+                    f = new FileOutputStream(fileToSave.getPath() + ".sq");
+                    os = new ObjectOutputStream(f);
+                    os.writeObject(c.getSquadre());
+                    System.out.println("Squadre salvate");
+                    os.flush();
+                    os.close();
+               }else System.out.println("Inserire almeno una squadra"); //err frame
             
             }
             

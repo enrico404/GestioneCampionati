@@ -44,6 +44,7 @@ public class CalcioPanel extends JPanel {
         c = new Campionato("calcio" );
           
         centP = new CenterCalcioP(f, c, listmodel);
+        centP.setEnabled(true);
     
         listmodel.add(0, sq.getText());
         

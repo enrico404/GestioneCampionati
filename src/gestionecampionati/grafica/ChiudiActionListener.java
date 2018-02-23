@@ -20,20 +20,22 @@ class ChiudiActionListener implements ActionListener {
     private InsSqPanel old;
     private Campionato c;
     private DefaultListModel<String> listmodel;
+    private CenterCalcioP centP;
     
-    public ChiudiActionListener(MainFrame f, InsSqPanel old, Campionato c, DefaultListModel<String> listmodel) {
+    public ChiudiActionListener(MainFrame f, InsSqPanel old, Campionato c, DefaultListModel<String> listmodel, CenterCalcioP centP) {
         this.old = old;
         this.f = f;
         this.c = c;
         this.listmodel = listmodel;
+        this.centP = centP;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        CenterCalcioP panel = new CenterCalcioP(f, c, listmodel);
+        centP.setEnabled(true);
         f.remove(old);
-        f.add(panel);
+        f.add(centP);
         f.validate();
         f.repaint();
         

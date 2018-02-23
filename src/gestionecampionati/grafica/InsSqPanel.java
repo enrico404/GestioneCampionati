@@ -35,14 +35,15 @@ class InsSqPanel extends JPanel{
     private Campionato c;
     private MainFrame f;
     private DefaultListModel<String> listmodel;
+    private CenterCalcioP centP;
     
     
-    public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel) {
+    public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel, CenterCalcioP centP) {
         super();
         this.c = c;
         this.f = f;
         this.listmodel = listmodel;
-        
+        this.centP = centP;
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         
         text=new Dimension(140, 40);
@@ -95,7 +96,7 @@ class InsSqPanel extends JPanel{
         this.add(esci);
         
         
-        esci.addActionListener(new ChiudiActionListener(f, this, c, listmodel));
+        esci.addActionListener(new ChiudiActionListener(f, this, c, listmodel, centP));
         ins.addActionListener(new InsActionListener(c, this, listmodel));
         
         

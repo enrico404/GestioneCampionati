@@ -30,13 +30,15 @@ class InsSqActionLitener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-     
-        InsSqPanel panel = new InsSqPanel(f, c, listmodel );
-        f.remove(panelOld);
-        f.add(panel);
-        f.validate();
-        f.repaint();
-      
+        if(panelOld.isEnabled()){
+           
+            InsSqPanel panel = new InsSqPanel(f, c, listmodel, panelOld);
+            f.remove(panelOld);
+            panelOld.setEnabled(false);
+            f.add(panel);
+            f.validate();
+            f.repaint();
+        }
 
        
     }

@@ -26,7 +26,7 @@ public class CalcioPanel extends JPanel {
     private JButton button;
     private MenuBar menu;
     private Campionato c;
-    private CenterCalcioP centP;
+    private MenuPanel centP;
     private DefaultListModel<String> listmodel;
 
     
@@ -43,7 +43,7 @@ public class CalcioPanel extends JPanel {
         
         c = new Campionato("calcio" );
           
-        centP = new CenterCalcioP(f, c, listmodel);
+        centP = new MenuPanel(f, c, listmodel);
         centP.setEnabled(true);
     
         listmodel.add(0, sq.getText());

@@ -9,36 +9,37 @@ import gestionecampionati.Campionato;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
-import javax.swing.JPanel;
 
 /**
  *
  * @author enrico
  */
-class ChiudiActionListener implements ActionListener {
-
+class GestCalActionListener implements ActionListener {
     private MainFrame f;
-    private JPanel old;
+    private MenuPanel oldPanel;
     private Campionato c;
     private DefaultListModel<String> listmodel;
-    private MenuPanel centP;
-    
-    public ChiudiActionListener(MainFrame f, JPanel old, Campionato c, DefaultListModel<String> listmodel, MenuPanel centP) {
-        this.old = old;
+
+    public GestCalActionListener(MainFrame f, MenuPanel oldPanel, Campionato c, DefaultListModel<String> listmodel) {
         this.f = f;
+        this.oldPanel = oldPanel;
         this.c = c;
         this.listmodel = listmodel;
-        this.centP = centP;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(oldPanel.isEnabled()){
+            GestCalPanel gestCal = new GestCalPanel(f, c, listmodel, oldPanel);
+            f.remove(oldPanel);
+            oldPanel.setEnabled(false);
+            f.add(gestCal);
+            f.validate();
+            f.repaint();
         
-        centP.setEnabled(true);
-        f.remove(old);
-        f.add(centP);
-        f.validate();
-        f.repaint();
+        
+        }
+        
         
     }
     

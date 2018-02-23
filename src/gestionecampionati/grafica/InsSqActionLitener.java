@@ -18,10 +18,10 @@ import javax.swing.JPanel;
 class InsSqActionLitener implements ActionListener {
 
     private MainFrame f;
-    private CenterCalcioP panelOld;
+    private MenuPanel panelOld;
     private Campionato c;
     private DefaultListModel<String> listmodel;
-    public InsSqActionLitener(MainFrame f, CenterCalcioP panelOld, Campionato c, DefaultListModel<String> listmodel) {
+    public InsSqActionLitener(MainFrame f, MenuPanel panelOld, Campionato c, DefaultListModel<String> listmodel) {
         this.f = f;
         this.panelOld = panelOld;
         this.c  = c;

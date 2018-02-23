@@ -35,10 +35,10 @@ class InsSqPanel extends JPanel{
     private Campionato c;
     private MainFrame f;
     private DefaultListModel<String> listmodel;
-    private CenterCalcioP centP;
+    private MenuPanel centP;
     
     
-    public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel, CenterCalcioP centP) {
+    public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel, MenuPanel centP) {
         super();
         this.c = c;
         this.f = f;

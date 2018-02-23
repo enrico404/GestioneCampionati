@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  *
  * @author enrico
  */
-public class CenterCalcioP extends JPanel {
+public class MenuPanel extends JPanel {
    private JButton gestCal; 
    private JButton insRis;
    private JButton visClass;
@@ -28,7 +28,7 @@ public class CenterCalcioP extends JPanel {
    private DefaultListModel<String> listmodel;
    
    
-   public CenterCalcioP(MainFrame f, Campionato c, DefaultListModel<String> listmodel){
+   public MenuPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel){
        super();
        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
        
@@ -70,7 +70,7 @@ public class CenterCalcioP extends JPanel {
             
             
             insSq.addActionListener(new InsSqActionLitener(f, this, c, listmodel));
-      
+            gestCal.addActionListener(new GestCalActionListener(f, this, c, listmodel));
    
    
    }

@@ -23,10 +23,10 @@ public class MenuBar extends JMenuBar{
     private MainFrame fr;
     private CalcioPanel panel;
     private DefaultListModel<Squadra> lista;
-    private CenterCalcioP centerPanel;
+    private MenuPanel centerPanel;
     
     
-    public MenuBar(Campionato c, MainFrame fr, CalcioPanel panel, DefaultListModel lista, CenterCalcioP centerPanel ) {
+    public MenuBar(Campionato c, MainFrame fr, CalcioPanel panel, DefaultListModel lista, MenuPanel centerPanel ) {
         this.c = c;
         this.lista = lista;
         this.panel = panel;
@@ -95,6 +95,8 @@ public class MenuBar extends JMenuBar{
         impSq.addActionListener(new ApriActionListener(c, fr, panel, lista, 1));
         expSq.addActionListener(new SalvaActionListener(c, fr, 1));
         insSq.addActionListener(new InsSqActionLitener(fr, centerPanel , c, lista));
+        gestCal.addActionListener(new GestCalActionListener(fr, centerPanel, c, lista));
+        
         
        
         file.add(apri);

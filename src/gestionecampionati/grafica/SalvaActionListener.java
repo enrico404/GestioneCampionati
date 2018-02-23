@@ -7,6 +7,7 @@ package gestionecampionati.grafica;
 
 import gestionecampionati.Calendario;
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Errors.ErrorPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -69,7 +70,11 @@ class SalvaActionListener implements ActionListener {
                     System.out.println("Calendario salvato");
                     os.flush();
                     os.close();
-                }else System.out.println("Calendario non ancora generato!"); //err frame
+                }else {
+                    ErrorPanel panel = new ErrorPanel(1);
+                    
+                
+                }
             
             }
             if(tipo == 1){
@@ -80,7 +85,10 @@ class SalvaActionListener implements ActionListener {
                     System.out.println("Squadre salvate");
                     os.flush();
                     os.close();
-               }else System.out.println("Inserire almeno una squadra"); //err frame
+               }else {
+                   ErrorPanel panel = new ErrorPanel(2);
+               
+               }
             
             }
             

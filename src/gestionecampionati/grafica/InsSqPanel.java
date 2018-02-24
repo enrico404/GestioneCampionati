@@ -5,6 +5,8 @@
  */
 package gestionecampionati.grafica;
 
+import gestionecampionati.grafica.Listener.InsActionListener;
+import gestionecampionati.grafica.Listener.ChiudiActionListener;
 import gestionecampionati.Campionato;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -21,7 +23,7 @@ import javax.swing.JPanel;
  *
  * @author enrico
  */
-class InsSqPanel extends JPanel{
+public class InsSqPanel extends JPanel{
 
     
     private JLabel nome;

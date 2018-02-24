@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica;
+package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Calendario;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors.ErrorPanel;
+import gestionecampionati.grafica.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -24,7 +25,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author enrico
  */
-class SalvaActionListener implements ActionListener {
+public class SalvaActionListener implements ActionListener {
     private Campionato c;
     private MainFrame fr;
     

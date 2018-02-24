@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica;
+package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.InsSqPanel;
+import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.MenuPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
@@ -15,7 +18,7 @@ import javax.swing.JPanel;
  *
  * @author enrico
  */
-class InsSqActionLitener implements ActionListener {
+public class InsSqActionLitener implements ActionListener {
 
     private MainFrame f;
     private MenuPanel panelOld;

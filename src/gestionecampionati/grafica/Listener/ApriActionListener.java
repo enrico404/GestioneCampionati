@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica;
+package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Calendario;
 import gestionecampionati.Campionato;
 import gestionecampionati.Squadra;
+import gestionecampionati.grafica.CalcioPanel;
+import gestionecampionati.grafica.MainFrame;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +26,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author enrico
  */
-class ApriActionListener implements ActionListener {
+public class ApriActionListener implements ActionListener {
     private Campionato c;
     private MainFrame fr;
     private CalcioPanel panel;

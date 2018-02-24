@@ -3,43 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica;
+package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.MenuPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author enrico
  */
-class GestCalActionListener implements ActionListener {
+public class ChiudiActionListener implements ActionListener {
+
     private MainFrame f;
-    private MenuPanel oldPanel;
+    private JPanel old;
     private Campionato c;
     private DefaultListModel<String> listmodel;
-
-    public GestCalActionListener(MainFrame f, MenuPanel oldPanel, Campionato c, DefaultListModel<String> listmodel) {
+    private MenuPanel centP;
+    
+    public ChiudiActionListener(MainFrame f, JPanel old, Campionato c, DefaultListModel<String> listmodel, MenuPanel centP) {
+        this.old = old;
         this.f = f;
-        this.oldPanel = oldPanel;
         this.c = c;
         this.listmodel = listmodel;
+        this.centP = centP;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(oldPanel.isEnabled()){
-            GestCalPanel gestCal = new GestCalPanel(f, c, listmodel, oldPanel);
-            f.remove(oldPanel);
-            oldPanel.setEnabled(false);
-            f.add(gestCal);
-            f.validate();
-            f.repaint();
         
-        
-        }
-        
+        centP.setEnabled(true);
+        f.remove(old);
+        f.add(centP);
+        f.validate();
+        f.repaint();
         
     }
     

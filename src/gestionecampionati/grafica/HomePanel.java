@@ -132,10 +132,7 @@ public class HomePanel extends JPanel implements ActionListener{
         public void paint(Graphics g){
         super.paint(g);
        
-        //g.drawRect(0, 0, fr.getWidth(), fr.getHeight());
-        //g.drawImage(sfondo, 0, 0,this);
-      
-      //   g.drawString("Scegli lo sport: ", 100, 100);
+
         }
         
     

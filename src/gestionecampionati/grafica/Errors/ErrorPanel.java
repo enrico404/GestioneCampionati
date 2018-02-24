@@ -24,6 +24,9 @@ public class ErrorPanel extends JPanel{
                     break;
             case 2: JOptionPane.showMessageDialog(this, "Inserire almeno una squadra!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;  
+                    
+            case 3: JOptionPane.showMessageDialog(this, "Inserire almeno due squadre per generare le partite!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
+                    break;
         }
     
     }

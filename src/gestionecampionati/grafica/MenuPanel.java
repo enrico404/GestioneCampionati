@@ -26,6 +26,7 @@ public class MenuPanel extends JPanel {
    private MainFrame f;
    private Campionato c;
    private DefaultListModel<String> listmodel;
+   private Dimension button;
    
    
    public MenuPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel){
@@ -36,7 +37,7 @@ public class MenuPanel extends JPanel {
        this.c = c;
        this.f = f;
        
-       Dimension button = new Dimension(200, 50);
+       button = new Dimension(200, 50);
             gestCal = new JButton("Gestione calendario");
             insRis = new JButton("Inserisci risultati");
             insSq = new JButton("Inserisci squadre");

@@ -66,6 +66,7 @@ class ApriActionListener implements ActionListener {
                  c.carica_calendario(path);
                  c.setSquadre(c.getC().getSquadre());
                  listmodel.removeAllElements();
+                 listmodel.addElement("Squadre: ");
                  if(c.getC() != null ) {System.out.println("Calendario caricato correttamente!");
                     c.getC().stampa_calendario();
             
@@ -75,6 +76,7 @@ class ApriActionListener implements ActionListener {
                
                 c.importa_squadre(path);
                 listmodel.removeAllElements();
+                listmodel.addElement("Squadre: ");
                 
             
             

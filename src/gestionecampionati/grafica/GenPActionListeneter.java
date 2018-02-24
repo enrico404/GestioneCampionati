@@ -38,7 +38,7 @@ class GenPActionListeneter implements ActionListener {
         
         if(c.get_numSquadre() >= 2){
             
-            System.out.println(c.get_numSquadre());
+          
             
             cal = new Calendario(c.getSquadre());
             cal.genera_calendario();
@@ -47,6 +47,7 @@ class GenPActionListeneter implements ActionListener {
             c.getC().stampa_calendario();
             System.out.println("Calendario generato correttamente");
         
+            sostituisci(); //cambio panel
         
         }
         else  error = new ErrorPanel(3);

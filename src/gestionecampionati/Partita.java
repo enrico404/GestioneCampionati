@@ -18,7 +18,7 @@ class Partita implements Serializable{
     private Punteggio p;
     /** variabile booleana che indica se la partita è stata giocata o no */
     private boolean giocata;
-    private Data d;
+   
     
     
     
@@ -33,9 +33,9 @@ class Partita implements Serializable{
     * */
     
     
-    public Partita(Data d, Pair coppia){
+    public Partita(Pair coppia){
            
-        this.d = d;
+  
         this.giocata = false;
         this.coppia = coppia;
         this.p = new Punteggio();
@@ -84,13 +84,6 @@ class Partita implements Serializable{
         this.giocata = giocata;
     }
 
-    public Data getD() {
-        return d;
-    }
-
-    public void setD(Data d) {
-        this.d = d;
-    }
     
   
     

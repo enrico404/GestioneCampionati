@@ -10,6 +10,7 @@ import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors.ErrorPanel;
 import gestionecampionati.grafica.gestione_calendario.GestCalPanel;
 import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,6 +24,7 @@ public class GenPActionListeneter implements ActionListener {
     private Campionato c;
     private ErrorPanel error;
     private Calendario cal;
+    private GestCSk panel;
     
 
     public GenPActionListeneter(MainFrame f, GestCalPanel oldPanel, Campionato c) {
@@ -59,7 +61,11 @@ public class GenPActionListeneter implements ActionListener {
     
     
     public boolean sostituisci(){
+        
+        panel = new GestCSk(f,c);
         f.remove(this.oldPanel);
+        f.add(panel);
+        f.validate();
         f.repaint();
     
         return true;

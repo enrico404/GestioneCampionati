@@ -6,12 +6,10 @@ package gestionecampionati;
 import java.util.ArrayList;
 
 import java.io.*;
-import java.sql.Time;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Random;
+
 
 
 /**
@@ -25,7 +23,8 @@ public class Calendario implements Serializable {
     private ArrayList<Pair> coppie = new ArrayList<Pair>();
     
     /** Array delle partite,  */
-    private ArrayList<Partita> partite = new ArrayList<Partita>();
+    private ArrayList<Partita> gironeAndata = new ArrayList<Partita>();
+    private ArrayList<Partita> gironeRitorno = new ArrayList<Partita>();
 
   
     
@@ -44,6 +43,46 @@ public class Calendario implements Serializable {
     }
     
     
+    
+    public boolean genera_calendario(){
+        Random rand = new Random();
+        if(!genera_coppie()) System.out.println("Errore nella generazione delle coppie");
+        
+        
+        
+         Pair coppiaTmp;
+         Partita tmp;
+         ArrayList<Pair> prese = new ArrayList<Pair>();
+        for(int i=0; i<coppie.size(); i++){ 
+            do{
+           
+                coppiaTmp = coppie.get(rand.nextInt(coppie.size()));
+                tmp = new Partita(coppiaTmp);
+          
+            
+            }while(prese.contains(coppiaTmp));
+            gironeAndata.add(tmp);
+            prese.add(coppiaTmp);
+        }
+        
+        
+        
+        for(int i = 0; i< coppie.size(); i++){
+            Pair tmp2 = new Pair(gironeAndata.get(i).getCoppia().getB(), gironeAndata.get(i).getCoppia().getA() );
+            tmp = new Partita(tmp2);
+            gironeRitorno.add(tmp);
+        
+        
+        }
+        
+        
+        return true;
+    }
+        
+    
+    /**
+     * Generazione campionato con date. Versione vecchia.
+    
     public boolean genera_calendario(){
         Random rand = new Random();
         Calendar cal = Calendar.getInstance();
@@ -51,16 +90,16 @@ public class Calendario implements Serializable {
       
         int g,m,an;
         
-        
+           Data d;
+            //array locale per controllare che le date non vengano prese più volte
+            ArrayList<Data> prese = new ArrayList<Data>();
+           
         
         
         if(!genera_coppie()) System.out.println("Errore nella generazione delle coppie");
         for(int i=0; i<coppie.size(); i++){
             
-            Data d;
-            //array locale per controllare che le date non vengano prese più volte
-            ArrayList<Data> prese = new ArrayList<Data>();
-           
+         
             
             
             do{
@@ -82,12 +121,12 @@ public class Calendario implements Serializable {
     
     }
     
-    
+    */
     
     
     public boolean genera_coppie(){
         for(int i =0 ; i< squadre.size(); i++){
-            for(int j=0; j<squadre.size(); j++){
+            for(int j=i; j<squadre.size(); j++){
                 if(i != j){
                    
                     
@@ -103,12 +142,18 @@ public class Calendario implements Serializable {
     
     
     public void stampa_calendario(){
-        for(int i=0; i< partite.size(); i++){
-            System.out.println(partite.get(i).getCoppia().getA().getNome()+ " vs "+ partite.get(i).getCoppia().getB().getNome()+ " "
-                    + "Data: "+ partite.get(i).getD().getAnno()+" mese: "+ ((partite.get(i).getD().getMese())+1) + " giorno : "+ partite.get(i).getD().getGiorno());
+        System.out.println("Girone di andata: ");
+        for(int i=0; i< gironeAndata.size(); i++){
+            System.out.println(gironeAndata.get(i).getCoppia().getA().getNome()+ " vs "+ gironeAndata.get(i).getCoppia().getB().getNome());
         
         }
+        
+        System.out.println("Girone di ritorno: ");
     
+        for(int i=0; i< gironeRitorno.size(); i++){
+            System.out.println(gironeRitorno.get(i).getCoppia().getA().getNome()+ " vs "+ gironeRitorno.get(i).getCoppia().getB().getNome());
+        
+        }
     
     }
     
@@ -124,15 +169,16 @@ public class Calendario implements Serializable {
     
     }
     
+  
     
     /** Funzione per l'inserimento del risultato di una partita giocata */
     public boolean inserisci_ris(Partita par, Punteggio p){
-        for(int i=0; i< partite.size(); i++){
+        for(int i=0; i< gironeAndata.size(); i++){
             
             //trovo la partita e se esiste e non è ancora stata giocata vado a chiamare il metodo inserisci punteggio
             // che setta la partita giocata e inserisce il risultato
-            if(partite.get(i).equals(par) && !partite.get(i).isGiocata() ){
-                partite.get(i).inserisci_punt(p);
+            if(gironeAndata.get(i).equals(par) && !gironeAndata.get(i).isGiocata() ){
+                gironeAndata.get(i).inserisci_punt(p);
                 return true;
             
             }
@@ -145,15 +191,15 @@ public class Calendario implements Serializable {
     
     }
     
-    
+ 
     
     /** Funzione per la modifica del risultato di una partita giocata */
     
     public boolean modifica_ris(Partita par, Punteggio p){
-         for(int i=0; i< partite.size(); i++){
+         for(int i=0; i< gironeAndata.size(); i++){
              // modifico la partita solo se esiste la partita ed è stata già giocata
-            if(partite.get(i).equals(par) && partite.get(i).isGiocata()){
-                partite.get(i).inserisci_punt(p);
+            if(gironeAndata.get(i).equals(par) && gironeAndata.get(i).isGiocata()){
+                gironeAndata.get(i).inserisci_punt(p);
                 return true;
             
             }
@@ -166,9 +212,7 @@ public class Calendario implements Serializable {
     
     }
     
-    
-    
-    
+    //metodo deprecato
     public boolean salva(String nomeFile){
         FileOutputStream f; 
         ObjectOutputStream os;
@@ -210,11 +254,11 @@ public class Calendario implements Serializable {
     }
 
     public ArrayList<Partita> getPartite() {
-        return partite;
+        return gironeAndata;
     }
 
     public void setPartite(ArrayList<Partita> partite) {
-        this.partite = partite;
+        this.gironeAndata = partite;
     }
     
     

@@ -25,6 +25,7 @@ public class Pair implements Serializable{
     
     
     }
+   
 
     
     public void add(Squadra a, Squadra b){

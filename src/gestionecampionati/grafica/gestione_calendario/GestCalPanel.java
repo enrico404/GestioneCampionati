@@ -54,14 +54,16 @@ public class GestCalPanel extends JPanel{
          
            chiudi.setAlignmentX(CENTER_ALIGNMENT);
            
-           add(Box.createRigidArea(new Dimension(0, 140)));
+           this.add(Box.createRigidArea(new Dimension(0, 140)));
            this.add(genP);
-           add(Box.createRigidArea(new Dimension(0, 30)));
+           this.add(Box.createRigidArea(new Dimension(0, 30)));
            this.add(chiudi);
     
     
            chiudi.addActionListener(new ChiudiActionListener(f, this, c, listmodel, oldPanel));
            genP.addActionListener(new GenPActionListeneter(f, this, c));
+           
+           
            
        }
        

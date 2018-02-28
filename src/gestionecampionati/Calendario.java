@@ -253,15 +253,22 @@ public class Calendario implements Serializable {
         this.coppie = coppie;
     }
 
-    public ArrayList<Partita> getPartite() {
+    public ArrayList<Partita> getGironeAndata() {
         return gironeAndata;
     }
+    
+    public ArrayList<Partita> getGironeRitorno() {
+        return gironeRitorno;
+    }
+    
 
-    public void setPartite(ArrayList<Partita> partite) {
+    public void setGironeAndata(ArrayList<Partita> partite) {
         this.gironeAndata = partite;
     }
     
-    
+     public void setGironeRitorno(ArrayList<Partita> partite) {
+        this.gironeRitorno = partite;
+    }
     
     
     

@@ -15,6 +15,8 @@ import javax.swing.JPanel;
  */
 public class SkPanelCenter extends JPanel {
 
+    
+    
     SkPanelCenter(MainFrame f, Campionato c) {
         super();
     }

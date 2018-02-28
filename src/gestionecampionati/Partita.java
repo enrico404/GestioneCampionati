@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author enrico
  */
-class Partita implements Serializable{
+public class Partita implements Serializable{
     
     /** squadre contendenti */
     private Pair coppia;

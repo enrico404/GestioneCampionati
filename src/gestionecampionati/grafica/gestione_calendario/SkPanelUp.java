@@ -13,6 +13,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.text.View;
+import gestionecampionati.grafica.Listener.CercaTextFocusListener;
+
 
 /**
  *
@@ -49,6 +51,9 @@ public class SkPanelUp extends JPanel {
         cerca.setMaximumSize(d1);
         cerca.setMinimumSize(d1);
         
+        cerca.addFocusListener(new CercaTextFocusListener(cerca));
+        
+        
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
@@ -64,3 +69,6 @@ public class SkPanelUp extends JPanel {
     }
     
 }
+
+
+

@@ -22,7 +22,7 @@ import javax.swing.text.View;
 
 /**
  *
- * @author enrico
+ * @author enrico.
  */
 public class SkPanelDown extends JPanel{
     

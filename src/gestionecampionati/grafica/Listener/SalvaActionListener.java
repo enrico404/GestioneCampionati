@@ -48,9 +48,15 @@ public class SalvaActionListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JFileChooser chooser;
          int userSelection;
-        if(tipo == 0)
-         chooser = new JFileChooser("../GestioneCampionati/saves/calendari");
-        else chooser = new JFileChooser("../GestioneCampionati/saves/squadre");
+        if(tipo == 0){
+              chooser = new JFileChooser("../GestioneCampionati/saves/calendari");
+              chooser.setDialogTitle("Salva");
+        }
+        else{ chooser = new JFileChooser("../GestioneCampionati/saves/squadre");
+                chooser.setDialogTitle("Esporta squadre");
+        
+        
+        }
             userSelection =  chooser.showSaveDialog(fr);
         
         if(userSelection == JFileChooser.APPROVE_OPTION){

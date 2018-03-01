@@ -131,6 +131,7 @@ public class HomePanel extends JPanel implements ActionListener{
         @Override
         public void paint(Graphics g){
         super.paint(g);
+        repaint();
        
 
         }

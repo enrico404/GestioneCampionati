@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.text.View;
 import gestionecampionati.grafica.Listener.CercaTextFocusListener;
+import java.awt.Graphics;
 
 
 /**
@@ -57,6 +58,8 @@ public class SkPanelUp extends JPanel {
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
+        button1.setAlignmentX(LEFT_ALIGNMENT);
+        button2.setAlignmentX(RIGHT_ALIGNMENT);
         
         
         this.add(button1);
@@ -68,6 +71,13 @@ public class SkPanelUp extends JPanel {
         
     }
     
+       @Override
+        public void paint(Graphics g){
+        super.paint(g);
+        repaint();
+       
+
+        }
 }
 
 

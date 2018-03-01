@@ -12,6 +12,7 @@ import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MenuPanel;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
@@ -71,6 +72,13 @@ public class GestCalPanel extends JPanel{
        
     
     }
+       @Override
+        public void paint(Graphics g){
+        super.paint(g);
+        repaint();
+       
+
+        }
 
     
 }

@@ -49,9 +49,13 @@ public class ApriActionListener implements ActionListener {
         JFileChooser chooser;
         
         
-        if(tipo == 0)
-         chooser = new JFileChooser("../GestioneCampionati/saves/calendari");
-        else chooser = new JFileChooser("../GestioneCampionati/saves/squadre");
+        if(tipo == 0){
+            chooser = new JFileChooser("../GestioneCampionati/saves/calendari");
+            chooser.setDialogTitle("Apri");
+        }
+        else{ chooser = new JFileChooser("../GestioneCampionati/saves/squadre");
+            chooser.setDialogTitle("Importa squadre");
+        }
         chooser.showOpenDialog(fr);
       
       

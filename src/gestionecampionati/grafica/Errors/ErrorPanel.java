@@ -5,6 +5,7 @@
  */
 package gestionecampionati.grafica.Errors;
 
+import java.awt.Graphics;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,5 +31,12 @@ public class ErrorPanel extends JPanel{
         }
     
     }
+       @Override
+        public void paint(Graphics g){
+        super.paint(g);
+        repaint();
+       
+
+        }
     
 }

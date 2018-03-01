@@ -84,7 +84,7 @@ public class CalcioPanel extends JPanel {
      @Override
         public void paint(Graphics g){
         super.paint(g);
-       
+        repaint();
         
         }
     

@@ -11,6 +11,7 @@ import gestionecampionati.Campionato;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.TextField;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -122,7 +123,13 @@ public class InsSqPanel extends JPanel{
         this.Tcitta = Tcitta;
     }
     
-    
+       @Override
+        public void paint(Graphics g){
+        super.paint(g);
+        repaint();
+       
+
+        }
     
     
     

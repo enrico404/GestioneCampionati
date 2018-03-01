@@ -10,6 +10,7 @@ import gestionecampionati.grafica.Listener.GestCalActionListener;
 import gestionecampionati.grafica.Listener.InsSqActionLitener;
 import gestionecampionati.Campionato;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
@@ -77,6 +78,13 @@ public class MenuPanel extends JPanel {
    
    
    }
+      @Override
+        public void paint(Graphics g){
+        super.paint(g);
+        repaint();
+       
+
+        }
     
     
     

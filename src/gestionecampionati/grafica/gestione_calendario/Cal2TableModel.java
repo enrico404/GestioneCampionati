@@ -25,7 +25,7 @@ public class Cal2TableModel extends AbstractTableModel{
    
     @Override
     public int getRowCount() {
-        return (c.getC().getGironeAndata().size()+ c.getC().getGironeRitorno().size());
+        return (c.getC().getGironeRitorno().size());
                 
     }
 
@@ -37,11 +37,11 @@ public class Cal2TableModel extends AbstractTableModel{
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         String nome, nome2, risultato;
-        nome = c.getC().getGironeAndata().get(rowIndex).getCoppia().getA().getNome();
-        nome2 =   c.getC().getGironeAndata().get(rowIndex).getCoppia().getB().getNome();   
-        if(c.getC().getGironeAndata().get(rowIndex).isGiocata()){
-            risultato = new String(c.getC().getGironeAndata().get(rowIndex).getP().getPa() + " - " +
-                    c.getC().getGironeAndata().get(rowIndex).getP().getPb());
+        nome = c.getC().getGironeRitorno().get(rowIndex).getCoppia().getA().getNome();
+        nome2 =   c.getC().getGironeRitorno().get(rowIndex).getCoppia().getB().getNome();   
+        if(c.getC().getGironeRitorno().get(rowIndex).isGiocata()){
+            risultato = new String(c.getC().getGironeRitorno().get(rowIndex).getP().getPa() + " - " +
+                    c.getC().getGironeRitorno().get(rowIndex).getP().getPb());
             
         
         

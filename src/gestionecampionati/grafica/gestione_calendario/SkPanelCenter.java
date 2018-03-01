@@ -7,8 +7,14 @@ package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
+import javafx.scene.layout.Border;
+import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
@@ -21,13 +27,35 @@ import javax.swing.text.View;
  * @author enrico
  */
 public class SkPanelCenter extends JPanel {
-
-    
-    
-    
-    SkPanelCenter(MainFrame f, Campionato c) {
-        super();
    
+    private Campionato c;
+ 
+    private SkPanelCenterSqA panelA;
+    private SkPanelCenterSqB panelB;
+    private Font font;
+    
+    
+    SkPanelCenter(Campionato c) {
+        super();
+        
+        font =  new Font("sans-serif", Font.PLAIN, 14);
+        this.c = c;
+        
+        panelA = new SkPanelCenterSqA(c,font);
+        panelB = new SkPanelCenterSqB(c,font);
+        
+        
+        
+        
+        this.setLayout(new BoxLayout(this, View.X_AXIS));
+        
+        this.add(panelA, font);
+       
+        this.add(panelB, font);
+       
+        
+        
+        
         
         
         

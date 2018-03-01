@@ -26,7 +26,7 @@ import javax.swing.text.View;
  */
 public class SkPanelDown extends JPanel{
     
-    private MainFrame f;
+   
     private Campionato c;
     private CalTableModel tab1;
     private Cal2TableModel tab2;
@@ -38,11 +38,11 @@ public class SkPanelDown extends JPanel{
     private JScrollPane panelloScroll2;
   
 
-    SkPanelDown(MainFrame f, Campionato c) {
+    SkPanelDown(Campionato c) {
         super();
         tab1 = new CalTableModel(c);
         tab2 = new Cal2TableModel(c);
-        Font font = new Font("sans-serif", Font.BOLD, 18);
+        Font font = new Font("sans-serif", Font.BOLD, 16);
         
         gironeAnd = new JLabel("Girone Andata: ");
         gironeAnd.setFont(font);

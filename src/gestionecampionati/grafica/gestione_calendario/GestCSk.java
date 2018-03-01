@@ -40,8 +40,8 @@ public class GestCSk extends JPanel {
         this.f = f;
         
         panel1 = new SkPanelUp();
-        panel2 = new SkPanelCenter(f,c);
-        panel3 = new SkPanelDown(f,c);
+        panel2 = new SkPanelCenter(c);
+        panel3 = new SkPanelDown(c);
 
         
         this.add(Box.createRigidArea(new Dimension(0, 40)));

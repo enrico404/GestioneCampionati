@@ -32,9 +32,9 @@ public class SkPanelUp extends JPanel {
     public SkPanelUp() {
         super();
         
-        d = new Dimension(150, 30);
-        d1 = new Dimension(200, 30);
-        d2 = new Dimension(180, 30 );
+        d = new Dimension(300, 40);
+        d1 = new Dimension(300, 30);
+        d2 = new Dimension(300, 40 );
         
         button1 = new JButton("Calendario completo");
         
@@ -58,12 +58,11 @@ public class SkPanelUp extends JPanel {
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
-        button1.setAlignmentX(LEFT_ALIGNMENT);
-        button2.setAlignmentX(RIGHT_ALIGNMENT);
+       
         
-        
+        this.add(Box.createRigidArea(new Dimension(30, 0)));
         this.add(button1);
-        this.add(Box.createRigidArea(new Dimension(160, 40)));
+        this.add(Box.createHorizontalGlue());
         this.add(cerca);
         this.add(Box.createRigidArea(new Dimension(30, 40)));
         this.add(button2);

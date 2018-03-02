@@ -32,9 +32,9 @@ public class SkPanelUp extends JPanel {
     public SkPanelUp() {
         super();
         
-        d = new Dimension(300, 40);
-        d1 = new Dimension(300, 30);
-        d2 = new Dimension(300, 40 );
+        d = new Dimension(150, 40);
+        d1 = new Dimension(150, 30);
+        d2 = new Dimension(150, 40 );
         
         button1 = new JButton("Calendario completo");
         

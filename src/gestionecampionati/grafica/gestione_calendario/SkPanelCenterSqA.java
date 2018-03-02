@@ -6,6 +6,7 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -28,10 +29,14 @@ public class SkPanelCenterSqA extends JPanel {
     private Font font;
     
     
+    
     public SkPanelCenterSqA(Campionato c, Font font) {
         super();
         this.c = c;
         this.font = font;
+      
+        
+        
         d = new Dimension(200 , 30);
         lsqa = new JLabel("Squadra Casa: ");
         vs = new JLabel("VS");
@@ -43,6 +48,19 @@ public class SkPanelCenterSqA extends JPanel {
         
         sqa.setMaximumSize(d);
         sqa.setMinimumSize(d);
+        sqa.setBackground(Color.white);
+      
+          
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
@@ -55,6 +73,27 @@ public class SkPanelCenterSqA extends JPanel {
         
         
     }
+    
+    
+    public boolean riempi(){
+         
+                  for(int i=0; i<c.getSquadre().size(); i++){
+                  
+                       sqa.addItem(c.getSquadre().get(i).getNome());
+                  }
+            
+            
+            return true;
+    
+    
+    }
+
+    public JComboBox getSqa() {
+        return sqa;
+    }
+    
+    
+    
      @Override
         public void paint(Graphics g){
         super.paint(g);

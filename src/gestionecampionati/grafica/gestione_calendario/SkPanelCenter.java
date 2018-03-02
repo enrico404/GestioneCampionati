@@ -29,23 +29,26 @@ import javax.swing.text.View;
 public class SkPanelCenter extends JPanel {
    
     private Campionato c;
- 
+    private MainFrame f;
     private SkPanelCenterSqA panelA;
     private SkPanelCenterSqB panelB;
     private Font font;
+    private GestCSk p;
     
     
-    SkPanelCenter(Campionato c) {
+    public SkPanelCenter(Campionato c, MainFrame f, GestCSk p) {
         super();
-        
+        this.p = p;
         font =  new Font("sans-serif", Font.PLAIN, 14);
         this.c = c;
-        
+        this.f = f;
         panelA = new SkPanelCenterSqA(c,font);
-        panelB = new SkPanelCenterSqB(c,font);
+        panelB = new SkPanelCenterSqB(c,font, f, p);
         
+        panelA.riempi();
+        panelB.riempi();
         
-        
+        panelB.getSqb().setSelectedIndex(1);
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
@@ -62,6 +65,21 @@ public class SkPanelCenter extends JPanel {
         
     }
     
+       public SkPanelCenterSqA getPanelA() {
+        return panelA;
+    }
+
+    public void setPanelA(SkPanelCenterSqA panelA) {
+        this.panelA = panelA;
+    }
+
+    public SkPanelCenterSqB getPanelB() {
+        return panelB;
+    }
+
+    public void setPanelB(SkPanelCenterSqB panelB) {
+        this.panelB = panelB;
+    }
        @Override
         public void paint(Graphics g){
         super.paint(g);

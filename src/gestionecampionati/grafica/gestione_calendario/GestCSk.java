@@ -21,9 +21,9 @@ import javax.swing.text.View;
  */
 public class GestCSk extends JPanel {
     
-    private SkPanelUp panel1;
-    private SkPanelCenter panel2;
-    private SkPanelDown  panel3; 
+    private SkPanelUp panelUp;
+    private SkPanelCenter panelCenter;
+    private SkPanelDown  panelDown; 
     
     
     private MainFrame f;
@@ -32,6 +32,7 @@ public class GestCSk extends JPanel {
     public GestCSk(MainFrame f, Campionato c) {
         super();
        
+       
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         this.setAlignmentX(LEFT_ALIGNMENT);
         
@@ -39,20 +40,46 @@ public class GestCSk extends JPanel {
         this.c = c;
         this.f = f;
         
-        panel1 = new SkPanelUp();
-        panel2 = new SkPanelCenter(c);
-        panel3 = new SkPanelDown(c);
+        panelUp = new SkPanelUp();
+        panelCenter = new SkPanelCenter(c,f,this );
+        panelDown = new SkPanelDown(c);
 
         
         this.add(Box.createRigidArea(new Dimension(0, 40)));
-        this.add(panel1);
+        this.add(panelUp);
         this.add(Box.createRigidArea(new Dimension(0, 40)));
-        this.add(panel2);
+        this.add(panelCenter);
         this.add(Box.createRigidArea(new Dimension(0, 40)));
-        this.add(panel3);
+        this.add(panelDown);
         
         
     }
+
+    public SkPanelUp getPanelUp() {
+        return panelUp;
+    }
+
+    public void setPanelUp(SkPanelUp panelUp) {
+        this.panelUp = panelUp;
+    }
+
+    public SkPanelCenter getPanelCenter() {
+        return panelCenter;
+    }
+
+    public void setPanelCenter(SkPanelCenter panelCenter) {
+        this.panelCenter = panelCenter;
+    }
+
+    public SkPanelDown getPanelDown() {
+        return panelDown;
+    }
+
+    public void setPanelDown(SkPanelDown panelDown) {
+        this.panelDown = panelDown;
+    }
+
+ 
     
     
        @Override

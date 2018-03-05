@@ -9,6 +9,7 @@ import gestionecampionati.Campionato;
 import javax.swing.table.AbstractTableModel;
 import gestionecampionati.Calendario;
 
+
 /**
  *
  * @author enrico
@@ -69,6 +70,12 @@ public class CalTableModel extends AbstractTableModel{
     @Override
     public String getColumnName(int column) {
         return colName[column];
+    }
+      public void removeRow(int row){
+        fireTableRowsDeleted(row, row);
+          
+          fireTableDataChanged();
+    
     }
     
     

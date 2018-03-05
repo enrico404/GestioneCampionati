@@ -62,7 +62,7 @@ public class SkPanelCenterSqB extends JPanel {
         this.add(Box.createRigidArea(new Dimension(40, 0)));
         this.add(cerca);
         
-        cerca.addActionListener(new CercaGiornataActionListener(f,c, p));
+        cerca.addActionListener(new CercaGiornataActionListener(f,c, p, font));
         
         
         

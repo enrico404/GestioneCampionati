@@ -58,7 +58,7 @@ public class SkPanelDown extends JPanel{
         
         tabella = new JTable(tab1);
         tabella2 = new JTable(tab2);
-        
+       
         panelloScroll = new JScrollPane(tabella);
         panelloScroll2 = new JScrollPane(tabella2);
         
@@ -75,6 +75,71 @@ public class SkPanelDown extends JPanel{
         this.add(panelloScroll2);
         
     }
+
+    public CalTableModel getTab1() {
+        return tab1;
+    }
+
+    public void setTab1(CalTableModel tab1) {
+        this.tab1 = tab1;
+    }
+
+    public Cal2TableModel getTab2() {
+        return tab2;
+    }
+
+    public void setTab2(Cal2TableModel tab2) {
+        this.tab2 = tab2;
+    }
+
+    public JTable getTabella() {
+        return tabella;
+    }
+
+    public void setTabella(JTable tabella) {
+        this.tabella = tabella;
+    }
+
+    public JTable getTabella2() {
+        return tabella2;
+    }
+
+    public void setTabella2(JTable tabella2) {
+        this.tabella2 = tabella2;
+    }
+
+    public JLabel getGironeAnd() {
+        return gironeAnd;
+    }
+
+    public void setGironeAnd(JLabel gironeAnd) {
+        this.gironeAnd = gironeAnd;
+    }
+
+    public JLabel getGironeRit() {
+        return gironeRit;
+    }
+
+    public void setGironeRit(JLabel gironeRit) {
+        this.gironeRit = gironeRit;
+    }
+
+    public JScrollPane getPanelloScroll() {
+        return panelloScroll;
+    }
+
+    public void setPanelloScroll(JScrollPane panelloScroll) {
+        this.panelloScroll = panelloScroll;
+    }
+
+    public JScrollPane getPanelloScroll2() {
+        return panelloScroll2;
+    }
+
+    public void setPanelloScroll2(JScrollPane panelloScroll2) {
+        this.panelloScroll2 = panelloScroll2;
+    }
+    
        @Override
         public void paint(Graphics g){
         super.paint(g);

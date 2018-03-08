@@ -11,6 +11,7 @@ import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.CalcioPanel;
 import java.awt.Font;
 import java.util.ArrayList;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 
@@ -25,12 +26,13 @@ public class GestioneCampionati {
      */
     public static void main(String[] args) {
         MainFrame f = new MainFrame("Gestione Campionati");
-        
-        CalcioPanel cal = new CalcioPanel(f);
-        HomePanel p = new HomePanel(f, cal);
+      
+                 HomePanel p = new HomePanel(f);
   
-        f.add(p);
-        f.setVisible(true);
+                  f.add(p);
+                f.setVisible(true);      
+          
+      
 
 /*
        

@@ -8,6 +8,7 @@ package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.Squadra;
+import gestionecampionati.grafica.Errors.ErrorPanel;
 import gestionecampionati.grafica.InsSqPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,7 +50,8 @@ public class InsActionListener implements ActionListener {
                panel.getTcitta().setText("");
             }
         }    
-        else {//error frame
+        else {
+            ErrorPanel err = new ErrorPanel(5);
             
             
             }

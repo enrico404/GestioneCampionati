@@ -9,21 +9,21 @@ import javax.swing.*;
  * @author enrico
  */
 public class MainFrame extends JFrame{
-    private static final int Width = 1200;
-    private static final int Heigth =720;
+    private static final int Wd = 1200;
+    private static final int Hg =720;
 
-    public int getWidth() {
-        return Width;
+    public int getWd() {
+        return Wd;
     }
 
-    public int getHeigth() {
-        return Heigth;
+    public int getHg() {
+        return Hg;
     }
     private String title;
     
     public MainFrame(String title){
         this.setTitle(title);
-        this.setSize(Width, Heigth);
+        this.setSize(Wd, Hg);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(this);
         this.setMinimumSize(new Dimension(800,600));

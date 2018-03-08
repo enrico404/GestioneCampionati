@@ -37,11 +37,13 @@ public class HomePanel extends JPanel implements ActionListener{
         private Font f; 
         private MainFrame fr; 
         private BufferedImage sfondo;
-        private JPanel calcioPanel;
+ 
+       
+      
         
     
     
-        public HomePanel(MainFrame fr, JPanel calcioPanel){
+        public HomePanel(MainFrame fr){
           
             
             super();
@@ -51,7 +53,7 @@ public class HomePanel extends JPanel implements ActionListener{
             int W = fr.getWidth();
             int H = fr.getHeight();
             
-            this.calcioPanel = calcioPanel; 
+           
             button = new Dimension(200, 50);
             calcio = new JButton("Calcio");
             rugby = new JButton("Rugby");
@@ -131,7 +133,7 @@ public class HomePanel extends JPanel implements ActionListener{
         @Override
         public void paint(Graphics g){
         super.paint(g);
-        repaint();
+      
        
 
         }
@@ -143,11 +145,16 @@ public class HomePanel extends JPanel implements ActionListener{
         if(e.getSource() == calcio) {
             
                                     System.out.println("calcio"); 
+                                    
+                                    
                                     fr.clean(); //rimuovo il vecchio pannello
-                                    fr.setContentPane(calcioPanel); //aggiungo il pannello selezionato
-                                    fr.validate(); // rendo valido il frame e faccio lavorare il layout manager per settarmi le coordinate dei component
-                                  
-                                    repaint();
+                                    
+                                   
+                                          fr.setContentPane(new CalcioPanel(fr));
+                                          fr.validate();
+                                       
+                                    
+                                 
                                     }
         if(e.getSource() == rugby) {System.out.println("rugby"); this.setVisible(false);}
         if(e.getSource() == pallavolo) {System.out.println("pallavolo"); this.setVisible(false);}
@@ -155,6 +162,7 @@ public class HomePanel extends JPanel implements ActionListener{
         
         
     }
+   
     
     
     

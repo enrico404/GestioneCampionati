@@ -30,13 +30,15 @@ public class ErrorPanel extends JPanel{
                     break;
             case 4: JOptionPane.showMessageDialog(this, "Le due squadre selezionate sono uguali!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;
+            case 5: JOptionPane.showMessageDialog(this, "Bisogna riempire entrambi i campi!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
+                    break;
         }
     
     }
        @Override
         public void paint(Graphics g){
         super.paint(g);
-        repaint();
+    
        
 
         }

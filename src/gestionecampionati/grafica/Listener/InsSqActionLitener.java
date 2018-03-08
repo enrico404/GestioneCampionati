@@ -40,7 +40,7 @@ public class InsSqActionLitener implements ActionListener {
             panelOld.setEnabled(false);
             f.add(panel);
             f.validate();
-            f.repaint();
+          
         }
 
        

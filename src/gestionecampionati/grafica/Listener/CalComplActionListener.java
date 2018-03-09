@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package gestionecampionati.grafica.Listener;
+
+import gestionecampionati.Campionato;
+import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.gestione_calendario.GestCSk;
+import gestionecampionati.grafica.gestione_calendario.SkPanelDown;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+/**
+ *
+ * @author Enrico
+ */
+public class CalComplActionListener implements ActionListener {
+    private MainFrame f;
+    private GestCSk sk;
+    private Campionato c;
+    private SkPanelDown pdown;
+    
+    
+    public CalComplActionListener(MainFrame f,GestCSk sk, Campionato c ){
+        this.f = f;
+        this.sk = sk;
+        this.c = c;
+        
+    
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        sk.getPanelDown().removeAll();
+        pdown = new SkPanelDown(c);
+        sk.getPanelDown().add(pdown);
+        f.revalidate();
+        
+        
+    }
+    
+}

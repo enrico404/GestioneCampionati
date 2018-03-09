@@ -5,21 +5,16 @@
  */
 package gestionecampionati.grafica.Listener;
 
-import gestionecampionati.Calendario;
+
 import gestionecampionati.Campionato;
-import gestionecampionati.Squadra;
 import gestionecampionati.grafica.CalcioPanel;
 import gestionecampionati.grafica.MainFrame;
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileFilter;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
-import javax.swing.JList;
-import javax.swing.ListModel;
-import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 
 /**
@@ -64,11 +59,7 @@ public class ApriActionListener implements ActionListener {
             String path = f.getAbsolutePath();
         
             if(tipo == 0){
-                /*
-                FileNameExtensionFilter datFilter = new FileNameExtensionFilter("dat file filter", "dat");
-                chooser.setFileFilter(datFilter);
 
-                */
                  c.carica_calendario(path);
                  c.setSquadre(c.getC().getSquadre());
                  listmodel.removeAllElements();

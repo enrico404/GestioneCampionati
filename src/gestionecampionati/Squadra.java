@@ -3,13 +3,8 @@
  */
 package gestionecampionati;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+
 
 /**
  *
@@ -19,18 +14,12 @@ public class Squadra implements Serializable{
     
     private String nome;
     private String citta;
-    transient private BufferedImage logo; //se non esiste carica logo di default, non va serializzato
+   
     
     public Squadra(){
         this.nome = "";
         this.citta  = "";
-      
-        try {
-            this.logo = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
-        } catch (IOException ex) {
-            Logger.getLogger(Squadra.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+
     
     }
     
@@ -38,21 +27,7 @@ public class Squadra implements Serializable{
         this.nome = nome;
         this.citta = citta;
         
-        
-        //carico logo squadra, se non esiste carico logo di default
-      
-        try {
-            this.logo = ImageIO.read(new File("../GestioneCampionati/media/loghi/"+ nome + ".jpg"));
-        } catch (IOException ex) {
-            try {
-                
-                this.logo = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
-            } catch (IOException ex1) {
-                Logger.getLogger(Squadra.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-        }
-        
-    
+
     
     }
     
@@ -73,13 +48,8 @@ public class Squadra implements Serializable{
         this.citta = citta;
     }
 
-    public BufferedImage getLogo() {
-        return logo;
-    }
+ 
 
-    public void setLogo(BufferedImage logo) {
-        this.logo = logo;
-    }
   
     
 }

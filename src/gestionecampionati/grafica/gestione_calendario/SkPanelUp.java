@@ -6,6 +6,9 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 
+import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Listener.CalComplActionListener;
+import gestionecampionati.grafica.Listener.CercaSquadraActionListener;
 import java.awt.Dimension;
 import java.awt.TextField;
 import javax.swing.Box;
@@ -18,9 +21,7 @@ import gestionecampionati.grafica.Listener.ChiudiActionListener;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MenuPanel;
 import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+
 
 
 /**
@@ -29,47 +30,51 @@ import javax.swing.ImageIcon;
  */
 public class SkPanelUp extends JPanel {
    
-    private JButton button1;
-    private JButton button2, indietro;
-    private TextField cerca;
+    private JButton calCompl;
+    private JButton buttCerca, indietro;
+    private TextField cercaText;
     private Dimension d, d1, d2, d3;
     private MenuPanel menuP;
     private GestCSk sk;
     private MainFrame f;
+    private Campionato c;
     
-    public SkPanelUp(MenuPanel menuP, GestCSk sk, MainFrame f) {
+    public SkPanelUp(MenuPanel menuP, GestCSk sk, MainFrame f, Campionato c) {
         super();
         this.menuP = menuP;
         this.sk = sk;
         this.f = f;
+        this.c = c;
         d = new Dimension(150, 40);
         d1 = new Dimension(150, 30);
         d2 = new Dimension(150, 40 );
-        d3 = new Dimension(40, 40);
+        d3 = new Dimension(60, 40);
         
         
         
-        button1 = new JButton("Calendario completo");
+        calCompl = new JButton("Calendario completo");
      
-        button1.setMaximumSize(d2);
-        button1.setMinimumSize(d2);
+        calCompl.setMaximumSize(d2);
+        calCompl.setMinimumSize(d2);
         
-        indietro = new JButton("<");
+        indietro = new JButton("Menu");
         
         indietro.setMaximumSize(d3);
         indietro.setMinimumSize(d3);
         
-        button2 = new JButton("Cerca");
+        buttCerca = new JButton("Cerca");
         
-        button2.setMaximumSize(d);
-        button2.setMinimumSize(d);
+        buttCerca.setMaximumSize(d);
+        buttCerca.setMinimumSize(d);
         
-        cerca = new TextField("Inserire squadra");
+        cercaText = new TextField("Inserire squadra");
         
-        cerca.setMaximumSize(d1);
-        cerca.setMinimumSize(d1);
+        cercaText.setMaximumSize(d1);
+        cercaText.setMinimumSize(d1);
         
-        cerca.addFocusListener(new CercaTextFocusListener(cerca));
+        buttCerca.addActionListener(new CercaSquadraActionListener(cercaText, sk));
+        calCompl.addActionListener(new CalComplActionListener(f, sk, c));
+        cercaText.addFocusListener(new CercaTextFocusListener(cercaText));
         indietro.addActionListener(new ChiudiActionListener(f, sk, menuP));
         
         
@@ -78,11 +83,11 @@ public class SkPanelUp extends JPanel {
         this.add(Box.createRigidArea(new Dimension(30, 0)));
         this.add(indietro);
         this.add(Box.createRigidArea(new Dimension(30, 0)));
-        this.add(button1);
+        this.add(calCompl);
         this.add(Box.createHorizontalGlue());
-        this.add(cerca);
+        this.add(cercaText);
         this.add(Box.createRigidArea(new Dimension(30, 40)));
-        this.add(button2);
+        this.add(buttCerca);
         this.add(Box.createRigidArea(new Dimension(20, 40)));
         
     }

@@ -67,9 +67,9 @@ public class SkPanelCenterSqA extends JPanel {
         this.add(lsqa);
         this.add(Box.createRigidArea(new Dimension(20, 0)));
         this.add(sqa);
-        this.add(Box.createRigidArea(new Dimension(60, 0)));
+        this.add(Box.createRigidArea(new Dimension(120, 0)));
         this.add(vs);
-        this.add(Box.createRigidArea(new Dimension(60, 0)));
+        this.add(Box.createRigidArea(new Dimension(120, 0)));
         
         
     }

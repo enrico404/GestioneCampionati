@@ -9,7 +9,6 @@ import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MenuPanel;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -41,7 +40,7 @@ public class GestCSk extends JPanel {
         this.c = c;
         this.f = f;
         
-        panelUp = new SkPanelUp(menuP, this, f);
+        panelUp = new SkPanelUp(menuP, this, f, c);
         panelCenter = new SkPanelCenter(c,f,this );
         panelDown = new SkPanelDown(c);
 

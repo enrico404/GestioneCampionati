@@ -3,6 +3,8 @@
  */
 package gestionecampionati;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,6 +14,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 
 
 /**
@@ -24,7 +27,7 @@ public class Campionato {
     /** variabile in cui è salvato il tipo di sport */
     private String sport;
     /** Array delle squadre partecipanti al campionato, utile solo in fase di creazione del campionato */
-    private ArrayList<Squadra> squadre = new ArrayList<Squadra>();
+    private ArrayList<Squadra> squadre;
     /** calendario associato al campionato */
     private Calendario c;
 
@@ -36,14 +39,16 @@ public class Campionato {
         this.c = c;
     }
 
-    public Campionato(String calcio) {
-        this.sport = calcio;
+    public Campionato(String sport) {
+        this.sport = sport;
         c = null;
+        squadre = new ArrayList<Squadra>();
        
         
     }
 
- 
+    
+
 
  
 
@@ -169,7 +174,6 @@ public class Campionato {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Campionato.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     
         return true;
     }
@@ -181,7 +185,14 @@ public class Campionato {
     
     
     }
+
+    public void nuovo(String sport) {
+       this.sport = sport;
+        c = null;
+        squadre = new ArrayList<Squadra>();
+    }
     
+ 
     
     
     

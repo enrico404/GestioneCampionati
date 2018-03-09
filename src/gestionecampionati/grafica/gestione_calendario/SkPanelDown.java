@@ -38,7 +38,7 @@ public class SkPanelDown extends JPanel{
     private JScrollPane panelloScroll2;
   
 
-    SkPanelDown(Campionato c) {
+    public SkPanelDown(Campionato c) {
         super();
         tab1 = new CalTableModel(c);
         tab2 = new Cal2TableModel(c);

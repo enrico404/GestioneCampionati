@@ -47,10 +47,13 @@ public class MenuBar extends JMenuBar{
         
         help = new JMenu("Help");
         help.setFont(f);
-    /*    
-        JMenuItem nuovo = new JMenuItem("Crea campionato");
+ 
+    
+    
+        JMenuItem nuovo = new JMenuItem("Nuovo..");
         nuovo.setFont(f);
-      */  
+        
+        
         JMenuItem apri = new JMenuItem("Apri.. "); //insieme al calendario devo caricare il file dei risultati
         apri.setFont(f);
         
@@ -101,9 +104,17 @@ public class MenuBar extends JMenuBar{
         expSq.addActionListener(new SalvaActionListener(c, fr, 1));
         insSq.addActionListener(new InsSqActionLitener(fr, centerPanel , c, lista));
         gestCal.addActionListener(new GestCalActionListener(fr, centerPanel, c, lista));
+        nuovo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.nuovo("Calcio");
+                lista.removeAllElements();
+                lista.addElement("Squadre: ");
+            }
+        });
         
         
-       
+        file.add(nuovo);
         file.add(apri);
         file.add(salva);
         file.add(insSq);

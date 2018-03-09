@@ -64,7 +64,7 @@ public class CercaGiornataActionListener implements ActionListener {
                  
 
 
-                    p.getPanelDown().removeAll();
+               
                     
                     tmpA = c.getC().getGironeAndata().get(i).getP().getPa();
                     tmpB =  c.getC().getGironeAndata().get(i).getP().getPb();
@@ -87,11 +87,11 @@ public class CercaGiornataActionListener implements ActionListener {
                    p.getPanelDown().add(txt);
                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
                    p.getPanelDown().add(new JScrollPane(tabella));
-                   p.getPanelDown().repaint();
-                   p.getPanelDown().validate();
+                 
+                   
                   
                    
-                   f.repaint();
+          
             
                  }
             }
@@ -99,7 +99,7 @@ public class CercaGiornataActionListener implements ActionListener {
              for(int i=0; i<c.getC().getGironeRitorno().size(); i++){
                 if(sqa.equals(c.getC().getGironeRitorno().get(i).getCoppia().getA().getNome()) && sqb.equals(c.getC().getGironeRitorno().get(i).getCoppia().getB().getNome()))
                 {
-                   p.getPanelDown().removeAll();
+                   
                     
                     tmpA = c.getC().getGironeRitorno().get(i).getP().getPa();
                     tmpB =  c.getC().getGironeRitorno().get(i).getP().getPb();
@@ -122,19 +122,19 @@ public class CercaGiornataActionListener implements ActionListener {
                    p.getPanelDown().add(txt);
                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
                    p.getPanelDown().add(new JScrollPane(tabella));
-                   p.getPanelDown().repaint();
-                   p.getPanelDown().validate();
+            
+
                   
                    
-                   f.repaint();
+            
                     
                 
                 }
             
             }
+            p.getPanelDown().validate();
             
-            
-             f.repaint();
+          
         }else err = new ErrorPanel(4);
     }
     

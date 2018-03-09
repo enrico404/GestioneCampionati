@@ -5,6 +5,8 @@
  */
 package gestionecampionati.grafica.Listener;
 
+import gestionecampionati.Campionato;
+import gestionecampionati.grafica.gestione_calendario.CercaSqTableModel;
 import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -15,6 +17,8 @@ import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
@@ -23,10 +27,14 @@ import javax.swing.JLabel;
 public class CercaSquadraActionListener implements ActionListener {
     private GestCSk sk;
     private TextField cerca;
+    private Campionato c;
+    private CercaSqTableModel model;
+    private JTable tabella;
 
-    public CercaSquadraActionListener(TextField cerca, GestCSk sk) {
+    public CercaSquadraActionListener(TextField cerca, GestCSk sk, Campionato c) {
         this.sk = sk;
         this.cerca = cerca;
+        this.c = c;
     }
 
     
@@ -35,9 +43,24 @@ public class CercaSquadraActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
+        boolean esiste= false;
         sk.getPanelDown().setLayout(new FlowLayout(FlowLayout.LEFT));
-        if(!(cerca.getText().equals("Inserire squadra"))){
         
+        for(int i=0; i<c.get_numSquadre(); i++)
+            if(c.getC().getSquadre().get(i).getNome().equals(cerca.getText())) esiste=true;
+       
+        if( esiste==true){
+         
+            model = new CercaSqTableModel(cerca.getText(), c);
+            tabella = new JTable(model);
+            JScrollPane sc = new JScrollPane(tabella);
+            sk.getPanelDown().removeAll();
+            
+            sk.getPanelDown().add(sc);
+            
+            sk.getPanelDown().revalidate();
+            sk.getPanelDown().repaint();
+            esiste=false;
         
         
         }else {

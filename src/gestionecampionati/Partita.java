@@ -30,7 +30,7 @@ public class Partita implements Serializable{
         this.d = d;
     
     }
-    * */
+     */
     
     
     public Partita(Pair coppia){

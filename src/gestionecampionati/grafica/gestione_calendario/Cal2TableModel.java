@@ -46,7 +46,7 @@ public class Cal2TableModel extends AbstractTableModel{
             
         
         
-        }else risultato = new String(" Non giocata");
+        }else risultato = new String("Non giocata");
                 
         switch (columnIndex){
             case 0: return nome;

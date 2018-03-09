@@ -31,7 +31,7 @@ public class CercaTextFocusListener implements FocusListener{
 
     @Override
     public void focusLost(FocusEvent e) {
-        cerca.setText("Inserire squadra");
+        
     }
    
 

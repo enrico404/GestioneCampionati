@@ -7,6 +7,7 @@ package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.MenuPanel;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
@@ -24,14 +25,14 @@ public class GestCSk extends JPanel {
     private SkPanelUp panelUp;
     private SkPanelCenter panelCenter;
     private SkPanelDown  panelDown; 
-    
-    
+    private MenuPanel menuP;
     private MainFrame f;
     private Campionato c;
 
-    public GestCSk(MainFrame f, Campionato c) {
+    public GestCSk(MainFrame f, Campionato c, MenuPanel menuP) {
         super();
-       
+        
+        this.menuP = menuP;
        
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         this.setAlignmentX(LEFT_ALIGNMENT);
@@ -40,7 +41,7 @@ public class GestCSk extends JPanel {
         this.c = c;
         this.f = f;
         
-        panelUp = new SkPanelUp();
+        panelUp = new SkPanelUp(menuP, this, f);
         panelCenter = new SkPanelCenter(c,f,this );
         panelDown = new SkPanelDown(c);
 

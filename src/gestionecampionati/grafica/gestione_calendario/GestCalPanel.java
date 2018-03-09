@@ -61,8 +61,8 @@ public class GestCalPanel extends JPanel{
            this.add(chiudi);
     
     
-           chiudi.addActionListener(new ChiudiActionListener(f, this, c, listmodel, oldPanel));
-           genP.addActionListener(new GenPActionListeneter(f, this, c));
+           chiudi.addActionListener(new ChiudiActionListener(f, this, oldPanel));
+           genP.addActionListener(new GenPActionListeneter(f, this, c, oldPanel));
            
            
            

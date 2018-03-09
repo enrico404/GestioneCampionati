@@ -21,15 +21,12 @@ public class ChiudiActionListener implements ActionListener {
 
     private MainFrame f;
     private JPanel old;
-    private Campionato c;
-    private DefaultListModel<String> listmodel;
     private MenuPanel centP;
     
-    public ChiudiActionListener(MainFrame f, JPanel old, Campionato c, DefaultListModel<String> listmodel, MenuPanel centP) {
+    public ChiudiActionListener(MainFrame f, JPanel old, MenuPanel centP) {
         this.old = old;
         this.f = f;
-        this.c = c;
-        this.listmodel = listmodel;
+      
         this.centP = centP;
     }
 

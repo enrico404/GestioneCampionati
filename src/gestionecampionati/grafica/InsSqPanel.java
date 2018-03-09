@@ -54,8 +54,8 @@ public class InsSqPanel extends JPanel{
         
         nome = new JLabel("Nome: ");
         citta = new JLabel("Città: ");
-        ins = new JButton("Inserisci");
-        esci = new JButton("Esci");
+       
+        
         
         
         nome.setAlignmentX(CENTER_ALIGNMENT);
@@ -99,7 +99,7 @@ public class InsSqPanel extends JPanel{
         this.add(esci);
         
         
-        esci.addActionListener(new ChiudiActionListener(f, this, c, listmodel, centP));
+        esci.addActionListener(new ChiudiActionListener(f, this, centP));
         ins.addActionListener(new InsActionListener(c, this, listmodel));
         
         

@@ -72,7 +72,7 @@ public class Squadra implements Serializable{
     public void setCitta(String citta) {
         this.citta = citta;
     }
-    /* se tolgo i commenti non riesco più a caricare le squadre perchè quando ho serializzato i metodi non esistevano
+
     public BufferedImage getLogo() {
         return logo;
     }
@@ -80,6 +80,6 @@ public class Squadra implements Serializable{
     public void setLogo(BufferedImage logo) {
         this.logo = logo;
     }
-    */
+  
     
 }

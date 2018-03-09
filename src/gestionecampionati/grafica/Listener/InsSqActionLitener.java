@@ -25,6 +25,7 @@ public class InsSqActionLitener implements ActionListener {
     private Campionato c;
     private DefaultListModel<String> listmodel;
     public InsSqActionLitener(MainFrame f, MenuPanel panelOld, Campionato c, DefaultListModel<String> listmodel) {
+        
         this.f = f;
         this.panelOld = panelOld;
         this.c  = c;

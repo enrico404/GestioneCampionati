@@ -38,6 +38,7 @@ public class Campionato {
 
     public Campionato(String calcio) {
         this.sport = calcio;
+        c = null;
        
         
     }

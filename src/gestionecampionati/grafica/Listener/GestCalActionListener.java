@@ -9,6 +9,7 @@ import gestionecampionati.Campionato;
 import gestionecampionati.grafica.gestione_calendario.GestCalPanel;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
@@ -32,11 +33,21 @@ public class GestCalActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(oldPanel.isEnabled()){
+        if(oldPanel.isEnabled() && (c.getC() == null)){
+     
             GestCalPanel gestCal = new GestCalPanel(f, c, listmodel, oldPanel);
             f.remove(oldPanel);
             oldPanel.setEnabled(false);
             f.add(gestCal);
+            f.validate();
+            f.repaint();
+        
+        
+        }else {
+            
+            GestCSk sk = new GestCSk(f, c, oldPanel); 
+            f.remove(oldPanel);
+            f.add(sk);
             f.validate();
             f.repaint();
         

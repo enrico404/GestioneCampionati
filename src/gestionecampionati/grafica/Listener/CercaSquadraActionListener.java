@@ -6,6 +6,7 @@
 package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.gestione_calendario.CercaSqTableModel;
 import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import java.awt.Dimension;
@@ -15,10 +16,10 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.text.View;
 
 /**
  *
@@ -30,11 +31,13 @@ public class CercaSquadraActionListener implements ActionListener {
     private Campionato c;
     private CercaSqTableModel model;
     private JTable tabella;
+    private MainFrame f;
 
-    public CercaSquadraActionListener(TextField cerca, GestCSk sk, Campionato c) {
+    public CercaSquadraActionListener(TextField cerca, GestCSk sk, Campionato c, MainFrame f) {
         this.sk = sk;
         this.cerca = cerca;
         this.c = c;
+        this.f = f;
     }
 
     
@@ -51,11 +54,17 @@ public class CercaSquadraActionListener implements ActionListener {
        
         if( esiste==true){
          
+            sk.getPanelDown().setLayout(new FlowLayout());
+            
             model = new CercaSqTableModel(cerca.getText(), c);
             tabella = new JTable(model);
             JScrollPane sc = new JScrollPane(tabella);
-            sk.getPanelDown().removeAll();
             
+          
+            
+            
+            sk.getPanelDown().removeAll();
+           
             sk.getPanelDown().add(sc);
             
             sk.getPanelDown().revalidate();

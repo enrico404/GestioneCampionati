@@ -16,24 +16,69 @@ public class CercaSqTableModel extends AbstractTableModel{
 
     private Campionato c;
     private String nome;
-    private int size;
+    private Object data[][];
+  
     
     String[] colName = {"Casa", "Trasferta", "Risultato"};
     
     public CercaSqTableModel(String nome, Campionato c) {
         this.c = c;
         this.nome = nome;
+        String nome1, nome2, risultato;
+        
+        data = new Object[200][3];
+        int row = 0; 
+        
+        
+        
+       
+        for(int i=0; i<c.getC().getGironeAndata().size(); i++){
+             if(c.getC().getGironeAndata().get(i).isGiocata()){
+                    risultato = new String(c.getC().getGironeAndata().get(i).getP().getPa() + " - " +
+                     c.getC().getGironeAndata().get(i).getP().getPb());
+
+                 }else risultato = new String(" Non giocata");
+                 nome1 = c.getC().getGironeAndata().get(i).getCoppia().getA().getNome();
+                 nome2 =  c.getC().getGironeAndata().get(i).getCoppia().getB().getNome();
+            if(nome1.equals(nome) || nome2.equals(nome)){
+                   data[row][0] = nome1;
+                   data[row][1] = nome2;
+                   data[row][2] = risultato;
+                   row++;
+            }
+        
+        
+        }
+        
+        for(int i=0; i<c.getC().getGironeRitorno().size(); i++){
+             if(c.getC().getGironeRitorno().get(i).isGiocata()){
+                    risultato = new String(c.getC().getGironeRitorno().get(i).getP().getPa() + " - " +
+                     c.getC().getGironeRitorno().get(i).getP().getPb());
+
+                 }else risultato = new String(" Non giocata");
+                 nome1 = c.getC().getGironeRitorno().get(i).getCoppia().getA().getNome();
+                 nome2 =  c.getC().getGironeRitorno().get(i).getCoppia().getB().getNome();
+            if(nome1.equals(nome) || nome2.equals(nome)){
+                   data[row][0] = nome1;
+                   data[row][1] = nome2;
+                   data[row][2] = risultato;
+                   row++;
+            }
+        
+        
+        }
+        
         
         
         
     }
     
-    
-    
-    @Override
+       @Override
     public int getRowCount() {
-        return 10;
+        return ((c.get_numSquadre() - 1)*2);
     }
+    
+   
 
     @Override
     public int getColumnCount() {
@@ -42,46 +87,10 @@ public class CercaSqTableModel extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        
-        String nome1, nome2, risultato;
-        
-        for(int i=0; i< c.getC().getGironeAndata().size(); i++){
-            nome1 = c.getC().getGironeAndata().get(i).getCoppia().getA().getNome();
-            nome2 =  c.getC().getGironeAndata().get(i).getCoppia().getB().getNome();
-            risultato = c.getC().getGironeAndata().get(i).getP().getPa() + " - "+c.getC().getGironeAndata().get(i).getP().getPb();
-                if(nome1.equals(nome) || nome2.equals(nome) ){
-                     switch (columnIndex){
-                         case 0: return nome1;
-                         case 1: return nome2; 
-                         case 2: return risultato;
-                         default: return "";
-        
-
-                         }
+       
+                 return data[rowIndex][columnIndex];
                 
-                }
         
-        }
-        
-          for(int i=0; i< c.getC().getGironeRitorno().size(); i++){
-            nome1 = c.getC().getGironeRitorno().get(i).getCoppia().getA().getNome();
-            nome2 =  c.getC().getGironeRitorno().get(i).getCoppia().getB().getNome();
-            risultato = c.getC().getGironeRitorno().get(i).getP().getPa() + " - "+c.getC().getGironeRitorno().get(i).getP().getPb();
-                if(nome1.equals(nome) || nome2.equals(nome) ){
-                     switch (columnIndex){
-                         case 0: return nome1;
-                         case 1: return nome2; 
-                         case 2: return risultato;
-                         default: return "";
-        
-
-                         }
-                
-                }
-        
-        }
-
-        return "";
     }
     
     
@@ -94,4 +103,6 @@ public class CercaSqTableModel extends AbstractTableModel{
     public String getColumnName(int column) {
         return colName[column];
     }
+
+ 
 }

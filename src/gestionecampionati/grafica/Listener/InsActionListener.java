@@ -23,10 +23,12 @@ public class InsActionListener implements ActionListener {
     private Campionato c;
     private InsSqPanel panel;
     private DefaultListModel<String> listmodel;
-    public InsActionListener(Campionato c, InsSqPanel panel, DefaultListModel<String> listmodel) {
+    private String path;
+    public InsActionListener(Campionato c, InsSqPanel panel, DefaultListModel<String> listmodel, String path) {
         this.c = c;
         this.panel = panel;
         this.listmodel = listmodel;
+        this.path = path;
     }
 
     @Override

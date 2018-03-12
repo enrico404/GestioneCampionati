@@ -28,6 +28,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.text.View;
 
 /**
  *
@@ -137,7 +138,7 @@ public class CercaGiornataActionListener implements ActionListener {
                     
                     
                  
-                    
+                    p.getPanelDown().setLayout(new BoxLayout(p.getPanelDown(), View.Y_AXIS));
                     
                     JLabel txt = new JLabel("Girone Andata ");
                     txt.setFont(new Font("sans-serif", Font.BOLD, 18));

@@ -16,6 +16,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -47,14 +48,14 @@ public class CercaSquadraActionListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         boolean esiste= false;
-        sk.getPanelDown().setLayout(new FlowLayout(FlowLayout.LEFT));
+        sk.getPanelDown().setLayout(new BoxLayout(sk.getPanelDown(), View.Y_AXIS));
         
         for(int i=0; i<c.get_numSquadre(); i++)
             if(c.getC().getSquadre().get(i).getNome().equals(cerca.getText())) esiste=true;
        
         if( esiste==true){
          
-            sk.getPanelDown().setLayout(new FlowLayout());
+           
             
             model = new CercaSqTableModel(cerca.getText(), c);
             tabella = new JTable(model);

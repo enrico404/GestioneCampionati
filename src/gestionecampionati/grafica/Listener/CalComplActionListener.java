@@ -11,6 +11,8 @@ import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import gestionecampionati.grafica.gestione_calendario.SkPanelDown;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BoxLayout;
+import javax.swing.text.View;
 
 /**
  *
@@ -35,6 +37,7 @@ public class CalComplActionListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         sk.getPanelDown().removeAll();
         pdown = new SkPanelDown(c);
+        sk.getPanelDown().setLayout(new BoxLayout(sk.getPanelDown(), View.Y_AXIS));
         sk.getPanelDown().add(pdown);
         f.revalidate();
         

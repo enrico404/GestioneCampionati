@@ -14,6 +14,9 @@ public class Squadra implements Serializable{
     
     private String nome;
     private String citta;
+    /** percorso del logo */
+    private String logo; 
+    
    
     
     public Squadra(){
@@ -46,6 +49,14 @@ public class Squadra implements Serializable{
 
     public void setCitta(String citta) {
         this.citta = citta;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
  

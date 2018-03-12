@@ -8,9 +8,10 @@ package gestionecampionati.grafica;
 import gestionecampionati.grafica.Listener.InsActionListener;
 import gestionecampionati.grafica.Listener.ChiudiActionListener;
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Listener.ApriActionListener;
+import gestionecampionati.grafica.Listener.ApriLogoActionListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.TextField;
 import javax.swing.Box;
@@ -32,6 +33,7 @@ public class InsSqPanel extends JPanel{
     private TextField Tnome;
     private TextField Tcitta;
     private JButton ins;
+    private JButton insLogo;
     private JButton esci;
     private Dimension text;
     private Dimension text2;
@@ -39,6 +41,7 @@ public class InsSqPanel extends JPanel{
     private MainFrame f;
     private DefaultListModel<String> listmodel;
     private MenuPanel centP;
+    private String path;
     
     
     public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel, MenuPanel centP) {
@@ -66,12 +69,13 @@ public class InsSqPanel extends JPanel{
         Tcitta = new TextField();
         
      
-        
+        insLogo = new JButton("Inserisci logo");
         ins = new JButton("Inserisci");
         esci = new JButton("Chiudi");
         
         ins.setAlignmentX(CENTER_ALIGNMENT);
         esci.setAlignmentX(CENTER_ALIGNMENT);
+        insLogo.setAlignmentX(CENTER_ALIGNMENT);
         
         
         Tnome.setMinimumSize(text2);
@@ -84,6 +88,9 @@ public class InsSqPanel extends JPanel{
         ins.setMaximumSize(text);
         ins.setMinimumSize(text);
         
+        insLogo.setMaximumSize(text);
+        insLogo.setMinimumSize(text);
+        
         esci.setMaximumSize(text);
         esci.setMinimumSize(text);
         
@@ -93,14 +100,16 @@ public class InsSqPanel extends JPanel{
         this.add(Tnome );
         this.add(citta);
         this.add(Tcitta);
-        add(Box.createRigidArea(new Dimension(0, 40)));
-        this.add(ins);
         add(Box.createRigidArea(new Dimension(0, 20)));
+        this.add(insLogo);
+        add(Box.createRigidArea(new Dimension(0, 20)));
+        this.add(ins);
+        add(Box.createRigidArea(new Dimension(0, 35)));
         this.add(esci);
         
-        
+        insLogo.addActionListener(new ApriLogoActionListener(f, path));
         esci.addActionListener(new ChiudiActionListener(f, this, centP));
-        ins.addActionListener(new InsActionListener(c, this, listmodel));
+        ins.addActionListener(new InsActionListener(c, this, listmodel, path));
         
         
         

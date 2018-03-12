@@ -24,16 +24,14 @@ import javax.swing.JFileChooser;
 public class ApriActionListener implements ActionListener {
     private Campionato c;
     private MainFrame fr;
-    private CalcioPanel panel;
     private DefaultListModel<String> listmodel;
     
     /** variabile per capire quale tipo di file caricare in memoria */
     private int tipo; 
 
-    public ApriActionListener(Campionato c, MainFrame fr, CalcioPanel panel, DefaultListModel<String> lista, int tipo){
+    public ApriActionListener(Campionato c, MainFrame fr, DefaultListModel<String> lista, int tipo){
         this.c = c;
         this.fr = fr;
-        this.panel = panel;
         this.listmodel = lista;
         this.tipo = tipo;
     }
@@ -47,11 +45,16 @@ public class ApriActionListener implements ActionListener {
         if(tipo == 0){
             chooser = new JFileChooser("../GestioneCampionati/saves/calendari");
             chooser.setDialogTitle("Apri");
+            chooser.showOpenDialog(fr);
         }
-        else{ chooser = new JFileChooser("../GestioneCampionati/saves/squadre");
+        else { chooser = new JFileChooser("../GestioneCampionati/saves/squadre");
             chooser.setDialogTitle("Importa squadre");
+            chooser.showOpenDialog(fr);
         }
-        chooser.showOpenDialog(fr);
+            
+        
+        
+        
       
       
         File f = chooser.getSelectedFile();
@@ -78,6 +81,7 @@ public class ApriActionListener implements ActionListener {
             
             
             }
+           
         
         }catch(NullPointerException ex){
             System.out.println("Calendario non caricato ");

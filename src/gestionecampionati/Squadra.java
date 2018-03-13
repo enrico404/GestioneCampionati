@@ -3,7 +3,10 @@
  */
 package gestionecampionati;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.Serializable;
+import javax.imageio.ImageIO;
 
 
 /**
@@ -29,6 +32,27 @@ public class Squadra implements Serializable{
     public Squadra(String nome, String citta){
         this.nome = nome;
         this.citta = citta;
+        
+                    try{
+                        BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome));
+                        this.logo = "../GestioneCampionati/media/loghi/"+this.nome;                      
+                    }catch(Exception ex){
+                       this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                        
+                    }
+        
+
+    
+    }
+    
+    public Squadra(String nome, String citta, String path){
+        this.nome = nome;
+        this.citta = citta;
+        
+        this.logo = path;
+        
+        
+        
         
 
     

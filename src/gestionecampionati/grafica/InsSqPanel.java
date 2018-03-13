@@ -41,7 +41,7 @@ public class InsSqPanel extends JPanel{
     private MainFrame f;
     private DefaultListModel<String> listmodel;
     private MenuPanel centP;
-    private String path;
+    
     
     
     public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel, MenuPanel centP) {
@@ -50,6 +50,10 @@ public class InsSqPanel extends JPanel{
         this.f = f;
         this.listmodel = listmodel;
         this.centP = centP;
+        
+ 
+        
+        
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         
         text=new Dimension(140, 40);
@@ -106,10 +110,15 @@ public class InsSqPanel extends JPanel{
         this.add(ins);
         add(Box.createRigidArea(new Dimension(0, 35)));
         this.add(esci);
+       
         
-        insLogo.addActionListener(new ApriLogoActionListener(f, path));
+        ApriLogoActionListener apri = new ApriLogoActionListener(f);
+        
+        insLogo.addActionListener(apri);
+        
         esci.addActionListener(new ChiudiActionListener(f, this, centP));
-        ins.addActionListener(new InsActionListener(c, this, listmodel, path));
+        
+        ins.addActionListener(new InsActionListener(c, this, listmodel, apri));
         
         
         

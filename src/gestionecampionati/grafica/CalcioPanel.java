@@ -4,16 +4,12 @@
  * and open the template in the editor.
  */
 package gestionecampionati.grafica;
-import gestionecampionati.Calendario;
 import gestionecampionati.Campionato;
-import gestionecampionati.Squadra;
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import javax.swing.*;
+import java.awt.BorderLayout;
 import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
 import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
 /**

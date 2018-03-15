@@ -24,18 +24,18 @@ public class GestCalActionListener implements ActionListener {
     private Campionato c;
     private DefaultListModel<String> listmodel;
 
-    public GestCalActionListener(MainFrame f, MenuPanel oldPanel, Campionato c, DefaultListModel<String> listmodel) {
+    public GestCalActionListener(MainFrame f, MenuPanel oldPanel, Campionato c) {
         this.f = f;
         this.oldPanel = oldPanel;
         this.c = c;
-        this.listmodel = listmodel;
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(oldPanel.isEnabled() && (c.getC() == null)){
      
-            GestCalPanel gestCal = new GestCalPanel(f, c, listmodel, oldPanel);
+            GestCalPanel gestCal = new GestCalPanel(f, c, oldPanel);
             f.remove(oldPanel);
             oldPanel.setEnabled(false);
             f.add(gestCal);

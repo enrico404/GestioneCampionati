@@ -54,7 +54,7 @@ public class InsSqPanel extends JPanel{
  
         
         
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+         
         
         text=new Dimension(140, 40);
         text2=new Dimension(260, 35);
@@ -150,8 +150,6 @@ public class InsSqPanel extends JPanel{
        @Override
         public void paint(Graphics g){
         super.paint(g);
-       
-       
 
         }
     

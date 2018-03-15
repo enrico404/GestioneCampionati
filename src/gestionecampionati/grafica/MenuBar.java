@@ -103,7 +103,7 @@ public class MenuBar extends JMenuBar{
         impSq.addActionListener(new ApriActionListener(c, fr, lista, 1));
         expSq.addActionListener(new SalvaActionListener(c, fr, 1));
         insSq.addActionListener(new InsSqActionLitener(fr, centerPanel , c, lista));
-        gestCal.addActionListener(new GestCalActionListener(fr, centerPanel, c, lista));
+        gestCal.addActionListener(new GestCalActionListener(fr, centerPanel, c));
         nuovo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

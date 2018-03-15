@@ -7,7 +7,6 @@ package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;

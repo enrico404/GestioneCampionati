@@ -6,6 +6,7 @@
  */
 package gestionecampionati.grafica;
 
+import gestionecampionati.grafica.Listener.InsRisActionListener;
 import gestionecampionati.grafica.Listener.GestCalActionListener;
 import gestionecampionati.grafica.Listener.InsSqActionLitener;
 import gestionecampionati.Campionato;
@@ -74,7 +75,8 @@ public class MenuPanel extends JPanel {
             
             
             insSq.addActionListener(new InsSqActionLitener(f, this, c, listmodel));
-            gestCal.addActionListener(new GestCalActionListener(f, this, c, listmodel));
+            gestCal.addActionListener(new GestCalActionListener(f, this, c));
+            insRis.addActionListener(new InsRisActionListener(f,this,c));
    
    
    }

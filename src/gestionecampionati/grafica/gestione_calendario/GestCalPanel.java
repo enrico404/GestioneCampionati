@@ -10,7 +10,6 @@ import gestionecampionati.grafica.Listener.ChiudiActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MenuPanel;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
@@ -28,16 +27,15 @@ public class GestCalPanel extends JPanel{
     private JButton chiudi;
     private MainFrame f;
     private Campionato c;
-    private DefaultListModel<String> listmodel;
     private MenuPanel oldPanel;
     private JButton genP;
     private Dimension dimB;
-    public GestCalPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel, MenuPanel oldPanel){
+    public GestCalPanel(MainFrame f, Campionato c, MenuPanel oldPanel){
         
         
         this.f = f;
         this.c = c;
-        this. listmodel = listmodel;
+       
         this.oldPanel = oldPanel;
         dimB = new Dimension(200, 50);
        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

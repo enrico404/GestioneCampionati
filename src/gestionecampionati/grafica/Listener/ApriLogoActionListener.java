@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import static java.lang.System.out;
 import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.util.logging.Level;
@@ -48,34 +49,39 @@ public class ApriLogoActionListener implements ActionListener{
             chooser.showOpenDialog(fr);
             
         File f = chooser.getSelectedFile();
-        this.path = f.getAbsolutePath();
-       
-        FileChannel source = null;
-        FileChannel dest = null;
-        
-        File f2 = new File("../GestioneCampionati/media/loghi/"+ f.getName());
-        
-        try {
-            source = new FileInputStream(f).getChannel();
-            dest = new FileOutputStream(f2).getChannel();
-        
-            if(source != null && dest != null){
-                dest.transferFrom(source, 0, source.size());
-                source.close();
-                dest.close();
-            
-            
-            
-            }
-            
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(ApriLogoActionListener.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(ApriLogoActionListener.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+                try{
+                this.path = f.getAbsolutePath();
 
+                FileChannel source = null;
+                FileChannel dest = null;
+
+                File f2 = new File("../GestioneCampionati/media/loghi/"+ f.getName());
+
+                try {
+                    source = new FileInputStream(f).getChannel();
+                    dest = new FileOutputStream(f2).getChannel();
+
+                    if(source != null && dest != null){
+                        dest.transferFrom(source, 0, source.size());
+                        source.close();
+                        dest.close();
+
+
+
+                    }
+
+
+                } catch (FileNotFoundException ex) {
+                    Logger.getLogger(ApriLogoActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IOException ex) {
+                    Logger.getLogger(ApriLogoActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        
+        }catch(NullPointerException exc){
+            
+            System.out.println("Logo non inserito");
+            
+        }
   
         
     }       

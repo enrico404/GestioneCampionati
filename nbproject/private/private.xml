@@ -5,9 +5,12 @@
         <group>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/ApriLogoActionListener.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/InsActionListener.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/CercaGiornataPanelBottom.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Squadra.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/CercaGiornataPanelUp.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/ApriActionListener.java</file>
             <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/InsSqPanel.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/CercaGiornataActionListener.java</file>
         </group>
     </open-files>
 </project-private>

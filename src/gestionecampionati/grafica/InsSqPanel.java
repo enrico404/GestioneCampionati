@@ -12,6 +12,7 @@ import gestionecampionati.grafica.Listener.ApriActionListener;
 import gestionecampionati.grafica.Listener.ApriLogoActionListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.TextField;
 import javax.swing.Box;
@@ -98,13 +99,19 @@ public class InsSqPanel extends JPanel{
         esci.setMaximumSize(text);
         esci.setMinimumSize(text);
         
+        JLabel hint = new JLabel("Dimensione consigliata (120x120)");
+        hint.setAlignmentX(CENTER_ALIGNMENT);
+        hint.setFont(new Font("san-serif", Font.PLAIN, 10));
+        
         
         add(Box.createRigidArea(new Dimension(0, 80)));
         this.add(nome, BorderLayout.NORTH);
         this.add(Tnome );
         this.add(citta);
         this.add(Tcitta);
-        add(Box.createRigidArea(new Dimension(0, 20)));
+        add(Box.createRigidArea(new Dimension(0, 15)));
+        this.add(hint);
+        add(Box.createRigidArea(new Dimension(0, 5)));
         this.add(insLogo);
         add(Box.createRigidArea(new Dimension(0, 20)));
         this.add(ins);

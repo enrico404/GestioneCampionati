@@ -72,112 +72,73 @@ public class CercaGiornataActionListener implements ActionListener {
 
                
                     
-                    tmpA = c.getC().getGironeAndata().get(i).getP().getPa();
-                    tmpB =  c.getC().getGironeAndata().get(i).getP().getPb();
-                   
-                    
-                    
-                    BufferedImage bf1, bf2;
-                            
-                            
-                    JLabel icoA = null;
-                    JLabel icoB = null;
-              
-                    try{
-                        bf1 = ImageIO.read(new File("../GestioneCampionati/media/loghi/"+ c.getC().getGironeAndata().get(i).getCoppia().getA().getNome() + ".jpg"));
+                    try {
+                        tmpA = c.getC().getGironeAndata().get(i).getP().getPa();
+                        tmpB =  c.getC().getGironeAndata().get(i).getP().getPb();
+                        BufferedImage bf1, bf2;
+                        JLabel icoA = null;
+                        JLabel icoB = null;
+                        bf1 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getA().getLogo()));
                         icoA = new JLabel(new ImageIcon(bf1));
-                    }catch(IOException ex){
-                        try {
-                            bf1 = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
-                            icoA = new JLabel(new ImageIcon(bf1));
-                        } catch (IOException ex1) {
-                            Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex1);
-                        }
-                    }
-                    
-                    try{
-                         bf2 = ImageIO.read(new File("../GestioneCampionati/media/loghi/"+ c.getC().getGironeAndata().get(i).getCoppia().getB().getNome() + ".jpg"));
-                         icoB = new JLabel(new ImageIcon(bf2));
-                    }catch(IOException ex){
-                        try {
-                            bf2 = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
-                            icoB = new JLabel(new ImageIcon(bf2));
-                        } catch (IOException ex1) {
-                            Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex1);
-                        }
-                    }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    icoA.setMaximumSize(new Dimension(120, 120));
-                    icoB.setMaximumSize(new Dimension(120, 120));
-                    icoA.setMinimumSize(new Dimension(120, 120));
-                    icoB.setMinimumSize(new Dimension(120, 120));
-                    
-                    JLabel puntA = null;
-                    JLabel puntB = null;
-                    
-                    if(c.getC().getGironeAndata().get(i).isGiocata()){
-                        puntA = new JLabel(""+tmpA);
-                        puntB = new JLabel(""+ tmpB);
-                        puntA.setFont(fontPunteggio);
-                        puntB.setFont(fontPunteggio);
-                    
-                    }else {
-                        puntA = new JLabel("Non giocata");
-                        puntB = new JLabel("Non giocata");
-                        puntA.setFont(font);
-                        puntB.setFont(font);
-                    
-                    }
-                    
-                    
-                 
-                    p.getPanelDown().setLayout(new BoxLayout(p.getPanelDown(), View.Y_AXIS));
-                    
-                    JLabel txt = new JLabel("Girone Andata ");
-                    txt.setFont(new Font("sans-serif", Font.BOLD, 18));
-                    txt.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
-                    p.getPanelDown().add(txt);
-                 
-                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
-                    p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
-                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 10)));
-                    p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
-                    
-                    
-                   
-                    f.repaint();
-                    
-                /**    
-                    
-                   Object[][] rowData = { {c.getC().getGironeAndata().get(i).getCoppia().getA().getNome(), c.getC().getGironeAndata().get(i).getCoppia().getB().getNome(), tmpA + " - "+ tmpB}};
-                    
-                   if(tmpA == 0 && tmpB == 0)
-                          for(int j=0; j<rowData.length; j++)       
-                               rowData[j][2] = "Non giocata"; 
+                        bf2 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getB().getLogo()));
+                        icoB = new JLabel(new ImageIcon(bf2));
+                        
+                        icoA.setMaximumSize(new Dimension(120, 120));
+                        icoB.setMaximumSize(new Dimension(120, 120));
+                        icoA.setMinimumSize(new Dimension(120, 120));
+                        icoB.setMinimumSize(new Dimension(120, 120));
+                        JLabel puntA = null;
+                        JLabel puntB = null;
+                        if(c.getC().getGironeAndata().get(i).isGiocata()){
+                            puntA = new JLabel(""+tmpA);
+                            puntB = new JLabel(""+ tmpB);
+                            puntA.setFont(fontPunteggio);
+                            puntB.setFont(fontPunteggio);
                             
-                   Object[] columnNames = {"Casa", "Trasferta", "Risultato"};
-                   
-                   JTable tabella = new JTable(rowData, columnNames);
-                   
-                   JLabel txt = new JLabel("Girone Andata: ");
-                   txt.setFont(font);
-                   p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
-                   p.getPanelDown().add(txt);
-                   p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
-                   p.getPanelDown().add(new JScrollPane(tabella));
-                 
-                   
-                  
-                   
-          */
+                        }else {
+                            puntA = new JLabel("Non giocata");
+                            puntB = new JLabel("Non giocata");
+                            puntA.setFont(font);
+                            puntB.setFont(font);
+                            
+                        }   p.getPanelDown().setLayout(new BoxLayout(p.getPanelDown(), View.Y_AXIS));
+                        JLabel txt = new JLabel("Girone Andata ");
+                        txt.setFont(new Font("sans-serif", Font.BOLD, 18));
+                        txt.setAlignmentX(Component.CENTER_ALIGNMENT);
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
+                        p.getPanelDown().add(txt);
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
+                        p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 10)));
+                        p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
+                        f.repaint();
+                        
+                        /**
+                         * 
+                         * Object[][] rowData = { {c.getC().getGironeAndata().get(i).getCoppia().getA().getNome(), c.getC().getGironeAndata().get(i).getCoppia().getB().getNome(), tmpA + " - "+ tmpB}};
+                         * 
+                         * if(tmpA == 0 && tmpB == 0)
+                         * for(int j=0; j<rowData.length; j++)
+                         * rowData[j][2] = "Non giocata";
+                         * 
+                         * Object[] columnNames = {"Casa", "Trasferta", "Risultato"};
+                         * 
+                         * JTable tabella = new JTable(rowData, columnNames);
+                         * 
+                         * JLabel txt = new JLabel("Girone Andata: ");
+                         * txt.setFont(font);
+                         * p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
+                         * p.getPanelDown().add(txt);
+                         * p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
+                         * p.getPanelDown().add(new JScrollPane(tabella));
+                         * 
+                         * 
+                         * 
+                         * 
+                         */        } catch (IOException ex) {
+                        Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+
             
                  }
             }
@@ -192,80 +153,47 @@ public class CercaGiornataActionListener implements ActionListener {
 
                
                     
-                    tmpA = c.getC().getGironeRitorno().get(i).getP().getPa();
-                    tmpB =  c.getC().getGironeRitorno().get(i).getP().getPb();
-                   
-                    
-                    
-                    BufferedImage bf1, bf2;
-                            
-                            
-                    JLabel icoA = null;
-                    JLabel icoB = null;
-                    JLabel puntA = null;
-                    JLabel puntB = null;
-              
-                    try{
-                        bf1 = ImageIO.read(new File("../GestioneCampionati/media/loghi/"+ c.getC().getGironeRitorno().get(i).getCoppia().getA().getNome() + ".jpg"));
+                    try {
+                        tmpA = c.getC().getGironeRitorno().get(i).getP().getPa();
+                        tmpB =  c.getC().getGironeRitorno().get(i).getP().getPb();
+                        BufferedImage bf1, bf2;
+                        JLabel icoA = null;
+                        JLabel icoB = null;
+                        JLabel puntA = null;
+                        JLabel puntB = null;
+                        bf1 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getA().getLogo()));
                         icoA = new JLabel(new ImageIcon(bf1));
-                    }catch(IOException ex){
-                        try {
-                            bf1 = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
-                            icoA = new JLabel(new ImageIcon(bf1));
-                        } catch (IOException ex1) {
-                            Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex1);
-                        }
+                        bf2 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getB().getLogo()));
+                        icoB = new JLabel(new ImageIcon(bf2));
+                        icoA.setMaximumSize(new Dimension(120, 120));
+                        icoB.setMaximumSize(new Dimension(120, 120));
+                        icoA.setMinimumSize(new Dimension(120, 120));
+                        icoB.setMinimumSize(new Dimension(120, 120));
+                        if(c.getC().getGironeAndata().get(i).isGiocata()){
+                            puntA = new JLabel(""+tmpA);
+                            puntB = new JLabel(""+ tmpB);
+                            puntA.setFont(fontPunteggio);
+                            puntB.setFont(fontPunteggio);
+                            
+                        }else {
+                            puntA = new JLabel("Non giocata");
+                            puntB = new JLabel("Non giocata");
+                            puntA.setFont(font);
+                            puntB.setFont(font);
+                            
+                        }   JLabel txt = new JLabel("Girone Ritorno ");
+                        txt.setFont(new Font("sans-serif", Font.BOLD, 18));
+                        txt.setAlignmentX(Component.CENTER_ALIGNMENT);
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
+                        p.getPanelDown().add(txt);
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
+                        p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 10)));
+                        p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
+                        f.repaint();
+                    } catch (IOException ex) {
+                        Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    
-                    try{
-                         bf2 = ImageIO.read(new File("../GestioneCampionati/media/loghi/"+ c.getC().getGironeRitorno().get(i).getCoppia().getB().getNome() + ".jpg"));
-                         icoB = new JLabel(new ImageIcon(bf2));
-                    }catch(IOException ex){
-                        try {
-                            bf2 = ImageIO.read(new File("../GestioneCampionati/media/loghi/default.jpg"));
-                            icoB = new JLabel(new ImageIcon(bf2));
-                        } catch (IOException ex1) {
-                            Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex1);
-                        }
-                    }
-                    
-                    
-      
-                    icoA.setMaximumSize(new Dimension(120, 120));
-                    icoB.setMaximumSize(new Dimension(120, 120));
-                    icoA.setMinimumSize(new Dimension(120, 120));
-                    icoB.setMinimumSize(new Dimension(120, 120));
-                    
-                    if(c.getC().getGironeAndata().get(i).isGiocata()){
-                        puntA = new JLabel(""+tmpA);
-                        puntB = new JLabel(""+ tmpB);
-                        puntA.setFont(fontPunteggio);
-                        puntB.setFont(fontPunteggio);
-                    
-                    }else {
-                        puntA = new JLabel("Non giocata");
-                        puntB = new JLabel("Non giocata");
-                        puntA.setFont(font);
-                        puntB.setFont(font);
-                    
-                    }
-                    
-                      
-                    JLabel txt = new JLabel("Girone Ritorno ");
-                    txt.setFont(new Font("sans-serif", Font.BOLD, 18));
-                    txt.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    
-                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
-                    p.getPanelDown().add(txt);
-                    
-                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
-                    p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
-                    p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 10)));
-                    p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
-                    
-                    
-                   
-                    f.repaint();
     
                 
                 }

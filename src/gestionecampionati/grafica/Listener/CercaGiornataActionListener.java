@@ -83,10 +83,10 @@ public class CercaGiornataActionListener implements ActionListener {
                         bf2 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getB().getLogo()));
                         icoB = new JLabel(new ImageIcon(bf2));
                         
-                        icoA.setMaximumSize(new Dimension(120, 120));
-                        icoB.setMaximumSize(new Dimension(120, 120));
-                        icoA.setMinimumSize(new Dimension(120, 120));
-                        icoB.setMinimumSize(new Dimension(120, 120));
+                        icoA.setMaximumSize(new Dimension(120, 160));
+                        icoB.setMaximumSize(new Dimension(120, 160));
+                        icoA.setMinimumSize(new Dimension(120, 160));
+                        icoB.setMinimumSize(new Dimension(120, 160));
                         JLabel puntA = null;
                         JLabel puntB = null;
                         if(c.getC().getGironeAndata().get(i).isGiocata()){
@@ -112,30 +112,7 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 10)));
                         p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
                         f.repaint();
-                        
-                        /**
-                         * 
-                         * Object[][] rowData = { {c.getC().getGironeAndata().get(i).getCoppia().getA().getNome(), c.getC().getGironeAndata().get(i).getCoppia().getB().getNome(), tmpA + " - "+ tmpB}};
-                         * 
-                         * if(tmpA == 0 && tmpB == 0)
-                         * for(int j=0; j<rowData.length; j++)
-                         * rowData[j][2] = "Non giocata";
-                         * 
-                         * Object[] columnNames = {"Casa", "Trasferta", "Risultato"};
-                         * 
-                         * JTable tabella = new JTable(rowData, columnNames);
-                         * 
-                         * JLabel txt = new JLabel("Girone Andata: ");
-                         * txt.setFont(font);
-                         * p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
-                         * p.getPanelDown().add(txt);
-                         * p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
-                         * p.getPanelDown().add(new JScrollPane(tabella));
-                         * 
-                         * 
-                         * 
-                         * 
-                         */        } catch (IOException ex) {
+                          } catch (IOException ex) {
                         Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
                     }
 
@@ -165,10 +142,10 @@ public class CercaGiornataActionListener implements ActionListener {
                         icoA = new JLabel(new ImageIcon(bf1));
                         bf2 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getB().getLogo()));
                         icoB = new JLabel(new ImageIcon(bf2));
-                        icoA.setMaximumSize(new Dimension(120, 120));
-                        icoB.setMaximumSize(new Dimension(120, 120));
-                        icoA.setMinimumSize(new Dimension(120, 120));
-                        icoB.setMinimumSize(new Dimension(120, 120));
+                        icoA.setMaximumSize(new Dimension(120, 160));
+                        icoB.setMaximumSize(new Dimension(120, 160));
+                        icoA.setMinimumSize(new Dimension(120, 160));
+                        icoB.setMinimumSize(new Dimension(120, 160));
                         if(c.getC().getGironeAndata().get(i).isGiocata()){
                             puntA = new JLabel(""+tmpA);
                             puntB = new JLabel(""+ tmpB);

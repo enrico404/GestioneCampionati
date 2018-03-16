@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica;
+package gestionecampionati.grafica.inserimento_squadre;
 
 import gestionecampionati.grafica.Listener.InsActionListener;
 import gestionecampionati.grafica.Listener.ChiudiActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Listener.ApriActionListener;
 import gestionecampionati.grafica.Listener.ApriLogoActionListener;
+import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -20,6 +24,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.text.View;
 
 /**
  *
@@ -35,8 +40,8 @@ public class InsSqPanel extends JPanel{
     private JButton ins;
     private JButton insLogo;
     private JButton esci;
-    private Dimension text;
-    private Dimension text2;
+    private Dimension d;
+    private Dimension d2;
     private Campionato c;
     private MainFrame f;
     private DefaultListModel<String> listmodel;
@@ -53,11 +58,11 @@ public class InsSqPanel extends JPanel{
         
  
         
-        
+        this.setLayout(new BoxLayout(this,View.Y_AXIS));
          
         
-        text=new Dimension(140, 40);
-        text2=new Dimension(260, 35);
+        d=new Dimension(180, 40);
+        d2=new Dimension(260, 35);
         
         nome = new JLabel("Nome: ");
         citta = new JLabel("Città: ");
@@ -82,21 +87,21 @@ public class InsSqPanel extends JPanel{
         insLogo.setAlignmentX(CENTER_ALIGNMENT);
         
         
-        Tnome.setMinimumSize(text2);
-        Tnome.setMaximumSize(text2);
+        Tnome.setMinimumSize(d2);
+        Tnome.setMaximumSize(d2);
        
         
-        Tcitta.setMinimumSize(text2);
-        Tcitta.setMaximumSize(text2);
+        Tcitta.setMinimumSize(d2);
+        Tcitta.setMaximumSize(d2);
         
-        ins.setMaximumSize(text);
-        ins.setMinimumSize(text);
+        ins.setMaximumSize(d);
+        ins.setMinimumSize(d);
         
-        insLogo.setMaximumSize(text);
-        insLogo.setMinimumSize(text);
+        insLogo.setMaximumSize(d);
+        insLogo.setMinimumSize(d);
         
-        esci.setMaximumSize(text);
-        esci.setMinimumSize(text);
+        esci.setMaximumSize(d);
+        esci.setMinimumSize(d);
         
         JLabel hint = new JLabel("Dimensione consigliata (120x160). Formato jpg/png.");
         hint.setAlignmentX(CENTER_ALIGNMENT);

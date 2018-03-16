@@ -26,7 +26,7 @@ public class MainFrame extends JFrame{
         this.setSize(Wd, Hg);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(this);
-        this.setMinimumSize(new Dimension(800,600));
+        this.setMinimumSize(new Dimension(1100,680));
     }
     
     public void clean(){

@@ -60,7 +60,7 @@ public class ApriActionListener implements ActionListener {
         File f = chooser.getSelectedFile();
          try{
             String path = f.getAbsolutePath();
-        
+            
             if(tipo == 0){
 
                  c.carica_calendario(path);
@@ -82,17 +82,17 @@ public class ApriActionListener implements ActionListener {
             
             }
            
-        
+         for(int i=1; i<=c.get_numSquadre(); i++){
+            listmodel.addElement("- "+ c.getSquadre().get(i-1).getNome());
+     
+       
+        }
         }catch(NullPointerException ex){
             System.out.println("Calendario non caricato ");
         }
        
       
-        for(int i=1; i<=c.get_numSquadre(); i++){
-            listmodel.addElement("- "+ c.getSquadre().get(i-1).getNome());
-     
        
-        }
         
         
          

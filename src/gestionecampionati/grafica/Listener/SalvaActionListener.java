@@ -7,7 +7,7 @@ package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Calendario;
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Errors.ErrorPanel;
+import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import gestionecampionati.grafica.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

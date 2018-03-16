@@ -6,7 +6,7 @@
 package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Errors.ErrorPanel;
+import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.gestione_calendario.CercaGiornataPanelBottom;
 import gestionecampionati.grafica.gestione_calendario.CercaGiornataPanelUp;
@@ -26,8 +26,6 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.text.View;
 
 /**
@@ -57,7 +55,7 @@ public class CercaGiornataActionListener implements ActionListener {
         this.sqa = p.getPanelCenter().getPanelA().getSqa().getSelectedItem().toString();
         this.sqb = p.getPanelCenter().getPanelB().getSqb().getSelectedItem().toString();
         
-        font = new Font("sans-serif", Font.BOLD, 16);
+        font = new Font("sans-serif", Font.BOLD, 18);
         fontPunteggio = new Font("sans-serif", Font.BOLD, 24);
         if(!(p.getPanelCenter().getPanelA().getSqa().getSelectedItem().equals(p.getPanelCenter().getPanelB().getSqb().getSelectedItem()))){
          
@@ -109,7 +107,7 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().add(txt);
                         p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
                         p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
-                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 10)));
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 20)));
                         p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
                         f.repaint();
                           } catch (IOException ex) {
@@ -165,7 +163,7 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().add(txt);
                         p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 60)));
                         p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
-                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 10)));
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 20)));
                         p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
                         f.repaint();
                     } catch (IOException ex) {

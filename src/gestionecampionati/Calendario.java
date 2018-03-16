@@ -171,47 +171,6 @@ public class Calendario implements Serializable {
     
   
     
-    /** Funzione per l'inserimento del risultato di una partita giocata */
-    public boolean inserisci_ris(Partita par, Punteggio p){
-        for(int i=0; i< gironeAndata.size(); i++){
-            
-            //trovo la partita e se esiste e non è ancora stata giocata vado a chiamare il metodo inserisci punteggio
-            // che setta la partita giocata e inserisce il risultato
-            if(gironeAndata.get(i).equals(par) && !gironeAndata.get(i).isGiocata() ){
-                gironeAndata.get(i).inserisci_punt(p);
-                return true;
-            
-            }
-        
-        
-        }
-        
-
-        return false;
-    
-    }
-    
- 
-    
-    /** Funzione per la modifica del risultato di una partita giocata */
-    
-    public boolean modifica_ris(Partita par, Punteggio p){
-         for(int i=0; i< gironeAndata.size(); i++){
-             // modifico la partita solo se esiste la partita ed è stata già giocata
-            if(gironeAndata.get(i).equals(par) && gironeAndata.get(i).isGiocata()){
-                gironeAndata.get(i).inserisci_punt(p);
-                return true;
-            
-            }
-        
-        
-        }
-        
-        
-        return false;
-    
-    }
-    
     //metodo deprecato
     public boolean salva(String nomeFile){
         FileOutputStream f; 

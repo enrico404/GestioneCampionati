@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica.Errors;
+package gestionecampionati.grafica.Errors_Confirm;
 
 import java.awt.Graphics;
 import javax.swing.JOptionPane;
@@ -26,7 +26,7 @@ public class ErrorPanel extends JPanel{
             case 2: JOptionPane.showMessageDialog(this, "Inserire almeno una squadra!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;  
                     
-            case 3: JOptionPane.showMessageDialog(this, "Inserire almeno due squadre per generare le partite!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
+            case 3: JOptionPane.showMessageDialog(this, "Calendario non ancora generato!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;
             case 4: JOptionPane.showMessageDialog(this, "Le due squadre selezionate sono uguali!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;

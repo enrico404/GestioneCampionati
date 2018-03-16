@@ -44,6 +44,7 @@ public class Partita implements Serializable{
     }
     
     
+    
     public void inserisci_punt(Punteggio p){
         this.p = p;
         this.giocata = true;

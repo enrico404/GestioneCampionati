@@ -10,6 +10,7 @@ import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MenuPanel;
 import java.awt.Graphics;
 import javax.swing.BoxLayout;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
 /**

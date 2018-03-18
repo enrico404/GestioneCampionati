@@ -3,16 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/CalcioPanel.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/VisualizzaClassificaActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/InsActionListener.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_squadre/InsSqPanel.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_calcio.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Calendario.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/CercaGiornataActionListener.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Errors_Confirm/ErrorPanel.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_risultati/InsRisPanelCenter.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_risultati/InsRisPanelDown.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/InserisciActionListener.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MenuPanel.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/InsRisActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/InsSqActionLitener.java</file>
         </group>
     </open-files>
 </project-private>

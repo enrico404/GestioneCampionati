@@ -26,6 +26,8 @@ public class Calendario implements Serializable {
     private ArrayList<Partita> gironeAndata = new ArrayList<Partita>();
     private ArrayList<Partita> gironeRitorno = new ArrayList<Partita>();
 
+    
+    
   
     
    

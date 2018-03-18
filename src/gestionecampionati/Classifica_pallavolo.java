@@ -9,7 +9,11 @@ package gestionecampionati;
  *
  * @author enrico
  */
-public class Classifica_pallavolo extends CalcolaClassifica{
+public class Classifica_pallavolo extends Classifica{
+
+    public Classifica_pallavolo(Campionato c) {
+        super(c);
+    }
 
     @Override
     public void calcola() {

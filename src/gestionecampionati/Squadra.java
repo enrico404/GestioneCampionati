@@ -19,12 +19,16 @@ public class Squadra implements Serializable{
     private String citta;
     /** percorso del logo */
     private String logo; 
+    /** punteggio totale assegnato alla squadra, serve per calcolare la classifica */
+    private int punteggio;
     
    
     
     public Squadra(){
         this.nome = "";
         this.citta  = "";
+        
+        this.punteggio = 0;
 
     
     }
@@ -53,9 +57,9 @@ public class Squadra implements Serializable{
                       
                         
                     }
-        
+     
 
-    
+                    this.punteggio = 0;
     }
     
     public Squadra(String nome, String citta, String path){
@@ -64,10 +68,20 @@ public class Squadra implements Serializable{
         
         this.logo = path;
         
-        
+        this.punteggio = 0;
+   
         
         
 
+    
+    }
+    
+    
+    /** metodo per incrementare punteggio della squadra di x punti
+     * @param x */
+    public void inc(int x){
+        this.punteggio += x;
+    
     
     }
     
@@ -95,6 +109,19 @@ public class Squadra implements Serializable{
     public void setLogo(String logo) {
         this.logo = logo;
     }
+
+    public int getPunteggio() {
+        return punteggio;
+    }
+
+    public void setPunteggio(int punteggio) {
+        this.punteggio = punteggio;
+    }
+    
+    
+    
+
+   
 
  
 

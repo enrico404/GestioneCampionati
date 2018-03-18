@@ -57,7 +57,7 @@ public class GenPActionListeneter implements ActionListener {
             sostituisci(); //cambio panel
         
         }
-        else  error = new ErrorPanel(3);
+        else  error = new ErrorPanel(6);
         
         
     }

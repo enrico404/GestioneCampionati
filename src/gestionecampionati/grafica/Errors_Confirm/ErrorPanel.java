@@ -32,6 +32,8 @@ public class ErrorPanel extends JPanel{
                     break;
             case 5: JOptionPane.showMessageDialog(this, "Bisogna riempire entrambi i campi!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;
+            case 6: JOptionPane.showMessageDialog(this, "Inserire almeno due squadre!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
+                    break;  
         }
     
     }

@@ -3,18 +3,14 @@
  */
 package gestionecampionati;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
+
 
 
 /**
@@ -31,6 +27,9 @@ public class Campionato {
     /** calendario associato al campionato */
     private Calendario c;
 
+    private Classifica cls; 
+    
+    
     public Campionato(String sport, ArrayList<Squadra> squadre, Calendario c) {
         
         
@@ -194,7 +193,25 @@ public class Campionato {
     
  
     
+    public void calcola_calssifica(){
+        if(this.getSport().equals("calcio")){
+            cls = new Classifica_calcio(this);
+            cls.calcola();
+            cls.stampa();
+        }
+         if(this.getSport().equals("pallavolo")){
+            cls = new Classifica_pallavolo(this);
+            cls.calcola();
+            cls.stampa();
+        }
+          if(this.getSport().equals("rugby")){
+            cls = new Classifica_rugby(this);
+            cls.calcola();
+            cls.stampa();
+        }
     
+    
+    }
     
     
 }

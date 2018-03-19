@@ -212,6 +212,15 @@ public class Campionato {
     
     
     }
+
+    public Classifica getCls() {
+        return cls;
+    }
+
+    public void setCls(Classifica cls) {
+        this.cls = cls;
+    }
+    
     
     
 }

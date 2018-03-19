@@ -6,8 +6,6 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.MainFrame;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -17,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
 import javax.swing.text.View;
 
 /**

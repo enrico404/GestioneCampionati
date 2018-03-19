@@ -38,8 +38,22 @@ public class VisualizzaClassificaActionListener implements ActionListener {
         try{
          if(old.isEnabled() && !(c.getC().getCoppie().isEmpty())){
            
+            for(int i=0; i<c.getC().getGironeAndata().size(); i++){
+                if(!(c.getC().getGironeAndata().get(i).isGiocata())){
+                    //alcune partite non ancora giocate
+                    err = new ErrorPanel(7);
+                    return;
+                } 
+            } 
+            for(int i=0; i<c.getC().getGironeRitorno().size(); i++){
+                if(!(c.getC().getGironeRitorno().get(i).isGiocata())){
+                    //alcune partite non ancora giocate
+                    err = new ErrorPanel(7);
+                    return;
+                } 
+            } 
             c.calcola_calssifica();
-            VisClassificaSk panel = new VisClassificaSk(c);
+            VisClassificaSk panel = new VisClassificaSk(c, old, f);
             f.remove(old);
             old.setEnabled(false);
             f.add(panel);

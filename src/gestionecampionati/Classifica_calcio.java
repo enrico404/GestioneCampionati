@@ -45,7 +45,7 @@ public class Classifica_calcio extends Classifica{
         
         for(int i=0; i< getCampionato().getC().getGironeRitorno().size(); i++){
             
-            if(getCampionato().getC().getGironeAndata().get(i).isGiocata()){
+            if(getCampionato().getC().getGironeRitorno().get(i).isGiocata()){
                     pa = getCampionato().getC().getGironeRitorno().get(i).getP().getPa();
                     pb =  getCampionato().getC().getGironeRitorno().get(i).getP().getPb();
                     if( pa > pb){

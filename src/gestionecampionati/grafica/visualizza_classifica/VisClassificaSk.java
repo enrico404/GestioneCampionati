@@ -6,6 +6,8 @@
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -23,11 +25,16 @@ public class VisClassificaSk extends JPanel {
 
     private Campionato c;
     private VisClassificaUp panelUp;
-    private VisClassificaCenterL panelCent;
+    private VisClassificaCenterL panelCentL;
     private VisClassificaDown panelDown;
+    private VisClassificaCenterP panelCentP;
+    private MenuPanel menu;
+    private MainFrame f;
     
-    public VisClassificaSk(Campionato c) {
+    public VisClassificaSk(Campionato c, MenuPanel menu, MainFrame f) {
         this.c = c;
+        this.menu = menu;
+        this.f = f;
         
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         JLabel cls = new JLabel("Classifica");
@@ -36,16 +43,19 @@ public class VisClassificaSk extends JPanel {
         cls.setAlignmentX(CENTER_ALIGNMENT);
         
         panelUp = new VisClassificaUp();
-        panelCent = new VisClassificaCenterL(c);
-        panelDown = new VisClassificaDown();
+        panelCentL = new VisClassificaCenterL(c);
+        panelCentP = new VisClassificaCenterP(c);
+        panelDown = new VisClassificaDown(c, menu, f, this);
         
         this.add(Box.createRigidArea(new Dimension(0, 40)));
         this.add(cls);
         this.add(Box.createRigidArea(new Dimension(0, 40)));
         this.add(panelUp);
         this.add(Box.createRigidArea(new Dimension(0, 20)));
-        this.add(panelCent);
+        this.add(panelCentL);
         this.add(Box.createRigidArea(new Dimension(0, 20)));
+        this.add(panelCentP);
+        this.add(Box.createRigidArea(new Dimension(0, 40)));
         this.add(panelDown);
         
         
@@ -72,14 +82,23 @@ public class VisClassificaSk extends JPanel {
         this.panelUp = panelUp;
     }
 
-    public VisClassificaCenterL getPanelCent() {
-        return panelCent;
+    public VisClassificaCenterL getPanelCentL() {
+        return panelCentL;
     }
 
-    public void setPanelCent(VisClassificaCenterL panelCent) {
-        this.panelCent = panelCent;
+    public void setPanelCentL(VisClassificaCenterL panelCentL) {
+        this.panelCentL = panelCentL;
     }
 
+    public VisClassificaCenterP getPanelCentP() {
+        return panelCentP;
+    }
+
+    public void setPanelCentP(VisClassificaCenterP panelCentP) {
+        this.panelCentP = panelCentP;
+    }
+
+    
     public VisClassificaDown getPanelDown() {
         return panelDown;
     }

@@ -10,7 +10,7 @@ import javax.swing.*;
  */
 public class MainFrame extends JFrame{
     private static final int Wd = 1300;
-    private static final int Hg =720;
+    private static final int Hg =730;
 
     public int getWd() {
         return Wd;

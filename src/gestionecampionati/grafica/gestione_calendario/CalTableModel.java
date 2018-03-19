@@ -7,7 +7,6 @@ package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
 import javax.swing.table.AbstractTableModel;
-import gestionecampionati.Calendario;
 
 
 /**

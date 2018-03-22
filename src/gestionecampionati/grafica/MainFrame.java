@@ -10,7 +10,9 @@ import javax.swing.*;
  */
 public class MainFrame extends JFrame{
     private static final int Wd = 1300;
-    private static final int Hg =730;
+    private static final int Hg =740;
+    /** panello centrale */
+    private JScrollPane sc;
 
     public int getWd() {
         return Wd;
@@ -26,7 +28,7 @@ public class MainFrame extends JFrame{
         this.setSize(Wd, Hg);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(this);
-        this.setMinimumSize(new Dimension(1100,680));
+        this.setMinimumSize(new Dimension(1150,730));
     }
     
     public void clean(){
@@ -36,8 +38,7 @@ public class MainFrame extends JFrame{
     
     
     }
-    
-    
-    
-    
+
+
+
 }

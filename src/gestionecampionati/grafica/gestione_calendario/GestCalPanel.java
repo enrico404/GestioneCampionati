@@ -5,7 +5,7 @@
  */
 package gestionecampionati.grafica.gestione_calendario;
 
-import gestionecampionati.grafica.Listener.GenPActionListeneter;
+import gestionecampionati.grafica.Listener.GenPActionListener;
 import gestionecampionati.grafica.Listener.ChiudiActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
@@ -60,7 +60,7 @@ public class GestCalPanel extends JPanel{
     
     
            chiudi.addActionListener(new ChiudiActionListener(f, this, oldPanel));
-           genP.addActionListener(new GenPActionListeneter(f, this, c, oldPanel));
+           genP.addActionListener(new GenPActionListener(f, this, c, oldPanel));
            
            
            

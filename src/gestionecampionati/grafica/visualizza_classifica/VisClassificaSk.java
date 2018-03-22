@@ -15,6 +15,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.text.View;
 
 /**
@@ -31,10 +32,13 @@ public class VisClassificaSk extends JPanel {
     private MenuPanel menu;
     private MainFrame f;
     
+    
     public VisClassificaSk(Campionato c, MenuPanel menu, MainFrame f) {
         this.c = c;
         this.menu = menu;
         this.f = f;
+        
+      
         
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         JLabel cls = new JLabel("Classifica");
@@ -42,20 +46,23 @@ public class VisClassificaSk extends JPanel {
         cls.setFont(font);
         cls.setAlignmentX(CENTER_ALIGNMENT);
         
+      
+        
+        
         panelUp = new VisClassificaUp();
         panelCentL = new VisClassificaCenterL(c);
         panelCentP = new VisClassificaCenterP(c);
         panelDown = new VisClassificaDown(c, menu, f, this);
         
-        this.add(Box.createRigidArea(new Dimension(0, 40)));
+        this.add(Box.createRigidArea(new Dimension(0, 10)));
         this.add(cls);
-        this.add(Box.createRigidArea(new Dimension(0, 40)));
+        this.add(Box.createRigidArea(new Dimension(0, 30)));
         this.add(panelUp);
         this.add(Box.createRigidArea(new Dimension(0, 20)));
         this.add(panelCentL);
         this.add(Box.createRigidArea(new Dimension(0, 20)));
         this.add(panelCentP);
-        this.add(Box.createRigidArea(new Dimension(0, 40)));
+        this.add(Box.createRigidArea(new Dimension(0, 30)));
         this.add(panelDown);
         
         
@@ -106,6 +113,11 @@ public class VisClassificaSk extends JPanel {
     public void setPanelDown(VisClassificaDown panelDown) {
         this.panelDown = panelDown;
     }
+
+ 
+
+  
+    
     
     
     

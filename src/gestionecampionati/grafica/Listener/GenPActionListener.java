@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
  *
  * @author enrico
  */
-public class GenPActionListeneter implements ActionListener {
+public class GenPActionListener implements ActionListener {
     private MainFrame f;
     private GestCalPanel oldPanel;
     private Campionato c;
@@ -29,7 +29,7 @@ public class GenPActionListeneter implements ActionListener {
     private MenuPanel menuP;
     
 
-    public GenPActionListeneter(MainFrame f, GestCalPanel oldPanel, Campionato c, MenuPanel menuP) {
+    public GenPActionListener(MainFrame f, GestCalPanel oldPanel, Campionato c, MenuPanel menuP) {
         this.f = f;
         this.oldPanel = oldPanel;
         this.c = c;

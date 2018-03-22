@@ -24,7 +24,7 @@ public class Calendario implements Serializable {
     
     /** Array delle partite,  */
     private ArrayList<Partita> gironeAndata = new ArrayList<Partita>();
-    private ArrayList<Partita> gironeRitorno = new ArrayList<Partita>();
+    private ArrayList<Partita> gironeRitorno = new ArrayList<Partita>();;
 
     
     
@@ -43,10 +43,11 @@ public class Calendario implements Serializable {
     
     
     }
-    
-    
+   
     
     public boolean genera_calendario(){
+        
+                
         Random rand = new Random();
         if(!genera_coppie()) System.out.println("Errore nella generazione delle coppie");
         
@@ -81,6 +82,21 @@ public class Calendario implements Serializable {
         return true;
     }
         
+    
+     public void cancella_ris(){
+        for(int i=0; i<gironeAndata.size(); i++){
+            gironeAndata.get(i).setP(new Punteggio(0,0));
+            gironeAndata.get(i).setGiocata(false);
+        
+        }
+        for(int i=0; i<gironeRitorno.size(); i++){
+            gironeRitorno.get(i).setP(new Punteggio(0,0));
+            gironeRitorno.get(i).setGiocata(false);
+        
+        }
+    
+    }
+    
     
     /**
      * Generazione campionato con date. Versione vecchia.

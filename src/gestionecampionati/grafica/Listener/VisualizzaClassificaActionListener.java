@@ -13,6 +13,7 @@ import gestionecampionati.grafica.visualizza_classifica.VisClassificaSk;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 /**
  *
  * @author Enrico
@@ -22,7 +23,7 @@ public class VisualizzaClassificaActionListener implements ActionListener {
     private MenuPanel old;
     private MainFrame f;
     private ErrorPanel err;
-
+    private VisClassificaSk panel;
     public VisualizzaClassificaActionListener(Campionato c, MenuPanel old, MainFrame f) {
         this.c = c;
         this.old = old;
@@ -53,7 +54,11 @@ public class VisualizzaClassificaActionListener implements ActionListener {
                 } 
             } 
             c.calcola_calssifica();
-            VisClassificaSk panel = new VisClassificaSk(c, old, f);
+            
+            
+            panel = new VisClassificaSk(c, old, f);
+           
+    
             f.remove(old);
             old.setEnabled(false);
             f.add(panel);
@@ -68,5 +73,8 @@ public class VisualizzaClassificaActionListener implements ActionListener {
         }
         
     }
+
+    
+    
     
 }

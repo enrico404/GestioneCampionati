@@ -22,32 +22,26 @@ import javax.swing.text.View;
 public class VisClassificaCenterP extends JPanel{
 
     private Campionato c;
-    private JLabel p1,p2,p3;
+    private JLabel[] p;
+    
     
     public VisClassificaCenterP(Campionato c) {
         this.c = c;
         
         Font font = new Font("sans-serif", Font.PLAIN, 18);
-        
-        p1 = new JLabel(c.getCls().getClassifica().get(0).getNome()+": "+c.getCls().getClassifica().get(0).getPunteggio());
-        p2 = new JLabel(c.getCls().getClassifica().get(1).getNome()+": "+c.getCls().getClassifica().get(1).getPunteggio());
-        p3 = new JLabel(c.getCls().getClassifica().get(2).getNome()+": "+c.getCls().getClassifica().get(2).getPunteggio());
-        
-        p1.setFont(font);
-        p2.setFont(font);
-        p3.setFont(font);
-        
-        
+        p = new JLabel[c.get_numSquadre()];
+        int i=0;
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
+        this.add(Box.createRigidArea(new Dimension(170, 0)));
+        while(i<c.get_numSquadre() && i<3){
+            p[i] = new JLabel(c.getCls().getClassifica().get(i).getNome()+": "+c.getCls().getClassifica().get(i).getPunteggio());
+            p[i].setFont(font);
+            this.add(p[i]);
+            this.add(Box.createRigidArea(new Dimension(200, 0)));
+            i++;
         
-        this.add(p1);
-        this.add(Box.createRigidArea(new Dimension(200, 0)));
-        this.add(p2);
-        this.add(Box.createRigidArea(new Dimension(200, 0)));
-        this.add(p3);
-        
-        
+        }
         
         
     }

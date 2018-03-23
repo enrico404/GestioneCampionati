@@ -4,11 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/VisualizzaClassificaActionListener.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/RigeneraCalActionListener.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Calendario.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MainFrame.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/GenPActionListener.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/CancellaRisActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaCenterL.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/SkPanelCenter.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaCenterP.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaSk.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaUp.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/SkPanelDown.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/GestCSk.java</file>
         </group>

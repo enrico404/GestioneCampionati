@@ -28,34 +28,40 @@ import javax.swing.text.View;
 public class VisClassificaCenterL extends JPanel {
 
     private Campionato c;
-    private JLabel ico1,ico2,ico3;
+    
     
     
     public VisClassificaCenterL(Campionato c) {
         this.c = c;
-        BufferedImage bf1 = null,bf2 = null,bf3 = null;
-        
+        BufferedImage[] bf = new BufferedImage[3];
+        JLabel[] ico = new JLabel[3];
+        int i =0;
         try {   
-            bf1 = ImageIO.read(new File(c.getCls().getClassifica().get(0).getLogo()));
-            bf2 = ImageIO.read(new File(c.getCls().getClassifica().get(1).getLogo()));
-            bf3 = ImageIO.read(new File(c.getCls().getClassifica().get(2).getLogo()));
+           while(i<c.get_numSquadre() && i<3){
+                bf[i] = ImageIO.read(new File(c.getCls().getClassifica().get(i).getLogo()));
+                ico[i]  = new JLabel(new ImageIcon(bf[i]));
+                i++;
+              
+                }
+            
             
         } catch (IOException ex) {
             Logger.getLogger(VisClassificaCenterL.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        ico1 = new JLabel(new ImageIcon(bf1));
-        ico2 = new JLabel(new ImageIcon(bf2));
-        ico3 = new JLabel(new ImageIcon(bf3));
-        
+      
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
+        this.add(Box.createRigidArea(new Dimension(170, 0)));
+        for(int j=0; j<i; j++){
+            this.add(ico[j]);
+            this.add(Box.createRigidArea(new Dimension(170, 0)));
+             
+        
+        }
+        
        
-        this.add(ico1);
-        this.add(Box.createRigidArea(new Dimension(170, 0)));
-        this.add(ico2);
-        this.add(Box.createRigidArea(new Dimension(170, 0)));
-        this.add(ico3);
+       
         
         
         
@@ -63,6 +69,9 @@ public class VisClassificaCenterL extends JPanel {
         
         
     }
+    
+    
+    
     
     
     @Override

@@ -80,9 +80,15 @@ public class SkPanelDown extends JPanel{
         end.add(stampa);
         
         
+      
         cancellaRis.addActionListener(new CancellaRisActionListener(c, this));
         rigenera.addActionListener(new RigeneraCalActionListener(c, this));
+        
   
+        gironeAnd.setAlignmentX(CENTER_ALIGNMENT);
+        gironeRit.setAlignmentX(CENTER_ALIGNMENT);
+        
+        
         this.add(Box.createRigidArea(new Dimension(0, 40)));
         this.add(gironeAnd);
         this.add(Box.createRigidArea(new Dimension(0, 40)));

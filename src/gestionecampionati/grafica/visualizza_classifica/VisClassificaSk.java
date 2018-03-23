@@ -15,7 +15,6 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.text.View;
 
 /**
@@ -49,10 +48,11 @@ public class VisClassificaSk extends JPanel {
       
         
         
-        panelUp = new VisClassificaUp();
+        panelUp = new VisClassificaUp(c);
         panelCentL = new VisClassificaCenterL(c);
         panelCentP = new VisClassificaCenterP(c);
         panelDown = new VisClassificaDown(c, menu, f, this);
+   
         
         this.add(Box.createRigidArea(new Dimension(0, 10)));
         this.add(cls);

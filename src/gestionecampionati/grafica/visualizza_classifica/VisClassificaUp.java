@@ -5,6 +5,7 @@
  */
 package gestionecampionati.grafica.visualizza_classifica;
 
+import gestionecampionati.Campionato;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -21,8 +22,9 @@ import javax.swing.text.View;
 public class VisClassificaUp extends JPanel{
 
     private JLabel primo,secondo,terzo;
-    
-    public VisClassificaUp() {
+    private Campionato c; 
+    public VisClassificaUp(Campionato c) {
+        this.c=c;
         primo = new JLabel("1º"); // altgr+shift+m per i gradi 
         secondo = new JLabel("2º");
         terzo = new JLabel("3º");
@@ -35,12 +37,27 @@ public class VisClassificaUp extends JPanel{
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
-        this.add(Box.createRigidArea(new Dimension(0, 40)));
-        this.add(primo);
-        this.add(Box.createRigidArea(new Dimension(260, 0)));
-        this.add(secondo);
-        this.add(Box.createRigidArea(new Dimension(260, 0)));
-        this.add(terzo);
+        
+        
+        if(c.get_numSquadre()==2){
+            this.add(Box.createRigidArea(new Dimension(0, 40)));
+            this.add(primo);
+            this.add(Box.createRigidArea(new Dimension(260, 0)));
+            this.add(secondo);
+
+        
+        }else{
+            this.add(Box.createRigidArea(new Dimension(0, 40)));
+            this.add(primo);
+            this.add(Box.createRigidArea(new Dimension(260, 0)));
+            this.add(secondo);
+            this.add(Box.createRigidArea(new Dimension(260, 0)));
+            this.add(terzo);
+        
+        
+        }
+        
+       
         
         
     }

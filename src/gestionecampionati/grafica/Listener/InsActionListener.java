@@ -9,7 +9,7 @@ package gestionecampionati.grafica.Listener;
 import gestionecampionati.Campionato;
 import gestionecampionati.Squadra;
 import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
-import gestionecampionati.grafica.inserimento_squadre.InsSqPanel;
+import gestionecampionati.grafica.gestione_squadre.InsSqPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;

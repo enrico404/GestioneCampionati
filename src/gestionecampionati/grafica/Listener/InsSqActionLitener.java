@@ -6,7 +6,7 @@
 package gestionecampionati.grafica.Listener;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.inserimento_squadre.InsSqPanel;
+import gestionecampionati.grafica.gestione_squadre.InsSqPanel;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MenuPanel;
 import java.awt.event.ActionEvent;

@@ -26,6 +26,7 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.text.View;
@@ -41,12 +42,24 @@ public class CercaSquadraActionListener implements ActionListener {
     private CercaSqTableModel model;
     private JTable tabella;
     private MainFrame f;
+    private JLabel sqnome, nome, sqcitta, citta;
 
     public CercaSquadraActionListener(TextField cerca, GestCSk sk, Campionato c, MainFrame f) {
         this.sk = sk;
         this.cerca = cerca;
         this.c = c;
         this.f = f;
+        Font font = new Font("sans-serif", Font.BOLD, 16);
+        Font font2 = new Font("sans-serif", Font.PLAIN, 16);
+        nome = new JLabel("Nome: ");
+        nome.setFont(font);
+        citta = new JLabel("Città: ");
+        citta.setFont(font);
+        sqnome = new JLabel();
+        sqcitta = new JLabel();
+        sqnome.setFont(font2);
+        sqcitta.setFont(font2);
+     
     }
 
     
@@ -60,7 +73,13 @@ public class CercaSquadraActionListener implements ActionListener {
         sk.getPanelDown().setLayout(new BoxLayout(sk.getPanelDown(), View.Y_AXIS));
         int i;
         for(i=0; i<c.get_numSquadre(); i++)
-            if(c.getC().getSquadre().get(i).getNome().equals(cerca.getText())){ esiste=true; break;}
+            if(c.getC().getSquadre().get(i).getNome().equals(cerca.getText())){
+                esiste=true;
+                sqnome.setText(c.getC().getSquadre().get(i).getNome());
+                sqcitta.setText(c.getC().getSquadre().get(i).getCitta());
+               
+                break;
+            }
        
         if( esiste==true){
          
@@ -79,13 +98,23 @@ public class CercaSquadraActionListener implements ActionListener {
             tabella = new JTable(model);
             JScrollPane sc = new JScrollPane(tabella);
             
-          
             
+            JPanel info = new JPanel();
+            info.setLayout(new FlowLayout());
+            info.add(nome);
+            info.add(Box.createRigidArea(new Dimension(10, 0)));
+            info.add(sqnome);
+            info.add(Box.createRigidArea(new Dimension(140, 0)));
+            info.add(citta);
+            info.add(Box.createRigidArea(new Dimension(10, 0)));
+            info.add(sqcitta);
             
             sk.getPanelDown().removeAll();
             sk.getPanelDown().add(Box.createRigidArea(new Dimension(0, 20)));
             sk.getPanelDown().add(logo);
-            sk.getPanelDown().add(Box.createRigidArea(new Dimension(0, 20)));
+            sk.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
+            sk.getPanelDown().add(info);
+            sk.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
             sk.getPanelDown().add(sc);
             
             sk.getPanelDown().revalidate();

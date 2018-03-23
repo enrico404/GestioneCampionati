@@ -32,7 +32,7 @@ public class GestCSk extends JPanel {
     private MenuPanel menuP;
     private MainFrame f;
     private Campionato c;
-    private JButton rigenera, cancellaRis;
+  
 
     public GestCSk(MainFrame f, Campionato c, MenuPanel menuP) {
         super();
@@ -46,33 +46,22 @@ public class GestCSk extends JPanel {
         this.c = c;
         this.f = f;
         
-        rigenera = new JButton("Rigenera");
-        cancellaRis = new JButton("Elimina risultati");
         
-        JPanel end = new JPanel();
-        end.setLayout(new FlowLayout());
-        
-        
-        end.add(rigenera);
-        end.add(Box.createRigidArea(new Dimension(20, 0)));
-        end.add(cancellaRis);
         
         panelUp = new SkPanelUp(menuP, this, f, c);
         panelCenter = new SkPanelCenter(c,f,this );
         panelDown = new SkPanelDown(c);
 
         
-        cancellaRis.addActionListener(new CancellaRisActionListener(c, panelDown));
-        rigenera.addActionListener(new RigeneraCalActionListener(c, panelDown));
+       
         
         this.add(Box.createRigidArea(new Dimension(0, 10)));
         this.add(panelUp);
         this.add(Box.createRigidArea(new Dimension(0, 20)));
         this.add(panelCenter);
-        this.add(Box.createRigidArea(new Dimension(0, 10)));
+        this.add(Box.createRigidArea(new Dimension(0, 20)));
         this.add(panelDown);
-        this.add(Box.createRigidArea(new Dimension(0, 10)));
-        this.add(end);
+        
         
         
         

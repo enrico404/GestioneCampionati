@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica.Listener;
+package gestionecampionati.grafica.Listener.popMenu;
 
 import gestionecampionati.Campionato;
 import java.awt.event.ActionEvent;

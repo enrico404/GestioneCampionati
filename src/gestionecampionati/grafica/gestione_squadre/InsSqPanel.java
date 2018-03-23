@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gestionecampionati.grafica.inserimento_squadre;
+package gestionecampionati.grafica.gestione_squadre;
 
 import gestionecampionati.grafica.Listener.InsActionListener;
 import gestionecampionati.grafica.Listener.ChiudiActionListener;
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.ApriActionListener;
 import gestionecampionati.grafica.Listener.ApriLogoActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MenuPanel;
 import gestionecampionati.grafica.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Font;

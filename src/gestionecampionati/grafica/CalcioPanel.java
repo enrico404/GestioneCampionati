@@ -5,8 +5,8 @@
  */
 package gestionecampionati.grafica;
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.EliminaSqActionListener;
-import gestionecampionati.grafica.Listener.ModificaSqActionListener;
+import gestionecampionati.grafica.Listener.popMenu.EliminaSqActionListener;
+import gestionecampionati.grafica.Listener.popMenu.ModificaSqActionListener;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -56,7 +56,7 @@ public class CalcioPanel extends JPanel {
         JMenuItem modifica = new JMenuItem("Modifica");
         
         elimina.addActionListener(new EliminaSqActionListener(c,lista, listmodel));
-        modifica.addActionListener(new ModificaSqActionListener(c,lista));
+        modifica.addActionListener(new ModificaSqActionListener(c,lista, listmodel));
         popMenu.add(modifica);
         popMenu.add(elimina);
         

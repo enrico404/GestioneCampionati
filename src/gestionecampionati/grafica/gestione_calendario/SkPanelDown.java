@@ -6,11 +6,15 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Listener.CancellaRisActionListener;
+import gestionecampionati.grafica.Listener.RigeneraCalActionListener;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -33,6 +37,7 @@ public class SkPanelDown extends JPanel{
     private JLabel gironeRit;
     private JScrollPane panelloScroll;
     private JScrollPane panelloScroll2;
+    private JButton rigenera, cancellaRis, stampa;
   
 
     public SkPanelDown(Campionato c) {
@@ -60,7 +65,23 @@ public class SkPanelDown extends JPanel{
         panelloScroll2 = new JScrollPane(tabella2);
         
         
+        rigenera = new JButton("Rigenera");
+        cancellaRis = new JButton("Elimina risultati");
+        stampa = new JButton("Stampa calendario");
         
+        JPanel end = new JPanel();
+        end.setLayout(new FlowLayout());
+        
+        
+        end.add(rigenera);
+        end.add(Box.createRigidArea(new Dimension(20, 0)));
+        end.add(cancellaRis);
+        end.add(Box.createRigidArea(new Dimension(20, 0)));
+        end.add(stampa);
+        
+        
+        cancellaRis.addActionListener(new CancellaRisActionListener(c, this));
+        rigenera.addActionListener(new RigeneraCalActionListener(c, this));
   
         this.add(Box.createRigidArea(new Dimension(0, 40)));
         this.add(gironeAnd);
@@ -70,6 +91,8 @@ public class SkPanelDown extends JPanel{
         this.add(gironeRit);
         this.add(Box.createRigidArea(new Dimension(0, 40)));
         this.add(panelloScroll2);
+        this.add(Box.createRigidArea(new Dimension(0, 10)));
+        this.add(end);
         
     }
 

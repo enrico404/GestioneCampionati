@@ -6,6 +6,8 @@ package gestionecampionati;
 import java.util.ArrayList;
 
 import java.io.*;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -143,6 +145,7 @@ public class Calendario implements Serializable {
     
     
     public boolean genera_coppie(){
+        Collections.shuffle(squadre);
         for(int i =0 ; i< squadre.size(); i++){
             for(int j=i; j<squadre.size(); j++){
                 if(i != j){

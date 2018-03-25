@@ -25,6 +25,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -43,6 +44,7 @@ public class CercaSquadraActionListener implements ActionListener {
     private JTable tabella;
     private MainFrame f;
     private JLabel sqnome, nome, sqcitta, citta;
+    private JButton stampa;
 
     public CercaSquadraActionListener(TextField cerca, GestCSk sk, Campionato c, MainFrame f) {
         this.sk = sk;
@@ -60,6 +62,12 @@ public class CercaSquadraActionListener implements ActionListener {
         sqnome.setFont(font2);
         sqcitta.setFont(font2);
      
+        stampa = new JButton("Stampa");
+        stampa.setMinimumSize(new Dimension(140, 35));
+        stampa.setMaximumSize(new Dimension(140, 35));
+        stampa.setAlignmentX(Component.CENTER_ALIGNMENT);
+       
+        stampa.addActionListener(new StampaActionListener(sk));
     }
 
     
@@ -116,6 +124,9 @@ public class CercaSquadraActionListener implements ActionListener {
             sk.getPanelDown().add(info);
             sk.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
             sk.getPanelDown().add(sc);
+            sk.getPanelDown().add(Box.createRigidArea(new Dimension(0, 40)));
+            sk.getPanelDown().add(stampa);
+            
             
             sk.getPanelDown().revalidate();
             sk.getPanelDown().repaint();

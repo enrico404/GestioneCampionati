@@ -5,10 +5,13 @@
  */
 package gestionecampionati.grafica.gestione_calendario;
 
+import gestionecampionati.grafica.Listener.StampaActionListener;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -20,14 +23,21 @@ public class CercaGiornataPanelBottom extends JPanel{
 
     private JLabel puntA;
     private JLabel puntB;
-   
+    private  JButton stampa;
+ 
+  
     public CercaGiornataPanelBottom(JLabel puntA, JLabel puntB) {
         this.puntA = puntA;
         this.puntB = puntB;
         
+ 
+        
+     
+        
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         
      
+        
         this.add(puntA);
         this.add(Box.createRigidArea(new Dimension(360, 0)));
         this.add(puntB);

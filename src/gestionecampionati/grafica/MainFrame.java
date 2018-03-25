@@ -28,15 +28,13 @@ public class MainFrame extends JFrame{
         this.setSize(Wd, Hg);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLocationRelativeTo(this);
-        this.setMinimumSize(new Dimension(1150,730));
+        this.setMinimumSize(new Dimension(1200,730));
     }
     
     public void clean(){
-                                    getContentPane().removeAll();
-                                  
-                                    repaint();
-    
-    
+                    getContentPane().removeAll();
+                    repaint();
+   
     }
 
 

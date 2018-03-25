@@ -20,7 +20,7 @@ import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
  *
  * @author enrico
  */
-public class CalcioPanel extends JPanel {
+public class MainPanel extends JPanel {
 
     private MainFrame f;
     private JButton button;
@@ -29,18 +29,25 @@ public class CalcioPanel extends JPanel {
     private MenuPanel centP;
     private DefaultListModel<String> listmodel;
     private JPopupMenu popMenu;
-
+   
     
     
-    public CalcioPanel(MainFrame f) {
+    public MainPanel(MainFrame f, int id) {
         super();
         JLabel sq = new JLabel("Squadre: ");
         Font font = new Font("sans-serif", Font.PLAIN, 15);
         listmodel = new DefaultListModel<>();
+     
         
-
-        c = new Campionato("calcio" );
-          
+        
+        if(id == 1)
+            c = new Campionato("calcio" );
+        else if (id == 2) 
+            c = new Campionato("pallavolo");
+        else 
+            c = new Campionato("rugby");
+        
+        
         centP = new MenuPanel(f, c, listmodel);
         centP.setEnabled(true);
     

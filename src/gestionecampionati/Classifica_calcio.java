@@ -5,7 +5,6 @@
  */
 package gestionecampionati;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -21,7 +20,11 @@ public class Classifica_calcio extends Classifica{
 
     @Override
     public void calcola() {
+        
         int pa, pb;
+        
+        /** resetta punteggio di tutte le squadre */
+        for(int i=0; i< getCampionato().get_numSquadre(); i++) getCampionato().getSquadre().get(i).reset_p();
         
         
         for(int i=0; i< getCampionato().getC().getGironeAndata().size(); i++){
@@ -60,7 +63,7 @@ public class Classifica_calcio extends Classifica{
                     }
                 } 
         }
-         for(int i=0; i<this.getCampionato().get_numSquadre(); i++){
+        for(int i=0; i<this.getCampionato().get_numSquadre(); i++){
                this.getClassifica().add(this.getCampionato().getSquadre().get(i));
                /** serve per introdurre randomicità nel caso due squadre abbiano lo stesso punteggio */
                Collections.shuffle(this.getClassifica());
@@ -69,6 +72,8 @@ public class Classifica_calcio extends Classifica{
           
          this.getClassifica().sort(new Comparator<Squadra>(){
             @Override
+            
+            /** ordinamento della classifica con algoritmo bubble sort */
             public int compare(Squadra o1, Squadra o2) {
                 return o2.getPunteggio() - o1.getPunteggio();
                 

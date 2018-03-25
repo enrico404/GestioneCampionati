@@ -197,17 +197,17 @@ public class Campionato {
         if(this.getSport().equals("calcio")){
             cls = new Classifica_calcio(this);
             cls.calcola();
-            cls.stampa();
+            
         }
          if(this.getSport().equals("pallavolo")){
             cls = new Classifica_pallavolo(this);
             cls.calcola();
-            cls.stampa();
+            
         }
           if(this.getSport().equals("rugby")){
             cls = new Classifica_rugby(this);
             cls.calcola();
-            cls.stampa();
+            
         }
     
     

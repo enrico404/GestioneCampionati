@@ -5,20 +5,28 @@
  */
 package gestionecampionati.grafica.gestione_calendario;
 
+import gestionecampionati.grafica.Listener.popMenu.InsPopActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Listener.CancellaRisActionListener;
 import gestionecampionati.grafica.Listener.RigeneraCalActionListener;
+import gestionecampionati.grafica.Listener.StampaActionListener;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
 import javax.swing.text.View;
 
 /**
@@ -38,28 +46,71 @@ public class SkPanelDown extends JPanel{
     private JScrollPane panelloScroll;
     private JScrollPane panelloScroll2;
     private JButton rigenera, cancellaRis, stampa;
-  
+    private JPopupMenu popMenu, popMenu2;
+    private GestCSk sk;
+   
 
-    public SkPanelDown(Campionato c) {
+    public SkPanelDown(Campionato c, GestCSk sk) {
         super();
         tab1 = new CalTableModel(c);
         tab2 = new Cal2TableModel(c);
+        
+        
+        this.sk = sk;
         Font font = new Font("sans-serif", Font.BOLD, 16);
         
         gironeAnd = new JLabel("Girone Andata: ");
-        gironeAnd.setFont(font);
-       
-        
-        
+        gironeAnd.setFont(font); 
         gironeRit = new JLabel("Girone Ritorno: ");
         gironeRit.setFont(font);
         
-        
-        
+
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         
         tabella = new JTable(tab1);
         tabella2 = new JTable(tab2);
+        
+        
+        popMenu = new JPopupMenu();
+        JMenuItem inserisci = new JMenuItem("Inserisci");
+        popMenu.add(inserisci);
+        
+        
+        popMenu2 = new JPopupMenu();
+        JMenuItem inserisci2 = new JMenuItem("Inserisci");
+        popMenu2.add(inserisci2);
+        
+        
+        tabella.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        tabella2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        
+        inserisci.addActionListener(new InsPopActionListener(tabella, c, 1,tab1));
+        inserisci2.addActionListener(new InsPopActionListener(tabella2, c, 2,tab2));
+ 
+        tabella.addMouseListener(new MouseAdapter() {
+   
+           
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                if(SwingUtilities.isRightMouseButton(e) && (tabella.getSelectedColumn() == 2)){ 
+                    popMenu.show(tabella, e.getX(), e.getY());
+                    
+                }
+            }
+
+        });
+        
+          tabella2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(SwingUtilities.isRightMouseButton(e) && (tabella2.getSelectedColumn() == 2)){                  
+                    popMenu2.show(tabella2, e.getX(), e.getY());
+                }
+            }
+
+        });
+        
        
         panelloScroll = new JScrollPane(tabella);
         panelloScroll2 = new JScrollPane(tabella2);
@@ -83,10 +134,12 @@ public class SkPanelDown extends JPanel{
       
         cancellaRis.addActionListener(new CancellaRisActionListener(c, this));
         rigenera.addActionListener(new RigeneraCalActionListener(c, this));
-        
+        stampa.addActionListener(new StampaActionListener(sk));
   
+        
         gironeAnd.setAlignmentX(CENTER_ALIGNMENT);
         gironeRit.setAlignmentX(CENTER_ALIGNMENT);
+        
         
         
         this.add(Box.createRigidArea(new Dimension(0, 40)));

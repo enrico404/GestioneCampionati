@@ -36,7 +36,7 @@ public class CalComplActionListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         sk.getPanelDown().removeAll();
-        pdown = new SkPanelDown(c);
+        pdown = new SkPanelDown(c,sk);
         sk.getPanelDown().setLayout(new BoxLayout(sk.getPanelDown(), View.Y_AXIS));
         sk.getPanelDown().add(pdown);
         f.revalidate();

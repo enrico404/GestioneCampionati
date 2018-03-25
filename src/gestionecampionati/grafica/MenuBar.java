@@ -26,12 +26,12 @@ public class MenuBar extends JMenuBar{
     private JMenu help;
     private Campionato c;
     private MainFrame fr;
-    private CalcioPanel panel;
+    private MainPanel panel;
     private DefaultListModel<Squadra> lista;
     private MenuPanel centerPanel;
     
     
-    public MenuBar(Campionato c, MainFrame fr, CalcioPanel panel, DefaultListModel lista, MenuPanel centerPanel ) {
+    public MenuBar(Campionato c, MainFrame fr, MainPanel panel, DefaultListModel lista, MenuPanel centerPanel ) {
         this.c = c;
         this.lista = lista;
         this.panel = panel;

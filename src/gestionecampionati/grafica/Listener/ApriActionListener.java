@@ -7,7 +7,7 @@ package gestionecampionati.grafica.Listener;
 
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.CalcioPanel;
+import gestionecampionati.grafica.MainPanel;
 import gestionecampionati.grafica.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

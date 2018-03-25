@@ -38,7 +38,7 @@ public class GestCSk extends JPanel {
         super();
         
         this.menuP = menuP;
-       
+        
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         this.setAlignmentX(LEFT_ALIGNMENT);
         
@@ -50,7 +50,7 @@ public class GestCSk extends JPanel {
         
         panelUp = new SkPanelUp(menuP, this, f, c);
         panelCenter = new SkPanelCenter(c,f,this );
-        panelDown = new SkPanelDown(c);
+        panelDown = new SkPanelDown(c, this);
 
         
        

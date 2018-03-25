@@ -60,15 +60,7 @@ public class HomePanel extends JPanel implements ActionListener{
                 Logger.getLogger(HomePanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         
-           // JLabel back = new JLabel(new ImageIcon("../GestioneCampionati/media/HomeBackground.png"));
-   
-           // this.add(back);
-            //fr.setContentPane(back);
-        
-           // JLabel back = new JLabel(new ImageIcon("../GestioneCampionati/media/HomeBackground.png"));
-   
-           // this.add(back);
-            //fr.setContentPane(back);
+          
             
             
             f = new Font( "TimesRoman", Font.PLAIN , 50);
@@ -135,26 +127,31 @@ public class HomePanel extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == calcio) {
             
-                                    System.out.println("calcio"); 
-                                    
-                                    
+                                    System.out.println("calcio");          
                                     fr.clean(); //rimuovo il vecchio pannello
-                                    
-                                   
-                                          fr.setContentPane(new CalcioPanel(fr));
-                                          fr.validate();
+                                    fr.setContentPane(new MainPanel(fr,1));
+                                    fr.validate();
                                        
                                     
                                  
                                     }
-        if(e.getSource() == rugby) {System.out.println("rugby"); this.setVisible(false);}
-        if(e.getSource() == pallavolo) {System.out.println("pallavolo"); this.setVisible(false);}
+        if(e.getSource() == pallavolo) {
+                                    System.out.println("pallavolo");          
+                                    fr.clean(); //rimuovo il vecchio pannello
+                                    fr.setContentPane(new MainPanel(fr,2));
+                                    fr.validate();
         
+        }
         
+        if(e.getSource() == rugby) {
+                                    System.out.println("rugby");          
+                                    fr.clean(); //rimuovo il vecchio pannello
+                                    fr.setContentPane(new MainPanel(fr,3));
+                                    fr.validate();
+        
+            }
+ 
         
     }
-   
-    
-    
-    
+
 }

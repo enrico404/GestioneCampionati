@@ -25,6 +25,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.text.View;
 
@@ -40,16 +41,28 @@ public class CercaGiornataActionListener implements ActionListener {
     private ErrorPanel err;
     private Font font, fontPunteggio;
     private String sqa, sqb;
+    private JButton stampa;
    
     public CercaGiornataActionListener(MainFrame f, Campionato c, GestCSk p, Font font) {
        this.c = c;
        this.f = f;
        this.p = p;
+       stampa = new JButton("Stampa");
+       stampa.setMinimumSize(new Dimension(140, 35));
+       stampa.setMaximumSize(new Dimension(140, 35));
+       stampa.setAlignmentX(Component.CENTER_ALIGNMENT);
+       
+       stampa.addActionListener(new StampaActionListener(p));
+       
        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        JLabel icoA = null;
+        JLabel icoB = null;
+        JLabel puntA = null;
+        JLabel puntB = null;
       
         int tmpA,tmpB;
         this.sqa = p.getPanelCenter().getPanelA().getSqa().getSelectedItem().toString();
@@ -74,8 +87,7 @@ public class CercaGiornataActionListener implements ActionListener {
                         tmpA = c.getC().getGironeAndata().get(i).getP().getPa();
                         tmpB =  c.getC().getGironeAndata().get(i).getP().getPb();
                         BufferedImage bf1, bf2;
-                        JLabel icoA = null;
-                        JLabel icoB = null;
+                      
                         bf1 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getA().getLogo()));
                         icoA = new JLabel(new ImageIcon(bf1));
                         bf2 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getB().getLogo()));
@@ -85,8 +97,7 @@ public class CercaGiornataActionListener implements ActionListener {
                         icoB.setMaximumSize(new Dimension(120, 160));
                         icoA.setMinimumSize(new Dimension(120, 160));
                         icoB.setMinimumSize(new Dimension(120, 160));
-                        JLabel puntA = null;
-                        JLabel puntB = null;
+                       
                         if(c.getC().getGironeAndata().get(i).isGiocata()){
                             puntA = new JLabel(""+tmpA);
                             puntB = new JLabel(""+ tmpB);
@@ -109,6 +120,9 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
                         p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 20)));
                         p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 100)));
+                        p.getPanelDown().add(stampa);
+                        
                         f.repaint();
                           } catch (IOException ex) {
                         Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
@@ -121,21 +135,13 @@ public class CercaGiornataActionListener implements ActionListener {
              for(int i=0; i<c.getC().getGironeRitorno().size(); i++){
                 if(sqa.equals(c.getC().getGironeRitorno().get(i).getCoppia().getA().getNome()) && sqb.equals(c.getC().getGironeRitorno().get(i).getCoppia().getB().getNome()))
                 {
-                   
-                    
-                    
-                             
 
-               
                     
                     try {
                         tmpA = c.getC().getGironeRitorno().get(i).getP().getPa();
                         tmpB =  c.getC().getGironeRitorno().get(i).getP().getPb();
                         BufferedImage bf1, bf2;
-                        JLabel icoA = null;
-                        JLabel icoB = null;
-                        JLabel puntA = null;
-                        JLabel puntB = null;
+                        
                         bf1 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getA().getLogo()));
                         icoA = new JLabel(new ImageIcon(bf1));
                         bf2 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getB().getLogo()));
@@ -165,6 +171,8 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().add(new CercaGiornataPanelUp(icoA, icoB));
                         p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 20)));
                         p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
+                        p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 100)));
+                        p.getPanelDown().add(stampa);
                         f.repaint();
                     } catch (IOException ex) {
                         Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);

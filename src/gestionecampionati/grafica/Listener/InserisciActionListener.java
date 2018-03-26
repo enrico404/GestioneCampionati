@@ -71,12 +71,6 @@ public class InserisciActionListener implements ActionListener {
 
                     }
 
-                     
-
-                   
-
-
-                   
                     
                     confirm = new ConfirmPanel(1);
 

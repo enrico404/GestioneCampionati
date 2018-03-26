@@ -26,7 +26,7 @@ public class ErrorPanel extends JPanel{
             case 2: JOptionPane.showMessageDialog(this, "Inserire almeno una squadra!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;  
                     
-            case 3: JOptionPane.showMessageDialog(this, "Calendario non ancora generato!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
+            case 3: JOptionPane.showMessageDialog(this, "Possibili problemi con il calendario!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;
             case 4: JOptionPane.showMessageDialog(this, "Le due squadre selezionate sono uguali!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;

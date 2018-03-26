@@ -5,6 +5,7 @@
  */
 package gestionecampionati;
 
+import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -13,6 +14,7 @@ import java.util.Comparator;
  * @author enrico
  */
 public class Classifica_pallavolo extends Classifica{
+    private ErrorPanel err;
 
     public Classifica_pallavolo(Campionato c) {
         super(c);
@@ -41,6 +43,7 @@ public class Classifica_pallavolo extends Classifica{
                        }
                 else getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(3);
              } else {
+                 if(pa==pb){err = new ErrorPanel(8); return;}
                  if(pb == 3 && pa == 2){
                      getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(1);
                      getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(2);

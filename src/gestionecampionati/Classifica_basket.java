@@ -41,7 +41,7 @@ public class Classifica_basket extends Classifica {
                         getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(2);
                     }
                     else if(pa == pb){ 
-                        err = new ErrorPanel(8);
+                        err = new ErrorPanel(8); return;
                     }else{
                          getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(2);
                     }

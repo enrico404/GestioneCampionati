@@ -204,7 +204,7 @@ public class Campionato {
             cls.calcola();
             
         }
-          if(this.getSport().equals("rugby")){
+          if(this.getSport().equals("basket")){
             cls = new Classifica_basket(this);
             cls.calcola();
             

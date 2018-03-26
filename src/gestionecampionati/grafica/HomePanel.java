@@ -21,7 +21,7 @@ import javax.swing.*;
 public class HomePanel extends JPanel implements ActionListener{
     
         private JButton calcio;
-        private JButton rugby;
+        private JButton basket;
         private JButton pallavolo;
         private Dimension button;
         private JLabel text;
@@ -47,7 +47,7 @@ public class HomePanel extends JPanel implements ActionListener{
            
             button = new Dimension(200, 50);
             calcio = new JButton("Calcio");
-            rugby = new JButton("Rugby");
+            basket = new JButton("Basket");
             pallavolo = new JButton("Pallavolo");
             text = new JLabel("Scegli lo sport: ");
             this.fr = fr;
@@ -74,10 +74,10 @@ public class HomePanel extends JPanel implements ActionListener{
             calcio.setPreferredSize(button);
             calcio.setMaximumSize(button);
              calcio.setMinimumSize(button);
-            rugby.setAlignmentX(CENTER_ALIGNMENT);
-            rugby.setPreferredSize(button);
-            rugby.setMaximumSize(button);
-            rugby.setMinimumSize(button);
+            basket.setAlignmentX(CENTER_ALIGNMENT);
+            basket.setPreferredSize(button);
+            basket.setMaximumSize(button);
+            basket.setMinimumSize(button);
             pallavolo.setAlignmentX(CENTER_ALIGNMENT);
             pallavolo.setPreferredSize(button);
             pallavolo.setMinimumSize(button);
@@ -85,7 +85,7 @@ public class HomePanel extends JPanel implements ActionListener{
             
             
             calcio.addActionListener(this);
-            rugby.addActionListener(this);
+            basket.addActionListener(this);
             pallavolo.addActionListener(this);
             
             
@@ -102,7 +102,7 @@ public class HomePanel extends JPanel implements ActionListener{
             add(Box.createRigidArea(new Dimension(0, 20)));
             add(pallavolo);
             add(Box.createRigidArea(new Dimension(0, 20)));
-            add(rugby);
+            add(basket);
       
             
             
@@ -143,8 +143,8 @@ public class HomePanel extends JPanel implements ActionListener{
         
         }
         
-        if(e.getSource() == rugby) {
-                                    System.out.println("rugby");          
+        if(e.getSource() == basket) {
+                                    System.out.println("basket");          
                                     fr.clean(); //rimuovo il vecchio pannello
                                     fr.setContentPane(new MainPanel(fr,3));
                                     fr.validate();

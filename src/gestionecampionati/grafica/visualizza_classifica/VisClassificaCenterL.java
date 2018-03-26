@@ -46,7 +46,7 @@ public class VisClassificaCenterL extends JPanel {
             
             
         } catch (IOException ex) {
-            Logger.getLogger(VisClassificaCenterL.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Immagine non letta"); 
         }
         
       
@@ -60,13 +60,7 @@ public class VisClassificaCenterL extends JPanel {
         
         }
         
-       
-       
-        
-        
-        
-        
-        
+   
         
     }
     

@@ -22,7 +22,7 @@ public abstract class Classifica {
     
     
 
-    /** setta il punteggio di ogni squadra e le inserisce nell'array classifica */
+    /** funzione per calcolare il punteggio di ogni squadra, a seconda dello sport, e gli inserisce nell'array classifica */
     public abstract void calcola();
 
     public ArrayList<Squadra> getClassifica() {

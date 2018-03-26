@@ -5,6 +5,7 @@
  */
 package gestionecampionati;
 
+import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -12,17 +13,20 @@ import java.util.Comparator;
  *
  * @author enrico
  */
-public class Classifica_calcio extends Classifica{
+public class Classifica_basket extends Classifica {
 
-    public Classifica_calcio(Campionato c) {
+    private ErrorPanel err;
+    public Classifica_basket(Campionato c) {
         super(c);
+        
     }
 
-    /** nel calcio i punteggi vengono assegnati nel modo seguente: 3 punti vittoria, 1 punto pareggio, 0 punti sconfitta */
+    /** nel basket i punteggi vengono calcolati nel seguente modo: 2 punti alla squadra vincente e 0 alla paerdente
+     * il pareggio nel basket non esiste
+     */
     @Override
     public void calcola() {
-        
-        int pa, pb;
+          int pa, pb;
         
         /** resetta punteggio di tutte le squadre */
         for(int i=0; i< getCampionato().get_numSquadre(); i++) getCampionato().getSquadre().get(i).reset_p();
@@ -34,14 +38,12 @@ public class Classifica_calcio extends Classifica{
                     pa = getCampionato().getC().getGironeAndata().get(i).getP().getPa();
                     pb =  getCampionato().getC().getGironeAndata().get(i).getP().getPb();
                     if( pa > pb){
-                        getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(3);
+                        getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(2);
                     }
-                    else if(pa == pb){
-                         getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(1);
-                         getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(1);
-                    }
-                    else if(pa < pb){
-                         getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(3);
+                    else if(pa == pb){ 
+                        err = new ErrorPanel(8);
+                    }else{
+                         getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(2);
                     }
             }
             
@@ -53,16 +55,15 @@ public class Classifica_calcio extends Classifica{
                     pa = getCampionato().getC().getGironeRitorno().get(i).getP().getPa();
                     pb =  getCampionato().getC().getGironeRitorno().get(i).getP().getPb();
                     if( pa > pb){
-                        getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().inc(3);
+                        getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().inc(2);
                     }
-                    else if(pa == pb){
-                         getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().inc(1);
-                         getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().inc(1);
+                    else if(pa == pb){ 
+                        err = new ErrorPanel(8);
+                    }else{
+                         getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().inc(2);
                     }
-                    else if(pa < pb){
-                         getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().inc(3);
-                    }
-                } 
+            }
+            
         }
         for(int i=0; i<this.getCampionato().get_numSquadre(); i++){
                this.getClassifica().add(this.getCampionato().getSquadre().get(i));
@@ -80,10 +81,11 @@ public class Classifica_calcio extends Classifica{
                 
             }
         });
-         
-         
-         
-         
+        
+        
+        
+        
+        
     }
     
 }

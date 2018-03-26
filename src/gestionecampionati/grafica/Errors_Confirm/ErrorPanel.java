@@ -36,6 +36,8 @@ public class ErrorPanel extends JPanel{
                     break;
             case 7: JOptionPane.showMessageDialog(this, "Ci sono alcune partite non ancora giocate!", "Errore!" ,JOptionPane.ERROR_MESSAGE);
                     break;         
+            case 8: JOptionPane.showMessageDialog(this, "Alcuni risultati non sono corretti (possibile parità)!", "Attenzione!" ,JOptionPane.ERROR_MESSAGE);
+                    break;   
         }
     
     }

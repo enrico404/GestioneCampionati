@@ -45,7 +45,7 @@ public class MainPanel extends JPanel {
         else if (id == 2) 
             c = new Campionato("pallavolo");
         else 
-            c = new Campionato("rugby");
+            c = new Campionato("basket");
         
         
         centP = new MenuPanel(f, c, listmodel);

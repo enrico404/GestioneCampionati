@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/VisualizzaClassificaActionListener.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaCenterL.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/SkPanelCenter.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaCenterP.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaSk.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/visualizza_classifica/VisClassificaUp.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/SkPanelDown.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/GestCSk.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Errors_Confirm/ErrorPanel.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/VisualizzaClassificaActionListener.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_basket.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_pallavolo.java</file>
+            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_calcio.java</file>
         </group>
     </open-files>
 </project-private>

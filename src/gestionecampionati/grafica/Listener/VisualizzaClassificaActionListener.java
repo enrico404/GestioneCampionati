@@ -53,11 +53,12 @@ public class VisualizzaClassificaActionListener implements ActionListener {
                     return;
                 } 
             } 
+        
             c.calcola_calssifica();
          
             
             panel = new VisClassificaSk(c, old, f);
-            
+             
     
             f.remove(old);
             old.setEnabled(false);

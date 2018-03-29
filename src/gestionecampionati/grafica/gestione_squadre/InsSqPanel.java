@@ -5,12 +5,10 @@
  */
 package gestionecampionati.grafica.gestione_squadre;
 
-import gestionecampionati.grafica.Listener.InsActionListener;
-import gestionecampionati.grafica.Listener.ChiudiActionListener;
+import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.ApriLogoActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;

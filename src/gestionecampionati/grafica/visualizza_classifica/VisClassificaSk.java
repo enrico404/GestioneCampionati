@@ -7,7 +7,7 @@ package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;

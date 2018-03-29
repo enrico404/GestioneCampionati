@@ -5,11 +5,10 @@
  */
 package gestionecampionati.grafica.gestione_calendario;
 
-import gestionecampionati.grafica.Listener.popMenu.InsPopActionListener;
+import gestionecampionati.grafica.popMenu.InsPopActionListener;
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.CancellaRisActionListener;
-import gestionecampionati.grafica.Listener.RigeneraCalActionListener;
-import gestionecampionati.grafica.Listener.StampaActionListener;
+import gestionecampionati.grafica.Home.InsRis2ActionListener;
+import gestionecampionati.grafica.MainFrame;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -39,23 +38,22 @@ public class SkPanelDown extends JPanel{
     private Campionato c;
     private CalTableModel tab1;
     private Cal2TableModel tab2;
-    private JTable tabella;
-    private JTable tabella2;
+    private JTable tabella, tabella2;
     private JLabel gironeAnd;
     private JLabel gironeRit;
-    private JScrollPane panelloScroll;
-    private JScrollPane panelloScroll2;
+    private JScrollPane panelloScroll, panelloScroll2;
     private JButton rigenera, cancellaRis, stampa;
     private JPopupMenu popMenu, popMenu2;
     private GestCSk sk;
+    private MainFrame f;
    
 
-    public SkPanelDown(Campionato c, GestCSk sk) {
+    public SkPanelDown(Campionato c, GestCSk sk, MainFrame f) {
         super();
         tab1 = new CalTableModel(c);
         tab2 = new Cal2TableModel(c);
         
-        
+        this.f = f;
         this.sk = sk;
         Font font = new Font("sans-serif", Font.BOLD, 16);
         
@@ -84,8 +82,15 @@ public class SkPanelDown extends JPanel{
         tabella.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         tabella2.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
-        inserisci.addActionListener(new InsPopActionListener(tabella, c, 1,tab1));
-        inserisci2.addActionListener(new InsPopActionListener(tabella2, c, 2,tab2));
+        if(c.getSport().equals("pallavolo")){
+             inserisci.addActionListener(new InsRis2ActionListener(f, sk, c, tabella, 1));
+             inserisci2.addActionListener(new InsRis2ActionListener(f, sk, c, tabella2, 2));
+        
+        }else{
+             inserisci.addActionListener(new InsPopActionListener(tabella, c, 1,tab1));
+             inserisci2.addActionListener(new InsPopActionListener(tabella2, c, 2,tab2));
+        }
+       
  
         tabella.addMouseListener(new MouseAdapter() {
    

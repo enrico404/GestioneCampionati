@@ -5,7 +5,6 @@
  */
 package gestionecampionati.grafica.gestione_calendario;
 
-import gestionecampionati.grafica.Listener.StampaActionListener;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;

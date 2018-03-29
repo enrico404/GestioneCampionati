@@ -2,9 +2,10 @@
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.ChiudiActionListener;
+import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.Home.MenuPanel;
+import gestionecampionati.grafica.gestione_calendario.StampaActionListener;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
@@ -23,7 +24,7 @@ public class VisClassificaDown extends JPanel{
 
     private Campionato c;
     private ClassificaTableModel cls;
-    private JButton indietro;
+    private JButton indietro, stampa;
     private MenuPanel menu;
     private MainFrame f;
     private VisClassificaSk sk;
@@ -39,6 +40,7 @@ public class VisClassificaDown extends JPanel{
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         cls = new ClassificaTableModel(c);
         indietro = new JButton("Indietro");
+        stampa = new JButton("Stampa");
         
         JTable tabella = new JTable(cls);
         JScrollPane sc = new JScrollPane(tabella);
@@ -46,14 +48,25 @@ public class VisClassificaDown extends JPanel{
         sc.setMinimumSize(new Dimension(800, 200));
         indietro.setMaximumSize(new Dimension(200, 40));
         indietro.setMinimumSize(new Dimension(200, 40));
+        stampa.setMaximumSize(new Dimension(200, 40));
+        stampa.setMinimumSize(new Dimension(200, 40));
         
         indietro.addActionListener(new ChiudiActionListener(f, sk, menu));
         indietro.setAlignmentX(CENTER_ALIGNMENT);
         
-        this.add(sc);
-        this.add(Box.createRigidArea(new Dimension(100, 20)));
+        stampa.addActionListener(new StampaActionListener(sk));
+        stampa.setAlignmentX(CENTER_ALIGNMENT);
         
-        this.add(indietro);
+        JPanel down = new JPanel();
+        down.setLayout(new BoxLayout(down, View.X_AXIS));
+        down.add(indietro);
+        down.add(Box.createRigidArea(new Dimension(20, 0)));
+        down.add(stampa);
+        
+        
+        this.add(sc);
+        this.add(Box.createRigidArea(new Dimension(100, 20)));  
+        this.add(down);
         
         
     }

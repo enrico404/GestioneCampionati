@@ -6,18 +6,13 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.CancellaRisActionListener;
-import gestionecampionati.grafica.Listener.RigeneraCalActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.text.View;
 
 /**
@@ -50,7 +45,7 @@ public class GestCSk extends JPanel {
         
         panelUp = new SkPanelUp(menuP, this, f, c);
         panelCenter = new SkPanelCenter(c,f,this );
-        panelDown = new SkPanelDown(c, this);
+        panelDown = new SkPanelDown(c, this, f);
 
         
        

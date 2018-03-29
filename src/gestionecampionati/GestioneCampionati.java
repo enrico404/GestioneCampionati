@@ -6,9 +6,9 @@
  */
 package gestionecampionati;
 
-import gestionecampionati.grafica.HomePanel;
+import gestionecampionati.grafica.Home.HomePanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MainPanel;
+import gestionecampionati.grafica.Home.MainPanel;
 import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.SwingUtilities;

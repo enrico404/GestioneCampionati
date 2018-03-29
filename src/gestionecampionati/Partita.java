@@ -6,6 +6,7 @@
 package gestionecampionati;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,7 +20,10 @@ public class Partita implements Serializable{
     /** variabile booleana che indica se la partita è stata giocata o no */
     private boolean giocata;
    
-    
+    /** array che mantiene in memoria i risultati intermedi delle partite(coppia di valori), è utilizzato per memorizzare i set parziali nel caso della pallavolo,
+     * nel rugby potrebbe tenere in memoria ad esempio numero di mete delle due squadre 
+     */
+    private ArrayList<Punteggio> ris_intermedi;
     
     
     /**
@@ -39,9 +43,22 @@ public class Partita implements Serializable{
         this.giocata = false;
         this.coppia = coppia;
         this.p = new Punteggio();
+        ris_intermedi = new ArrayList<>();
     
     
     }
+    
+    public Partita(){
+           
+  
+        this.giocata = false;
+        this.coppia = null;
+        this.p = new Punteggio();
+        ris_intermedi = new ArrayList<>();
+    
+    
+    }
+    
     
     
     
@@ -83,6 +100,14 @@ public class Partita implements Serializable{
 
     public void setGiocata(boolean giocata) {
         this.giocata = giocata;
+    }
+
+    public ArrayList<Punteggio> getRis_intermedi() {
+        return ris_intermedi;
+    }
+
+    public void setRis_intermedi(ArrayList<Punteggio> ris_intermedi) {
+        this.ris_intermedi = ris_intermedi;
     }
 
     

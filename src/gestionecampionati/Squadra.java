@@ -21,6 +21,8 @@ public class Squadra implements Serializable{
     private String logo; 
     /** punteggio totale assegnato alla squadra, serve per calcolare la classifica */
     private int punteggio;
+    /** punteggio parziale assegnato alla squadra, nel caso di pallavolo indica i set vinti, nel caso del rugby potrebbe indicare le mete totali conquistate */
+    private int punteggioParziale;
     
    
     
@@ -29,6 +31,7 @@ public class Squadra implements Serializable{
         this.citta  = "";
         
         this.punteggio = 0;
+        this.punteggioParziale = 0;
 
     
     }
@@ -36,6 +39,7 @@ public class Squadra implements Serializable{
     public Squadra(String nome, String citta){
         this.nome = nome;
         this.citta = citta;
+        this.punteggioParziale = 0;
         /** vado a cercare l'immagine in vari formati */
                     try{
                         BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome));
@@ -108,6 +112,13 @@ public class Squadra implements Serializable{
     
     }
     
+    
+    public void incParz(int x){
+    
+        this.punteggioParziale += x;
+    
+    }
+    
      public String getNome() {
         return nome;
     }
@@ -139,6 +150,16 @@ public class Squadra implements Serializable{
     public void setPunteggio(int punteggio) {
         this.punteggio = punteggio;
     }
+
+    public int getPunteggioParziale() {
+        return punteggioParziale;
+    }
+
+    public void setPunteggioParziale(int punteggioParziale) {
+        this.punteggioParziale = punteggioParziale;
+    }
+
+
     
     
     

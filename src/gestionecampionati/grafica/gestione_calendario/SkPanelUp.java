@@ -7,8 +7,6 @@ package gestionecampionati.grafica.gestione_calendario;
 
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.CalComplActionListener;
-import gestionecampionati.grafica.Listener.CercaSquadraActionListener;
 import java.awt.Dimension;
 import java.awt.TextField;
 import javax.swing.Box;
@@ -16,10 +14,9 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.text.View;
-import gestionecampionati.grafica.Listener.CercaTextFocusListener;
-import gestionecampionati.grafica.Listener.ChiudiActionListener;
+import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Graphics;
 
 

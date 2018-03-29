@@ -5,11 +5,10 @@
  */
 package gestionecampionati.grafica.gestione_calendario;
 
-import gestionecampionati.grafica.Listener.GenPActionListener;
-import gestionecampionati.grafica.Listener.ChiudiActionListener;
+import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MenuPanel;
+import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;

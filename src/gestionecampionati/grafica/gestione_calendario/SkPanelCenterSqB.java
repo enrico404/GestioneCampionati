@@ -6,7 +6,6 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Listener.CercaGiornataActionListener;
 import gestionecampionati.grafica.MainFrame;
 import java.awt.Color;
 import java.awt.Dimension;

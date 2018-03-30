@@ -11,11 +11,15 @@ import gestionecampionati.grafica.Errors_Confirm.ConfirmPanel;
 import gestionecampionati.grafica.Home.MainPanel;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.ProgressBarFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import javax.swing.JProgressBar;
 
 
 
@@ -28,7 +32,6 @@ public class ApriActionListener implements ActionListener {
     private MainFrame fr;
     private DefaultListModel<String> listmodel;
     private ConfirmPanel att;
-    
     /** variabile per capire quale tipo di file caricare in memoria */
     private int tipo; 
 
@@ -37,6 +40,7 @@ public class ApriActionListener implements ActionListener {
         this.fr = fr;
         this.listmodel = lista;
         this.tipo = tipo;
+       
     }
                     
 
@@ -65,7 +69,9 @@ public class ApriActionListener implements ActionListener {
             String path = f.getAbsolutePath();
             
             if(tipo == 0){
-               
+                  
+                
+                
                  c.carica_calendario(path);
                  c.setSquadre(c.getC().getSquadre());
                  listmodel.removeAllElements();
@@ -94,6 +100,8 @@ public class ApriActionListener implements ActionListener {
         }
         }catch(NullPointerException ex){
             System.out.println("Calendario non caricato ");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(ApriActionListener.class.getName()).log(Level.SEVERE, null, ex);
         }
        
       

@@ -3,6 +3,10 @@
  */
 package gestionecampionati;
 
+import gestionecampionati.grafica.MyThread;
+import gestionecampionati.grafica.ProgressBarFrame;
+import gestionecampionati.grafica.ProgressPanel;
+import gestionecampionati.grafica.menuBar.ApriActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,6 +14,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 
 
 
@@ -46,10 +51,6 @@ public class Campionato {
         
     }
 
-    
-
-
- 
 
     public String getSport() {
         return sport;
@@ -85,7 +86,9 @@ public class Campionato {
 
    
     
-    /** Funzione per l'inserimento di una squadra nel campionato */
+    /** Funzione per l'inserimento di una squadra nel campionato 
+     * @param sq squadra in input
+     */
     public boolean inserisci_squadra(Squadra sq){
         
        if(!squadre.contains(sq)){
@@ -108,7 +111,10 @@ public class Campionato {
     
     }
     
-    /** Funzione per la modifica di una squadra nel campionato */
+    /** Funzione per la modifica di una squadra nel campionato
+     *  @param i indice della squadra all'interno dell'array delle squadre
+     * @param sq squadra di sostituzione a quella vecchia
+     */
     public boolean modifica(int i, Squadra sq){
         if(i < squadre.size()){
             squadre.set(i, sq);
@@ -122,24 +128,40 @@ public class Campionato {
     }
     
     /**
-     *
-     * @return
+     * Funzione per il caricamento del calendario in memoria
+     * @param path percorso del file che sto caricando
      */
-    public boolean carica_calendario(String path){
+    public boolean carica_calendario(String path) throws InterruptedException{
     
         FileInputStream f;
         ObjectInputStream is;
-        System.out.println(path);
+        
+        ProgressBarFrame pFrame = new ProgressBarFrame("Caricando..");
+        
+        MyThread t = new MyThread(pFrame);
+        
+        new Thread(t).start();
+        t.setValue(10);
+        
+      
+        
+         
         try {
             f = new FileInputStream(path);
             is = new ObjectInputStream(f);
+            t.setValue(30);
             this.c = (Calendario) is.readObject();
-            
+            t.setValue(50);
+          
             is.close();
+            t.setValue(80);
+            
             f.close();
-            
-            
-            
+            t.setValue(100);
+     
+
+           
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Calendario.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | ClassNotFoundException ex) {
@@ -154,7 +176,9 @@ public class Campionato {
     
     
  
-    
+    /** Funzione per importare le squadre da file 
+     *  @param path percorso del file di input
+     */
     public boolean importa_squadre(String path){
     
         FileInputStream f;
@@ -224,3 +248,6 @@ public class Campionato {
     
     
 }
+
+
+

@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/menuBar/MenuBar.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/AboutFrame.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Calendario.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MainFrame.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/menuBar/AboutFrameListener.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/GestioneCampionati.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_risultati/InsRis2/InsRisPanel2.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MyThread.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/ProgressBarFrame.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/menuBar/ApriActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/ProgressPanel.java</file>
         </group>
     </open-files>
 </project-private>

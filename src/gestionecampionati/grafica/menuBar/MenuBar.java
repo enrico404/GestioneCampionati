@@ -10,7 +10,10 @@ import gestionecampionati.grafica.gestione_calendario.GestCalActionListener;
 import gestionecampionati.grafica.gestione_squadre.InsSqActionLitener;
 import gestionecampionati.Campionato;
 import gestionecampionati.Squadra;
+import gestionecampionati.grafica.Home.InsRis2ActionListener;
+import gestionecampionati.grafica.Home.InsRisActionListener;
 import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.visualizza_classifica.VisualizzaClassificaActionListener;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,6 +32,9 @@ public class MenuBar extends JMenuBar{
     private MainPanel panel;
     private DefaultListModel<Squadra> lista;
     private MenuPanel centerPanel;
+    private JMenuItem nuovo, apri, salva, insSq, insRis, visClass, expSq, impSq, exit, about, gestCal;
+    
+ 
     
     
     public MenuBar(Campionato c, MainFrame fr, MainPanel panel, DefaultListModel lista, MenuPanel centerPanel ) {
@@ -41,61 +47,54 @@ public class MenuBar extends JMenuBar{
         file = new JMenu("File");
         file.setFont(f);
         
-        
+
         edit = new JMenu("Edit");
         edit.setFont(f);
         
         help = new JMenu("Help");
         help.setFont(f);
  
+        
     
-    
-        JMenuItem nuovo = new JMenuItem("Nuovo..");
+        nuovo = new JMenuItem("Nuovo..");
         nuovo.setFont(f);
         
         
-        JMenuItem apri = new JMenuItem("Apri.. "); //insieme al calendario devo caricare il file dei risultati
+        apri = new JMenuItem("Apri.. "); //insieme al calendario devo caricare il file dei risultati
         apri.setFont(f);
         
-        JMenuItem salva = new JMenuItem("Salva"); //salvo sia calendario, sia risultati su file diversi
+        salva = new JMenuItem("Salva"); //salvo sia calendario, sia risultati su file diversi
         salva.setFont(f);
         
-        JMenuItem insSq = new JMenuItem("Inserisci squadre");
+        insSq = new JMenuItem("Inserisci squadre");
         insSq.setFont(f);
         
         
-        JMenuItem insRis = new JMenuItem("Inserisci risultati");
+        insRis = new JMenuItem("Inserisci risultati");
         insRis.setFont(f);
         
-        JMenuItem visClass = new JMenuItem("Visualizza classifica");
+        visClass = new JMenuItem("Visualizza classifica");
         visClass.setFont(f);
         
         
-        JMenuItem expSq = new JMenuItem("Esporta squadre su file");
+        expSq = new JMenuItem("Esporta squadre su file");
         expSq.setFont(f);
         
-        JMenuItem impSq = new JMenuItem("Importa squadre da file");
+        impSq = new JMenuItem("Importa squadre da file");
         impSq.setFont(f);
         
         
         
         
-        JMenuItem exit = new JMenuItem("Esci");
+        exit = new JMenuItem("Esci");
         exit.setFont(f);
         
-        
-        JMenuItem modRis = new JMenuItem("Modifica risultati");
-        modRis.setFont(f);
-        
-        JMenuItem RemSq = new JMenuItem("Rimuovi squadre");
-        RemSq.setFont(f);
-        
-        
-        JMenuItem about = new JMenuItem("About");
+        about = new JMenuItem("About");
         about.setFont(f);
         
-        JMenuItem gestCal = new JMenuItem("Gestione calendario");
+        gestCal = new JMenuItem("Gestione calendario");
         gestCal.setFont(f);
+        
         
         exit.addActionListener(new ExitActionListener());
         apri.addActionListener(new ApriActionListener(c,fr, lista, 0));
@@ -103,11 +102,18 @@ public class MenuBar extends JMenuBar{
         impSq.addActionListener(new ApriActionListener(c, fr, lista, 1));
         expSq.addActionListener(new SalvaActionListener(c, fr, 1));
         insSq.addActionListener(new InsSqActionLitener(fr, centerPanel , c, lista));
-        gestCal.addActionListener(new GestCalActionListener(fr, centerPanel, c));
+        gestCal.addActionListener(new GestCalActionListener(fr,centerPanel, c));
+        visClass.addActionListener(new VisualizzaClassificaActionListener(c, centerPanel, fr));
+        about.addActionListener(new AboutFrameListener());
+        
+        if(c.getSport().equals("pallavolo")){
+            insRis.addActionListener(new InsRis2ActionListener(fr, centerPanel, c));
+        }else insRis.addActionListener(new InsRisActionListener(fr, centerPanel, c));
         nuovo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                c.nuovo("Calcio");
+                String sport = c.getSport();
+                c.nuovo(sport);
                 lista.removeAllElements();
                 lista.addElement("Squadre: ");
             }
@@ -117,26 +123,21 @@ public class MenuBar extends JMenuBar{
         file.add(nuovo);
         file.add(apri);
         file.add(salva);
-        file.add(insSq);
         file.add(impSq);
         file.add(expSq);
-        file.add(gestCal);
-        file.add(insRis);
-        file.add(visClass);
         file.addSeparator();
         file.add(exit);
-        
-        
-        edit.add(modRis);
-        edit.add(RemSq);
+ 
 
         
         help.add(about);
         
         this.add(file);
-        this.add(edit);
         this.add(help);
     }
+
+
+    
     
   
 

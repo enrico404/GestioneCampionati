@@ -24,6 +24,8 @@ public class ConfirmPanel extends JPanel {
         switch(code){
             case 1: JOptionPane.showMessageDialog(this, "Risultato inserito correttamente!", "Risultato inserito", JOptionPane.INFORMATION_MESSAGE);
                     break;
+         //   case 2: JOptionPane.showMessageDialog(this, "Attenzione hai caricato un calendario di uno sport differente!", "Attenzione", JOptionPane.INFORMATION_MESSAGE);
+           //         break;
             
         }
     

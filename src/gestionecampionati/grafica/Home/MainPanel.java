@@ -77,6 +77,7 @@ public class MainPanel extends JPanel {
         this.setLayout(new BorderLayout());
         this.add(menu, BorderLayout.PAGE_START);
         
+        f.setMenuB(menu);
         JScrollPane scrollPane = new JScrollPane(lista, VERTICAL_SCROLLBAR_AS_NEEDED, HORIZONTAL_SCROLLBAR_NEVER);
         
         lista.setPreferredSize(new Dimension(200,100));
@@ -105,6 +106,7 @@ public class MainPanel extends JPanel {
 
         
         this.add(centP, BorderLayout.CENTER);
+  
         
         
     }

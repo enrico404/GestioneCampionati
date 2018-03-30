@@ -48,7 +48,7 @@ public class InsSetParzialiPanel extends JPanel{
         this.panelUp = panelUp;
         this.setLayout(new BoxLayout(this, View.Y_AXIS));
         
-        n = this.num_set.getSelectedIndex()+1;
+        n = this.num_set.getSelectedIndex()+3;
         set = new JLabel[n];
         ris = new JComboBox[n*2];
         

@@ -8,12 +8,10 @@ package gestionecampionati.grafica.gestione_calendario;
 import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -26,10 +24,10 @@ public class GestCalPanel extends JPanel{
     private JButton chiudi;
     private MainFrame f;
     private Campionato c;
-    private MenuPanel oldPanel;
+    private JPanel oldPanel;
     private JButton genP;
     private Dimension dimB;
-    public GestCalPanel(MainFrame f, Campionato c, MenuPanel oldPanel){
+    public GestCalPanel(MainFrame f, Campionato c, JPanel oldPanel){
         
         
         this.f = f;

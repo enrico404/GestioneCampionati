@@ -6,13 +6,11 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.gestione_calendario.GestCalPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
-import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -20,11 +18,11 @@ import javax.swing.DefaultListModel;
  */
 public class GestCalActionListener implements ActionListener {
     private MainFrame f;
-    private MenuPanel oldPanel;
+    private JPanel oldPanel;
     private Campionato c;
     private DefaultListModel<String> listmodel;
 
-    public GestCalActionListener(MainFrame f, MenuPanel oldPanel, Campionato c) {
+    public GestCalActionListener(MainFrame f, JPanel oldPanel, Campionato c) {
         this.f = f;
         this.oldPanel = oldPanel;
         this.c = c;
@@ -38,6 +36,7 @@ public class GestCalActionListener implements ActionListener {
             GestCalPanel gestCal = new GestCalPanel(f, c, oldPanel);
             f.remove(oldPanel);
             oldPanel.setEnabled(false);
+
             f.add(gestCal);
             f.validate();
             f.repaint();
@@ -48,6 +47,7 @@ public class GestCalActionListener implements ActionListener {
             GestCSk sk = new GestCSk(f, c, oldPanel); 
             f.remove(oldPanel);
             f.add(sk);
+  ;
             f.validate();
             f.repaint();
         

@@ -101,7 +101,7 @@ public class InsRisPanel2 extends JPanel{
     
     
     public void riempi(){
-          for(int i=1; i<6; i++){
+          for(int i=3; i<6; i++){
                   
                        num_set.addItem(i);
                       

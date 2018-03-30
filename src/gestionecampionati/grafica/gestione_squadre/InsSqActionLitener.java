@@ -21,10 +21,10 @@ import javax.swing.JPanel;
 public class InsSqActionLitener implements ActionListener {
 
     private MainFrame f;
-    private MenuPanel panelOld;
+    private JPanel panelOld;
     private Campionato c;
     private DefaultListModel<String> listmodel;
-    public InsSqActionLitener(MainFrame f, MenuPanel panelOld, Campionato c, DefaultListModel<String> listmodel) {
+    public InsSqActionLitener(MainFrame f, JPanel panelOld, Campionato c, DefaultListModel<String> listmodel) {
         
         this.f = f;
         this.panelOld = panelOld;
@@ -38,7 +38,7 @@ public class InsSqActionLitener implements ActionListener {
            
             InsSqPanel panel = new InsSqPanel(f, c, listmodel, panelOld);
             f.remove(panelOld);
-            panelOld.setEnabled(false);
+            panelOld.setEnabled(false); 
             f.add(panel);
             f.validate();
           

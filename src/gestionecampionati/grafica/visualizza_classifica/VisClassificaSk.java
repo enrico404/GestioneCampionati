@@ -28,11 +28,11 @@ public class VisClassificaSk extends JPanel {
     private VisClassificaCenterL panelCentL;
     private VisClassificaDown panelDown;
     private VisClassificaCenterP panelCentP;
-    private MenuPanel menu;
+    private JPanel menu;
     private MainFrame f;
     
     
-    public VisClassificaSk(Campionato c, MenuPanel menu, MainFrame f) {
+    public VisClassificaSk(Campionato c, JPanel menu, MainFrame f) {
         this.c = c;
         this.menu = menu;
         this.f = f;

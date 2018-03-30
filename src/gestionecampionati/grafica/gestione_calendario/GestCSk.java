@@ -7,7 +7,6 @@ package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
@@ -24,12 +23,12 @@ public class GestCSk extends JPanel {
     private SkPanelUp panelUp;
     private SkPanelCenter panelCenter;
     private SkPanelDown  panelDown; 
-    private MenuPanel menuP;
+    private JPanel menuP;
     private MainFrame f;
     private Campionato c;
   
 
-    public GestCSk(MainFrame f, Campionato c, MenuPanel menuP) {
+    public GestCSk(MainFrame f, Campionato c, JPanel menuP) {
         super();
         
         this.menuP = menuP;

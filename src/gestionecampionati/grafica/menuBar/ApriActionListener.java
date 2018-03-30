@@ -7,6 +7,7 @@ package gestionecampionati.grafica.menuBar;
 
 
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Errors_Confirm.ConfirmPanel;
 import gestionecampionati.grafica.Home.MainPanel;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.MainFrame;
@@ -26,6 +27,7 @@ public class ApriActionListener implements ActionListener {
     private Campionato c;
     private MainFrame fr;
     private DefaultListModel<String> listmodel;
+    private ConfirmPanel att;
     
     /** variabile per capire quale tipo di file caricare in memoria */
     private int tipo; 
@@ -63,14 +65,16 @@ public class ApriActionListener implements ActionListener {
             String path = f.getAbsolutePath();
             
             if(tipo == 0){
-
+               
                  c.carica_calendario(path);
                  c.setSquadre(c.getC().getSquadre());
                  listmodel.removeAllElements();
                  listmodel.addElement("Squadre: ");
+                 
+
                  if(c.getC() != null ) {System.out.println("Calendario caricato correttamente!");
                     c.getC().stampa_calendario();
-            
+
                     }
             }
             if(tipo == 1){
@@ -78,7 +82,7 @@ public class ApriActionListener implements ActionListener {
                 c.importa_squadre(path);
                 listmodel.removeAllElements();
                 listmodel.addElement("Squadre: ");
-                
+               
             
             
             }

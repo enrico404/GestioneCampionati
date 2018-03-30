@@ -41,6 +41,7 @@ public class VaiActionListener implements ActionListener {
        
         f.remove(old);
         f.add(panel);
+
         f.validate();
         f.repaint();
         

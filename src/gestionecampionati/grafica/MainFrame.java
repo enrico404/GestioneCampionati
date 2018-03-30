@@ -2,6 +2,7 @@
 * Frame principale per la gestione dell'intero software
  */
 package gestionecampionati.grafica;
+import gestionecampionati.grafica.menuBar.MenuBar;
 import java.awt.Dimension;
 import javax.swing.*;
 /**
@@ -11,16 +12,11 @@ import javax.swing.*;
 public class MainFrame extends JFrame{
     private static final int Wd = 1300;
     private static final int Hg =740;
-    /** panello centrale */
-    private JScrollPane sc;
+    
+    /** riferimento alla menu bar */
+    private MenuBar menuB;
+  
 
-    public int getWd() {
-        return Wd;
-    }
-
-    public int getHg() {
-        return Hg;
-    }
     private String title;
     
     public MainFrame(String title){
@@ -35,6 +31,23 @@ public class MainFrame extends JFrame{
                     getContentPane().removeAll();
                     repaint();
    
+    }
+
+    public MenuBar getMenuB() {
+        return menuB;
+    }
+
+    public void setMenuB(MenuBar menuB) {
+        this.menuB = menuB;
+    }
+
+    
+    public int getWd() {
+        return Wd;
+    }
+
+    public int getHg() {
+        return Hg;
     }
 
 

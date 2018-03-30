@@ -27,9 +27,9 @@ public class GestioneCampionati {
     public static void main(String[] args) {
         MainFrame f = new MainFrame("Gestione Campionati");
       
-                 HomePanel p = new HomePanel(f);
+                HomePanel p = new HomePanel(f);
   
-                  f.add(p);
+                f.add(p);
                 f.setVisible(true);      
           
       

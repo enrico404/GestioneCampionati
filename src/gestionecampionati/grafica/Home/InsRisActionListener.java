@@ -7,9 +7,7 @@ package gestionecampionati.grafica.Home;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
-import gestionecampionati.grafica.inserimento_risultati.InsRis.InsRisPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import gestionecampionati.grafica.inserimento_risultati.InsRis.InsRisPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,11 +18,11 @@ import javax.swing.JPanel;
  * @author Enrico
  */
 public class InsRisActionListener implements ActionListener{
-    private MenuPanel old;
+    private JPanel old;
     private MainFrame f;
     private Campionato c;
     private ErrorPanel err;
-    public InsRisActionListener( MainFrame f, MenuPanel old, Campionato c) {
+    public InsRisActionListener( MainFrame f, JPanel old, Campionato c) {
         this.old = old;
         this.f = f;
         this.c = c;
@@ -42,6 +40,7 @@ public class InsRisActionListener implements ActionListener{
             InsRisPanel panel = new InsRisPanel(old, c, f);
             f.remove(old);
             old.setEnabled(false);
+
             f.add(panel);
             f.validate();
          }

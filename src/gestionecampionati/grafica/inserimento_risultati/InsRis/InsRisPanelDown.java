@@ -5,13 +5,10 @@
  */
 package gestionecampionati.grafica.inserimento_risultati.InsRis;
 
-import gestionecampionati.grafica.inserimento_risultati.InsRis.InsRisPanel;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -28,13 +25,13 @@ public class InsRisPanelDown extends JPanel{
     private Campionato c;
     private InsRisPanel parent;
     private JButton inserisci, chiudi;
-    private MenuPanel menu;
+    private JPanel menu;
     MainFrame f;
 
     
     
 
-    public InsRisPanelDown(Campionato c, InsRisPanel parent, MenuPanel menu, MainFrame f) {
+    public InsRisPanelDown(Campionato c, InsRisPanel parent, JPanel menu, MainFrame f) {
         super();
         this.c = c;
         this.parent = parent;
@@ -61,10 +58,9 @@ public class InsRisPanelDown extends JPanel{
         
        
         
-       
-        this.add(inserisci);
-        this.add(Box.createRigidArea(new Dimension(10, 0)));
         this.add(chiudi);
+        this.add(Box.createRigidArea(new Dimension(10, 0)));
+        this.add(inserisci);
         
         
         chiudi.addActionListener(new ChiudiActionListener(f, parent, menu));

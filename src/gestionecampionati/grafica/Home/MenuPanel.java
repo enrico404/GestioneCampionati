@@ -11,6 +11,7 @@ import gestionecampionati.grafica.gestione_calendario.GestCalActionListener;
 import gestionecampionati.grafica.gestione_squadre.InsSqActionLitener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
+import gestionecampionati.grafica.menuBar.MenuBar;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
@@ -32,11 +33,13 @@ public class MenuPanel extends JPanel {
    private Campionato c;
    private DefaultListModel<String> listmodel;
    private Dimension button;
+  
    
    
    public MenuPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel){
        super();
        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+       
        
        this.listmodel = listmodel;
        this.c = c;

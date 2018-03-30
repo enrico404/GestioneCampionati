@@ -3,11 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Errors_Confirm/ErrorPanel.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Listener/VisualizzaClassificaActionListener.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_basket.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_pallavolo.java</file>
-            <file>file:/home/enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_calcio.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_risultati/InsRis2/VaiActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_risultati/InsRis2/InsSetParzialiPanel.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Home/InsRis2ActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Home/MenuPanel.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_risultati/InsRis2/InsRisPanel2.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/inserimento_risultati/InsRis2/Inserisci2ActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/gestione_calendario/SkPanelDown.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Classifica_basket.java</file>
         </group>
     </open-files>
 </project-private>

@@ -12,6 +12,7 @@ import gestionecampionati.grafica.Home.MenuPanel;
 import gestionecampionati.grafica.visualizza_classifica.VisClassificaSk;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 
 
 /**
@@ -20,11 +21,11 @@ import java.awt.event.ActionListener;
  */
 public class VisualizzaClassificaActionListener implements ActionListener {
     private Campionato c;
-    private MenuPanel old;
+    private JPanel old;
     private MainFrame f;
     private ErrorPanel err;
     private VisClassificaSk panel;
-    public VisualizzaClassificaActionListener(Campionato c, MenuPanel old, MainFrame f) {
+    public VisualizzaClassificaActionListener(Campionato c, JPanel old, MainFrame f) {
         this.c = c;
         this.old = old;
         this.f = f;
@@ -61,6 +62,7 @@ public class VisualizzaClassificaActionListener implements ActionListener {
     
             f.remove(old);
             old.setEnabled(false);
+    
             f.add(panel);
             f.validate();
          }

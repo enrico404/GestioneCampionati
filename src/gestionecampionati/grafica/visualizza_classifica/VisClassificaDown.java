@@ -25,13 +25,13 @@ public class VisClassificaDown extends JPanel{
     private Campionato c;
     private ClassificaTableModel cls;
     private JButton indietro, stampa;
-    private MenuPanel menu;
+    private JPanel menu;
     private MainFrame f;
     private VisClassificaSk sk;
     
     
 
-    public VisClassificaDown(Campionato c, MenuPanel menu, MainFrame f, VisClassificaSk sk) {
+    public VisClassificaDown(Campionato c, JPanel menu, MainFrame f, VisClassificaSk sk) {
         this.sk = sk;
         this.c = c;
         this.f= f;

@@ -7,7 +7,6 @@ package gestionecampionati.grafica.inserimento_risultati.InsRis;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
@@ -19,7 +18,7 @@ import javax.swing.JPanel;
  * @author Enrico
  */
 public class InsRisPanel extends JPanel {
-    private MenuPanel menu;
+    private JPanel menu;
     private Campionato c;
     private MainFrame f;
     private InsRisPanelUP panelUp;
@@ -28,7 +27,7 @@ public class InsRisPanel extends JPanel {
  
     
 
-    public InsRisPanel(MenuPanel menu, Campionato c, MainFrame f) {
+    public InsRisPanel(JPanel menu, Campionato c, MainFrame f) {
         super();
         this.menu = menu;
         this.c = c;

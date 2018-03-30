@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Graphics;
 
 
@@ -31,12 +30,12 @@ public class SkPanelUp extends JPanel {
     private JButton buttCerca, indietro;
     private TextField cercaText;
     private Dimension d, d1, d2, d3;
-    private MenuPanel menuP;
+    private JPanel menuP;
     private GestCSk sk;
     private MainFrame f;
     private Campionato c;
     
-    public SkPanelUp(MenuPanel menuP, GestCSk sk, MainFrame f, Campionato c) {
+    public SkPanelUp(JPanel menuP, GestCSk sk, MainFrame f, Campionato c) {
         super();
         this.menuP = menuP;
         this.sk = sk;

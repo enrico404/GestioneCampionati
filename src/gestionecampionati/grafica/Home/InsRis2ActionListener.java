@@ -71,6 +71,7 @@ public class InsRis2ActionListener implements ActionListener{
             
             f.remove(old);
             old.setEnabled(false);
+
             f.add(panel);
             f.validate();
          }

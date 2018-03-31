@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/Campionato.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MainFrame.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/MyThread.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Home/InsRisActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Home/InsRis2ActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/AboutFrame.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Home/MenuPanel.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Errors_Confirm/ConfirmPanel.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Errors_Confirm/ErrorPanel.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/ProgressBarFrame.java</file>
-            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/menuBar/ApriActionListener.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Home/HomePanel.java</file>
             <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/ProgressPanel.java</file>
+            <file>file:/C:/Users/Enrico/Desktop/GestioneCampionati/src/gestionecampionati/grafica/Home/MainPanel.java</file>
         </group>
     </open-files>
 </project-private>

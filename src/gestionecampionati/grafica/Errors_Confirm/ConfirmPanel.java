@@ -1,31 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.Errors_Confirm;
 
-import gestionecampionati.grafica.MainFrame;
 import java.awt.Graphics;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- *
+ * Pannello di conferma dell'avvenuto inserimento di risultati all'interno del calendario correttamente
  * @author Enrico
  */
 public class ConfirmPanel extends JPanel {
     private int code;
   
-    
+    /**
+     * Costruttore con parametri del pannello , in base al codice riporta un messaggio diverso
+     * @param code codice di conferma per gestire il messaggio
+     */
     public ConfirmPanel(int code){
         this.code = code;
       
         switch(code){
             case 1: JOptionPane.showMessageDialog(this, "Risultato inserito correttamente!", "Risultato inserito", JOptionPane.INFORMATION_MESSAGE);
                     break;
-         //   case 2: JOptionPane.showMessageDialog(this, "Attenzione hai caricato un calendario di uno sport differente!", "Attenzione", JOptionPane.INFORMATION_MESSAGE);
-           //         break;
+         
             
         }
     
@@ -37,7 +34,6 @@ public class ConfirmPanel extends JPanel {
        
 
         }
-    
-    
+
     
 }

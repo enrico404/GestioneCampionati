@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.Home;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
-import gestionecampionati.grafica.inserimento_risultati.InsRis.InsRisPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
-import gestionecampionati.grafica.inserimento_risultati.InsRis.InsRisPanel;
 import gestionecampionati.grafica.inserimento_risultati.InsRis2.InsRisPanel2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 
 /**
- *
+ * Listener utile per l'inserimento dei risultati nello sport della pallavolo
  * @author Enrico
  */
 public class InsRis2ActionListener implements ActionListener{
@@ -31,6 +24,15 @@ public class InsRis2ActionListener implements ActionListener{
     /** variabile che mi indica in quale girone mi trovo */
     private int tipo;
     
+    /** 
+     * Primo costruttore con parametri, oltre ad inserire il pannello all'interno del frame, setta le due squadre 
+     * contenenti in base alla riga selezionata nella tabella di gestione calendario
+     * @param f frame in cui inserire il pannello
+     * @param old vecchio pannello da rimuovere
+     * @param c Struttura dati da passare al nuovo pannello 
+     * @param tabella tabella appartenente al pannello di gestione del calendario, serve per recuparare la riga e quindi le due squadre contendenti
+     * @param tipo in base al valore so in quale girone mi trovo
+     */
     public InsRis2ActionListener( MainFrame f, JPanel old, Campionato c,JTable tabella, int tipo) {
         this.old = old;
         this.f = f;
@@ -38,7 +40,13 @@ public class InsRis2ActionListener implements ActionListener{
         this.tabella = tabella;
         this.tipo = tipo;
     }
-
+    
+/**
+ *  Secondo costruttore con parametri, che si occupa di inserire il pannello di inserimento dei risultati all'interno del frame
+ * @param f frame in cui inserire il pannello
+ * @param old vecchio pannello da rimuovere
+ * @param c struttura dati da passare al nuovo pannello
+ */
     public InsRis2ActionListener(MainFrame f, JPanel old, Campionato c) {
          this.old = old;
          this.f = f;

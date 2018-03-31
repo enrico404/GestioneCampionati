@@ -1,23 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Thread per la gestione della progress bar durante il caricamento del calendario 
+ * in memoria.
  * @author Enrico
  */
 public class MyThread implements Runnable {
     
-    
+    /** pannello della progress bar */
     private ProgressPanel panel;
+    /** frame principale a cui appartiene il pannello della progress bar */
     private ProgressBarFrame pFrame;
+    /** valore assunto dalla progres bar */
     private int value;
+    
+    /**
+     * Costruttore di default del thread
+     * @param pFrame 
+     */
     public MyThread(ProgressBarFrame pFrame) {
         this.panel=pFrame.getPpanel();
         this.pFrame = pFrame;
@@ -33,9 +37,7 @@ public class MyThread implements Runnable {
             
         
         }
-      
-      
-      
+
         if(value > 99){
                 try {
                     Thread.sleep(600);

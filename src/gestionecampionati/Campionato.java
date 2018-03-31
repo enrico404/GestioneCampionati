@@ -1,12 +1,8 @@
-/**
- * Classe 
- */
+
 package gestionecampionati;
 
 import gestionecampionati.grafica.MyThread;
 import gestionecampionati.grafica.ProgressBarFrame;
-import gestionecampionati.grafica.ProgressPanel;
-import gestionecampionati.grafica.menuBar.ApriActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -14,12 +10,12 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.SwingUtilities;
 
 
 
 /**
- *
+ * Classe Campionato, è la classe principale. Un campionato appartiene ad un determinato sport, ha determinate squadre partecipanti,
+ * contiene un calendario delle giornate e una volta giocate tutte le giorante, è possibile stilare una classifica
  * @author enrico
  */
 public class Campionato {
@@ -29,20 +25,29 @@ public class Campionato {
     private String sport;
     /** Array delle squadre partecipanti al campionato, utile solo in fase di creazione del campionato */
     private ArrayList<Squadra> squadre;
-    /** calendario associato al campionato */
+    /** Calendario associato al campionato */
     private Calendario c;
-
+    /** Classifica inerente al campionato */
     private Classifica cls; 
     
     
+    /**
+     * Primo costruttore con parametri del campionato.
+     * @param sport sport a cui appartiene il campionato
+     * @param squadre squadre partecipanti al campionato 
+     * @param c  calendario appartenente al campionato
+     */
     public Campionato(String sport, ArrayList<Squadra> squadre, Calendario c) {
-        
-        
+               
         this.sport = sport;
         this.squadre = squadre;
         this.c = c;
     }
 
+    /**
+     * Primo costruttore con parametri del campionato.
+     * @param sport sport a cui appartiene il campionato.
+     */
     public Campionato(String sport) {
         this.sport = sport;
         c = null;
@@ -88,6 +93,8 @@ public class Campionato {
     
     /** Funzione per l'inserimento di una squadra nel campionato 
      * @param sq squadra in input
+     * @return true se l'inserimento della squadra è avvenuto con successo, false altrimenti
+     * 
      */
     public boolean inserisci_squadra(Squadra sq){
         
@@ -100,7 +107,11 @@ public class Campionato {
     }
     
     
-    /** Funzione per la rimozione di una squadra nel campionato */
+    /** Funzione per la rimozione di una squadra nel campionato
+     * @param sq squadra da rimuave all'interno dell'array squadre
+     * @return true se la rimozione della squadra è avvenuto con successo, false altrimenti
+     */
+    
     public boolean remove(Squadra sq){
         
         if(squadre.contains(sq)){
@@ -114,6 +125,7 @@ public class Campionato {
     /** Funzione per la modifica di una squadra nel campionato
      *  @param i indice della squadra all'interno dell'array delle squadre
      * @param sq squadra di sostituzione a quella vecchia
+     * @return true se la modifica della squadra è avvenuta con successo, false altrimenti
      */
     public boolean modifica(int i, Squadra sq){
         if(i < squadre.size()){
@@ -130,6 +142,8 @@ public class Campionato {
     /**
      * Funzione per il caricamento del calendario in memoria
      * @param path percorso del file che sto caricando
+     * @return true se il calendario è stato caricato correttamente, false altrimenti
+     * @throws InterruptedException problemi con il thread che gestisce la progress bar
      */
     public boolean carica_calendario(String path) throws InterruptedException{
     
@@ -178,6 +192,7 @@ public class Campionato {
  
     /** Funzione per importare le squadre da file 
      *  @param path percorso del file di input
+     * @return true se l'importazione delle squadre è avvenuta con successo, false altrimenti
      */
     public boolean importa_squadre(String path){
     
@@ -216,7 +231,13 @@ public class Campionato {
     }
     
  
-    
+    /**
+     * Metodo per il calcolo della classifica, sfrutta il polimorfismo. Si usa una variabile di tipo classifica 
+     * che può essere quindi assegnata a istanze appartenenti al suo tipo o ai suoi discendenti (Classifica_calcio, Classifica_pallavolo,
+     * Classifica_rugby). Quando vado a richiamare il metodo calcola di cls viene effettuato un binding dinamico e in base al tipo di istanza che referenzia,
+     * viene chiamata una modalità di calcolo della classifica differente.
+     *
+     */
     public void calcola_calssifica(){
         if(this.getSport().equals("calcio")){
             cls = new Classifica_calcio(this);

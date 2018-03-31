@@ -1,6 +1,4 @@
-/**
- * Il calendario è un insieme di partite
- */
+
 package gestionecampionati;
 
 import java.util.ArrayList;
@@ -14,7 +12,8 @@ import java.util.logging.Logger;
 
 
 /**
- * 
+ *  Il calendario è suddiviso in due gironi principali, girone di andata e girone di ritorno.
+ *  Ogni girone contiene determinate partite, le quali formate da coppie di squadre contendenti
  * @author enrico
  */
 public class Calendario implements Serializable {
@@ -38,13 +37,17 @@ public class Calendario implements Serializable {
     public Calendario(ArrayList<Squadra> squadre){
       
         this.squadre = squadre;
-        
-        
-        
-    
+
     
     }
    
+    /**
+     * Metodo per la generazione del calendario. Vengono generati due gironi di partite casualmente.
+     * Il girone di ritorno è uguale al girone di andata ma con le squadre contendenti invertite, 
+     * la squadra che giocava in casa giocherà in trasferta e viceversa.
+     * 
+     * @return valore booleano che indica se il calendario è stato generato correttamente
+     */
     
     public boolean genera_calendario(){
         
@@ -83,6 +86,10 @@ public class Calendario implements Serializable {
         return true;
     }
         
+    /** 
+     * Metodo per la cancellazione dei risultati del calendario. Tutte le partite vengono azzerate 
+     * e settate a non giocate.
+     */
     
      public void cancella_ris(){
         for(int i=0; i<gironeAndata.size(); i++){
@@ -143,13 +150,18 @@ public class Calendario implements Serializable {
     */
     
     
+     /**
+      * Metodo per la generazione delle varie coppie di squadre contendenti. 
+      * La generazione delle coppie è casuale poichè viene effettuato uno shuffle delle 
+      * squadre prima di essere create le coppie.
+      * @return true se la generzione delle coppie è avvenuta con successo 
+      */
     public boolean genera_coppie(){
         Collections.shuffle(squadre);
         for(int i =0 ; i< squadre.size(); i++){
             for(int j=i; j<squadre.size(); j++){
                 if(i != j){
-                   
-                    
+
                     coppie.add(new Pair(squadre.get(i), squadre.get(j)));
                 
                 }
@@ -160,6 +172,12 @@ public class Calendario implements Serializable {
         return true;
     }
     
+    
+    /**
+     * Metodo per la stampa su standard output l'intero calendario. E' utile 
+     * sopratutto in fase di debug.
+     * 
+     */
     
     public void stampa_calendario(){
         System.out.println("Girone di andata: ");
@@ -178,20 +196,26 @@ public class Calendario implements Serializable {
     }
     
     
-   
+   /**
+     * Metodo per la stampa su standard output le coppie di squadre contendenti generate.
+     * E' utile sopratutto in fase di debug.
+     * 
+     */
     public void stampa_coppie(){
         for(int i=0; i<coppie.size(); i++){
             System.out.println(coppie.get(i).getA().getNome()+" "+coppie.get(i).getB().getNome());        
         
         }
-    
-    
-    
+
     }
     
   
     
-    //metodo deprecato
+    /** Metodo per il salvataggio del calendario su file.
+     * @deprecated  ****METODO DEPRECATO****
+     * @param nomeFile nome del file
+     * @return true in caso di salvataggio avvenuto con successo
+     */
     public boolean salva(String nomeFile){
         FileOutputStream f; 
         ObjectOutputStream os;

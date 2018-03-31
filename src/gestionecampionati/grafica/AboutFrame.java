@@ -1,28 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica;
 
 import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 /**
- *
+ * Frame about per la gestione dei crediti.
  * @author Enrico
  */
 public class AboutFrame extends JFrame{
     private int Width, Height;
    
-    
+    /**
+     * Costruttore del frame contente le informazioni sullo sviluppatore
+     * @param title titolo del frame
+     */
     public AboutFrame(String title) {
         super();
         this.Width = 450;

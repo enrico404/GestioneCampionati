@@ -1,42 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- *
+ * Classe partita, una partita è formata da due squadre contendenti 
+ * un punteggio, una variabile che indica se è stata giocata o no e da dei possibili 
+ * risultati intermedi.
  * @author enrico
  */
 public class Partita implements Serializable{
     
     /** squadre contendenti */
     private Pair coppia;
+    /** Punteggio della partita */
     private Punteggio p;
     /** variabile booleana che indica se la partita è stata giocata o no */
     private boolean giocata;
    
-    /** array che mantiene in memoria i risultati intermedi delle partite(coppia di valori), è utilizzato per memorizzare i set parziali nel caso della pallavolo,
+    /** array che mantiene in memoria i risultati intermedi delle partite(coppia di valori), 
+     * è utilizzato per memorizzare i set parziali nel caso della pallavolo,
      * nel rugby potrebbe tenere in memoria ad esempio numero di mete delle due squadre 
      */
     private ArrayList<Punteggio> ris_intermedi;
-    
-    
-    /**
-    public Partita(Pair coppia, Punteggio p, Data d){
-        this.coppia = coppia;
-        this.p = p;
-        this.giocata = true;
-        this.d = d;
-    
-    }
+
+    /** 
+     * Costrtuttore con parametri della classe partita.
+     * @param coppia squadre contentendenti della parita
      */
-    
-    
     public Partita(Pair coppia){
            
   
@@ -47,6 +39,10 @@ public class Partita implements Serializable{
     
     
     }
+    
+    /**
+     * Costruttore di default della classe partita.
+     */
     
     public Partita(){
            
@@ -61,7 +57,11 @@ public class Partita implements Serializable{
     
     
     
-    
+    /** 
+     * Metodo per l'inserimento del punteggio della partita, oltre a settare il 
+     * punteggio, setta la partita a giocata.
+     * @param  p punteggio della partita
+     */
     public void inserisci_punt(Punteggio p){
         this.p = p;
         this.giocata = true;
@@ -70,6 +70,11 @@ public class Partita implements Serializable{
     
     }
     
+    /** 
+     * Metodo per la modifica del punteggio di una determinata partita.
+     * @param  p punteggio che modifica il vecchio punteggio della partita
+     * 
+     */
     public void modifica_punt(Punteggio p){
         this.p = p;
         

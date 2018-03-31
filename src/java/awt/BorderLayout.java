@@ -370,6 +370,7 @@ public class BorderLayout implements LayoutManager2,
     /**
      * Returns the horizontal gap between components.
      * @since   JDK1.1
+     * @return Returns the horizontal gap between components.
      */
     public int getHgap() {
         return hgap;
@@ -387,6 +388,7 @@ public class BorderLayout implements LayoutManager2,
     /**
      * Returns the vertical gap between components.
      * @since   JDK1.1
+     * @return Returns the vertical gap between components.
      */
     public int getVgap() {
         return vgap;

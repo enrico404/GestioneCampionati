@@ -1,13 +1,10 @@
-/*
- * Pair identifica la singola coppia di squadre in competizione, si competiranno tra di loro due volte
-* 
- */
+
 package gestionecampionati;
 
 import java.io.Serializable;
 
 /**
- *
+ * Pair identifica la singola coppia di squadre in competizione, si competiranno tra di loro due volte
  * @author enrico
  */
 public class Pair implements Serializable{
@@ -27,7 +24,10 @@ public class Pair implements Serializable{
     }
    
 
-    
+    /** Metodo che istanzia la classe, è un alternativa al costruttore con parametri 
+     * @param a prima squadra
+     * @param b seconda squadra
+     */
     public void add(Squadra a, Squadra b){
         this.a = a;
         this.b = b;

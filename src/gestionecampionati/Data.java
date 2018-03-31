@@ -1,6 +1,4 @@
-/*
- * Classe deprecata
- */
+
 package gestionecampionati;
 
 import java.io.Serializable;
@@ -8,7 +6,9 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
- *
+ *  Classe data, gestisce le date delle varie giornate.
+  * @deprecated  ***CLASSE DEPRECATA**** 
+ * 
  * @author enrico
  */
 public class Data implements Serializable{

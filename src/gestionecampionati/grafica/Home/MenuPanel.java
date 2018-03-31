@@ -1,9 +1,4 @@
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gestionecampionati.grafica.Home;
 
 import gestionecampionati.grafica.visualizza_classifica.VisualizzaClassificaActionListener;
@@ -11,7 +6,6 @@ import gestionecampionati.grafica.gestione_calendario.GestCalActionListener;
 import gestionecampionati.grafica.gestione_squadre.InsSqActionLitener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.menuBar.MenuBar;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.Box;
@@ -21,7 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
- *
+ *  Pannello che mostra tutte le funzionalità offerte dal programma
  * @author enrico
  */
 public class MenuPanel extends JPanel {
@@ -35,7 +29,12 @@ public class MenuPanel extends JPanel {
    private Dimension button;
   
    
-   
+   /**
+    * Costruttore del pannello contenente le funzionalità del programma
+    * @param f frame in cui inserire il pannello
+    * @param c struttura dati da passare alle varie funzionalità richiamate dall'utente
+    * @param listmodel  lista delle squadre partecipanti al campionato, utile in caso di inserimento di nuove squadre
+    */
    public MenuPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel){
        super();
        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

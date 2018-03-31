@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.Errors_Confirm;
 
 import java.awt.Graphics;
@@ -10,13 +6,17 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- *
- * @author enrico
+ * Pannello che riporta un errore verificatosi durante l'esecuzione del programma
+ * @author Enrico
  */
 public class ErrorPanel extends JPanel{
     private int errCode;
     
     
+    /**
+     * Costruttore con parametri del pannello che riporta un errore
+     * @param errCode codice di errore
+     */
     public ErrorPanel(int errCode){
         this.errCode = errCode;
         

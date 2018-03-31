@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica;
 
-import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
- *
+ *  Listener dei bottoni che permettono di tornare al menu principale
  * @author enrico
  */
 public class ChiudiActionListener implements ActionListener {
@@ -21,6 +15,12 @@ public class ChiudiActionListener implements ActionListener {
     private JPanel old;
     private JPanel nuovo;
     
+    /**
+     * Costruttore con parametri 
+     * @param f frame principale
+     * @param old pannello da sostituire
+     * @param nuovo  nuovo pannello 
+     */
     public ChiudiActionListener(MainFrame f, JPanel old, JPanel nuovo) {
         this.old = old;
         this.f = f;

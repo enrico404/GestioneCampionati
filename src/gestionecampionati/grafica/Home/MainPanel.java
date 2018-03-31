@@ -1,10 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editosr.
- */
+
 package gestionecampionati.grafica.Home;
-import gestionecampionati.grafica.Home.MenuPanel;
+
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.popMenu.EliminaSqActionListener;
 import gestionecampionati.grafica.popMenu.ModificaSqActionListener;
@@ -19,8 +15,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
 import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
+
 /**
- *
+ * Pannello principale, è lo scheletro di tutto il programma. Contiene barra menu,
+ * lista delle squadre partecipanti al campionato e pannello dei menu con tutte le funzioni 
+ * che offre il programma.
  * @author enrico
  */
 public class MainPanel extends JPanel {
@@ -34,7 +33,12 @@ public class MainPanel extends JPanel {
     private JPopupMenu popMenu;
    
     
-    
+    /**
+     * Costruttore del pannello, in base al parametro id capisce che tipo di campionato
+     * creare.
+     * @param f frame in cui inserire il pannello
+     * @param id variabile che mi indica il tipo di sport che ha selezionato l'utente
+     */
     public MainPanel(MainFrame f, int id) {
         super();
         JLabel sq = new JLabel("Squadre: ");
@@ -76,8 +80,7 @@ public class MainPanel extends JPanel {
         
         this.setLayout(new BorderLayout());
         this.add(menu, BorderLayout.PAGE_START);
-        
-        f.setMenuB(menu);
+  
         JScrollPane scrollPane = new JScrollPane(lista, VERTICAL_SCROLLBAR_AS_NEEDED, HORIZONTAL_SCROLLBAR_NEVER);
         
         lista.setPreferredSize(new Dimension(200,100));

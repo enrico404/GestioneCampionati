@@ -1,6 +1,4 @@
-/*
- * Pannello contenente la home page del software
- */
+
 package gestionecampionati.grafica.Home;
 import gestionecampionati.grafica.MainFrame;
 import java.awt.Dimension;
@@ -9,14 +7,11 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.*;
+
+
 /**
- *
+ * Pannello contenente la home page del software, permette di selezionare lo sport
  * @author enrico
  */
 public class HomePanel extends JPanel implements ActionListener{
@@ -33,7 +28,10 @@ public class HomePanel extends JPanel implements ActionListener{
        
       
         
-    
+    /**
+     * Costruttore del pannello che gestisce la home page
+     * @param fr frame in cui inserire il pannello
+     */
     
         public HomePanel(MainFrame fr){
           
@@ -55,15 +53,11 @@ public class HomePanel extends JPanel implements ActionListener{
           
             text.setAlignmentX(CENTER_ALIGNMENT);
       
-        
-          
-            
-            
+   
             f = new Font( "TimesRoman", Font.PLAIN , 50);
             text.setFont(f);
             
-            
-            
+ 
             
             /** Posizione e dimensioni bottoni */
             calcio.setAlignmentX(CENTER_ALIGNMENT);
@@ -84,11 +78,7 @@ public class HomePanel extends JPanel implements ActionListener{
             basket.addActionListener(this);
             pallavolo.addActionListener(this);
             
-            
-            
-           
-          
-            
+
             /** Aggiunta componenti al pannello */
            
             add(Box.createRigidArea(new Dimension(0, 100)));
@@ -100,10 +90,7 @@ public class HomePanel extends JPanel implements ActionListener{
             add(Box.createRigidArea(new Dimension(0, 20)));
             add(basket);
       
-            
-            
-            
-          
+
         
         }
         

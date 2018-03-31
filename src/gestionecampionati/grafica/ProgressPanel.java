@@ -10,10 +10,18 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.text.View;
 
+/**
+ * Pannello che contiene la progress bar 
+ * @author Enrico
+ */
+
 public class ProgressPanel extends JPanel{
          private JProgressBar pbar;
          private JLabel car;
 
+        /**
+         * Costruttore di default del pannello
+         */
         public ProgressPanel() {
                 super();
                 this.setLayout(new BoxLayout(this, View.X_AXIS));

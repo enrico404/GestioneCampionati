@@ -1,27 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica;
 
 import java.awt.Dimension;
-import java.awt.Graphics;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.text.View;
 
 /**
- *
+ * Frame che si apre durante il caricamento del calendario in memoria
  * @author Enrico
  */
 public class ProgressBarFrame extends JFrame {
     private ProgressPanel ppanel;
 
+    /**
+     * Costruttore con parametri del frame
+     * @param title titolo della finestra
+     */
     public ProgressBarFrame(String title) {
       
         ppanel = new ProgressPanel();

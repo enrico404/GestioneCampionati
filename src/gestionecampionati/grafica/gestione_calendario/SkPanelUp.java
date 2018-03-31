@@ -68,7 +68,7 @@ public class SkPanelUp extends JPanel {
         cercaText.setMaximumSize(d1);
         cercaText.setMinimumSize(d1);
         
-        buttCerca.addActionListener(new CercaSquadraActionListener(cercaText, sk, c, f));
+        buttCerca.addActionListener(new CercaSquadraActionListener(cercaText, sk, c));
         calCompl.addActionListener(new CalComplActionListener(f, sk, c));
         cercaText.addFocusListener(new CercaTextFocusListener(cercaText));
         indietro.addActionListener(new ChiudiActionListener(f, sk, menuP));

@@ -9,7 +9,8 @@ import gestionecampionati.Campionato;
 import javax.swing.table.AbstractTableModel;
 
 /**
- *
+ * TabelModel utilizzato per visualizzare in una tabella 
+ * tutte le partite giocate da una squadra 
  * @author Enrico
  */
 public class CercaSqTableModel extends AbstractTableModel{
@@ -21,6 +22,11 @@ public class CercaSqTableModel extends AbstractTableModel{
     
     String[] colName = {"Casa", "Trasferta", "Risultato"};
     
+    /**
+     * Costruttore con parametri del table model 
+     * @param nome nome della squadra
+     * @param c  struttura dati in cui ricercare le partite
+     */
     public CercaSqTableModel(String nome, Campionato c) {
         this.c = c;
         this.nome = nome;

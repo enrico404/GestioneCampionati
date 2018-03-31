@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Calendario;
@@ -14,7 +10,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
- *
+ * Listener del bottone genera partite. Al click vado a generare in modo casuale 
+ * l'intero calendario
  * @author enrico
  */
 public class GenPActionListener implements ActionListener {
@@ -26,7 +23,13 @@ public class GenPActionListener implements ActionListener {
     private GestCSk panel;
     private JPanel menuP;
     
-
+/**
+ * Costruttore con parametri del listener, in cui si recuperano i vari dati
+ * @param f frame 
+ * @param oldPanel
+ * @param c
+ * @param menuP 
+ */
     public GenPActionListener(MainFrame f, GestCalPanel oldPanel, Campionato c, JPanel menuP) {
         this.f = f;
         this.oldPanel = oldPanel;
@@ -60,7 +63,11 @@ public class GenPActionListener implements ActionListener {
         
     }
     
-    
+    /**
+     *  Metodo che sostituisce il pannello corrente con quello per la visualizzazione
+     * del calendario
+     * @return true se la sostituzione è avvenuta con successo 
+     */
     public boolean sostituisci(){
         
         panel = new GestCSk(f,c, menuP);

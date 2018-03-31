@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
@@ -13,7 +9,8 @@ import javax.swing.BoxLayout;
 import javax.swing.text.View;
 
 /**
- *
+ * Listener del bottone per mostrare il calendario, è utile per ricaricare la visualizzazione
+ * del calendario completo di tutti i gironi
  * @author Enrico
  */
 public class CalComplActionListener implements ActionListener {
@@ -23,6 +20,13 @@ public class CalComplActionListener implements ActionListener {
     private SkPanelDown pdown;
     
     
+    
+    /**
+     *  Costruttore con parametri del listener
+     * @param f Frame in cui inserire il pannello 
+     * @param sk pannello scheletro da cui recuperare la posizione all'interno del frame in cui inserire il pannello nuovo 
+     * @param c struttura dati da cui recuperare i dati
+     */
     public CalComplActionListener(MainFrame f,GestCSk sk, Campionato c ){
         this.f = f;
         this.sk = sk;

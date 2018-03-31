@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
 import javax.swing.table.AbstractTableModel;
-import gestionecampionati.Calendario;
 
 
 /**
- *
+ * TableModel per gestire la visualizzazione dei dati all'interno della tabella 
+ * del girone di ritorno del pannello gestione calendario.
  * @author enrico
  */
 public class Cal2TableModel extends AbstractTableModel{
@@ -20,6 +16,10 @@ public class Cal2TableModel extends AbstractTableModel{
     
     String[] colName = {"Casa", "Trasferta", "Risultato"};
 
+    /** 
+     * Costruttore del tablemodel, utilizza la struttura dati campionato
+     * @param c  struttura dati da cui si recupera il girone di ritorno
+     */
     public Cal2TableModel(Campionato c) {
         this.c = c;
     }

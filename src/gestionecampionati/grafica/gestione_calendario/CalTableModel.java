@@ -8,9 +8,9 @@ package gestionecampionati.grafica.gestione_calendario;
 import gestionecampionati.Campionato;
 import javax.swing.table.AbstractTableModel;
 
-
 /**
- *
+ * TableModel per gestire la visualizzazione dei dati all'interno della tabella 
+ * del girone di andata del pannello gestione calendario.
  * @author enrico
  */
 public class CalTableModel extends AbstractTableModel{
@@ -19,6 +19,10 @@ public class CalTableModel extends AbstractTableModel{
     
     String[] colName = {"Casa", "Trasferta", "Risultato"};
 
+    /** 
+     * Costruttore del tablemodel, utilizza la struttura dati campionato
+     * @param c  struttura dati da cui si recupera il girone di andata
+     */
     public CalTableModel(Campionato c) {
         this.c = c;
     }

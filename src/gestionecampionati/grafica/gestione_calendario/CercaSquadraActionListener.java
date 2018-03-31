@@ -5,11 +5,8 @@
  */
 package gestionecampionati.grafica.gestione_calendario;
 
-import gestionecampionati.grafica.gestione_calendario.StampaActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.gestione_calendario.CercaSqTableModel;
-import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -34,7 +31,7 @@ import javax.swing.JTable;
 import javax.swing.text.View;
 
 /**
- *
+ * Listener del bottone che ricerca una squadra.
  * @author Enrico
  */
 public class CercaSquadraActionListener implements ActionListener {
@@ -43,15 +40,21 @@ public class CercaSquadraActionListener implements ActionListener {
     private Campionato c;
     private CercaSqTableModel model;
     private JTable tabella;
-    private MainFrame f;
     private JLabel sqnome, nome, sqcitta, citta;
     private JButton stampa;
 
-    public CercaSquadraActionListener(TextField cerca, GestCSk sk, Campionato c, MainFrame f) {
+    /**
+     * Costruttore con parametri del listener, prende in input una stringa che va a ricercare nella struttura dati
+     * @param cerca nome della squadra da cercare
+     * @param sk pannello scheletro da cui recupero il pannello da sovrascrivere
+     * @param c struttura dati in cui cerco la squadra
+     * 
+     */
+    public CercaSquadraActionListener(TextField cerca, GestCSk sk, Campionato c) {
         this.sk = sk;
         this.cerca = cerca;
         this.c = c;
-        this.f = f;
+
         Font font = new Font("sans-serif", Font.BOLD, 16);
         Font font2 = new Font("sans-serif", Font.PLAIN, 16);
         nome = new JLabel("Nome: ");

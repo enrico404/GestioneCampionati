@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import java.awt.Dimension;
@@ -14,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
+ * Pannell che mostra i loghi delle due squadre contendenti
  * @author Enrico
  */
 public class CercaGiornataPanelUp extends JPanel{
@@ -23,6 +19,11 @@ public class CercaGiornataPanelUp extends JPanel{
    private JLabel icoA;
    private JLabel icoB;
    
+   /**
+    * Costruttore con parametri del pannello
+    * @param icoA logo della prima squadra
+    * @param icoB  logo della seconda squadra
+    */
    public CercaGiornataPanelUp(JLabel icoA, JLabel icoB) {
    
         this.icoA = icoA;

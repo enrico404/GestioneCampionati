@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
-import gestionecampionati.grafica.gestione_calendario.StampaActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.gestione_calendario.CercaGiornataPanelBottom;
-import gestionecampionati.grafica.gestione_calendario.CercaGiornataPanelUp;
-import gestionecampionati.grafica.gestione_calendario.GestCSk;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -31,7 +23,8 @@ import javax.swing.JLabel;
 import javax.swing.text.View;
 
 /**
- *
+ * Listener del bottone cerca giornata. 
+ * Va a ricercare una determinata giornata nel calendario e riporta il risultato di questa.
  * @author Enrico
  */
 public class CercaGiornataActionListener implements ActionListener {
@@ -44,6 +37,14 @@ public class CercaGiornataActionListener implements ActionListener {
     private String sqa, sqb;
     private JButton stampa;
    
+    /**
+     * Costruttore con parametri in cui si vanno a passare tutti i dati necessari
+     * a recuperare la giornata dal calendario 
+     * @param f frame in cui vado ad inserire il nuovo pannello
+     * @param c struttura dati in cui vado a cercare la giornata
+     * @param p pannello da cui recupero il pannello da sostituire
+     * @param font  font utilizzato per diverse scritte 
+     */
     public CercaGiornataActionListener(MainFrame f, Campionato c, GestCSk p, Font font) {
        this.c = c;
        this.f = f;
@@ -79,11 +80,7 @@ public class CercaGiornataActionListener implements ActionListener {
             for(int i=0; i<c.getC().getGironeAndata().size(); i++){
                 if(sqa.equals(c.getC().getGironeAndata().get(i).getCoppia().getA().getNome()) && sqb.equals(c.getC().getGironeAndata().get(i).getCoppia().getB().getNome()))
                 {
-                 
-                             
-
-               
-                    
+      
                     try {
                         tmpA = c.getC().getGironeAndata().get(i).getP().getPa();
                         tmpB =  c.getC().getGironeAndata().get(i).getP().getPb();
@@ -178,8 +175,7 @@ public class CercaGiornataActionListener implements ActionListener {
                     } catch (IOException ex) {
                         Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
                     }
-    
-                
+
                 }
             
             }

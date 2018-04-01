@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.popMenu;
 
 import gestionecampionati.Campionato;
@@ -15,7 +11,8 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 
 /**
- *
+ * Listener che si occupa di aprire la finestra fluattuante di modifica del risultato
+ * di una giornata specifica 
  * @author Enrico
  */
 public class ModificaSqActionListener implements ActionListener{
@@ -26,6 +23,12 @@ public class ModificaSqActionListener implements ActionListener{
     private JFrame modifica;
     private JPanel modSqPanel;
 
+    /**
+     * Costruttore del listner di modifca dei risultati
+     * @param c struttura dati 
+     * @param lista jlist da cui recuperare la giornata 
+     * @param listModel  table model da aggiornare
+     */
     public ModificaSqActionListener(Campionato c, JList lista, DefaultListModel listModel) {
         this.c = c;
         this.lista = lista;

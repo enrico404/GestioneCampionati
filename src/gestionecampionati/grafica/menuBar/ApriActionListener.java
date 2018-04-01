@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.menuBar;
 
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors_Confirm.ConfirmPanel;
-import gestionecampionati.grafica.Home.MainPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.ProgressBarFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -19,12 +12,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
-import javax.swing.JProgressBar;
 
 
 
 /**
- *
+ * Listenr della menu bar, che si occupa di caricare in memoria un calendario
+ * o importare le squadre all'interno del programma da file
  * @author enrico
  */
 public class ApriActionListener implements ActionListener {
@@ -35,6 +28,15 @@ public class ApriActionListener implements ActionListener {
     /** variabile per capire quale tipo di file caricare in memoria */
     private int tipo; 
 
+    /**
+     * Costruttore con parametri del listener, prende il codice di input del file che deve 
+     * caricare (calendario o squadre) e la lista delle squadre partecipanti al campionato
+     *  da aggioranre in caso di caricamento con successo del file
+     * @param c struttura dati da modificare 
+     * @param fr frame di riferimento al pannello del file chooser
+     * @param lista lista da aggiorare
+     * @param tipo  codice del tipo di file che sto caricando. 0 calendario, squadra alrimenti
+     */
     public ApriActionListener(Campionato c, MainFrame fr, DefaultListModel<String> lista, int tipo){
         this.c = c;
         this.fr = fr;

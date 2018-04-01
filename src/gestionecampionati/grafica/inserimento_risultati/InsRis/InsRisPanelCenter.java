@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.inserimento_risultati.InsRis;
 
 import java.awt.Color;
@@ -16,13 +12,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
+ * Pannello centrale di inseriemento risulati, contiene le combo box dei punteggi
  * @author Enrico
  */
 public class InsRisPanelCenter extends JPanel{
     private JComboBox pa,pb;
     
 
+    /**
+     * Costruttore di default del pannello
+     */
     public InsRisPanelCenter() {
         
         

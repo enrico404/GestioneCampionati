@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
@@ -18,7 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello "a" centrale della gestione calendario
  * @author Enrico
  */
 public class SkPanelCenterSqA extends JPanel {
@@ -29,7 +25,11 @@ public class SkPanelCenterSqA extends JPanel {
     private Font font;
     
     
-    
+   /**
+    * Costruttore con parametri, prende in input il font con cui scrivere e la struttura dati
+    * @param c struttura dati 
+    * @param font font scelto 
+    */ 
     public SkPanelCenterSqA(Campionato c, Font font) {
         super();
         this.c = c;
@@ -74,7 +74,10 @@ public class SkPanelCenterSqA extends JPanel {
         
     }
     
-    
+    /**
+     * funzione per riempire le combo box dalle squadre partecipanti al campionato
+     * @return true in caso di riempimento con successo
+     */
     public boolean riempi(){
          
                   for(int i=0; i<c.getSquadre().size(); i++){

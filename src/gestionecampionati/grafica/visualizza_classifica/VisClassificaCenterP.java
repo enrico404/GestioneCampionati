@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
@@ -16,7 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello centrale della visualizzazione della calsssifica contenente 
+ * il punteggio delle prime squadre classificate
  * @author enrico
  */
 public class VisClassificaCenterP extends JPanel{
@@ -24,7 +21,10 @@ public class VisClassificaCenterP extends JPanel{
     private Campionato c;
     private JLabel[] p;
     
-    
+    /**
+     * Costruttore con parametri del pannello
+     * @param c  struttura dati da cui recuperare il punteggio
+     */
     public VisClassificaCenterP(Campionato c) {
         this.c = c;
         
@@ -45,9 +45,7 @@ public class VisClassificaCenterP extends JPanel{
         
         
     }
-    
-    
-    
+
     @Override
         public void paint(Graphics g){
         super.paint(g);

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.inserimento_risultati.InsRis2;
 
 import gestionecampionati.Campionato;
@@ -19,7 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
+ * Listener del bottone inserisci appartente alla seconda visualizzazione di inserimento 
+ * dei risultati. Recupera dai pannelli i dati inseriti e li inserisce all'interno della struttura dati
  * @author Enrico
  */
 public class Inserisci2ActionListener implements ActionListener{
@@ -37,6 +34,18 @@ public class Inserisci2ActionListener implements ActionListener{
     private InsSetParzialiPanel nuovo;
     private MainFrame f;
 
+    /**
+     * Costruttore con parametri del listener, inserisce il numero di set vinti di ogni squadra nella struttura dati e 
+     * va a calcolare il risultato finale della partita e lo inserisce anch'esso nella struttura dati
+     * @param c struttura dati pricipale
+     * @param center array dei set disputati dalle due squadre
+     * @param sq1 prima squadra contendente
+     * @param sq2 seconda squadre contendente
+     * @param ris array dei risultati inseriti dall'utente
+     * @param old pannello vecchio utile per tornare alla schermata di inserimento dei risultati
+     * @param nuovo pannello da sostituire con il pannello vecchio una volta inserito il risultato all'interno del campionato
+     * @param f  frame in cui inserire e rimuovere i vari pannelli
+     */
     public Inserisci2ActionListener(Campionato c, JPanel[] center, JLabel sq1, JLabel sq2, JComboBox[] ris,  InsRisPanel2 old, InsSetParzialiPanel nuovo, MainFrame f) {
         this.c = c;
         this.center = center;

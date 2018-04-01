@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_squadre;
 
 import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -22,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello di inserimento delle squadre all'interno del campioanato
  * @author enrico
  */
 public class InsSqPanel extends JPanel{
@@ -43,7 +38,13 @@ public class InsSqPanel extends JPanel{
     private JPanel centP;
     
     
-    
+    /**
+     * Costruttore del pannello
+     * @param f frame in cui inserire il pannello 
+     * @param c struttura dati da aggiornare in caso di inserimento corretto della squadra
+     * @param listmodel list model da aggioranre
+     * @param centP  pannello menu vecchio, utile se l'utente vuole tornare alla schermata precendente
+     */
     public InsSqPanel(MainFrame f, Campionato c, DefaultListModel<String> listmodel, JPanel centP) {
         super();
         this.c = c;

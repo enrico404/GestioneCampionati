@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import java.awt.Graphics;
@@ -15,7 +11,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Listener del bottone stampa, prende in input un pannello e ne permette la stampa.
+ * E' utilizzato in tutte le modalità di visualizzazione del calendario e per la stampa della 
+ * classifica finale.
  * @author Enrico
  */
 public class StampaActionListener implements ActionListener {
@@ -24,7 +22,10 @@ public class StampaActionListener implements ActionListener {
     
 
 
-
+/**
+ * Costrutore con parametri del listener, prende in input il pannello da stamapare
+ * @param panel  pannello da stampare
+ */
     public StampaActionListener(JPanel panel) {
         
         this.panel = panel;

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.inserimento_risultati.InsRis2;
 
 import gestionecampionati.Campionato;
@@ -21,7 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello di inserimentro dei set parziali, la sua dimensione cambia in 
+ * base  al numero di set che si sono disputati nella partita. 
  * @author Enrico
  */
 public class InsSetParzialiPanel extends JPanel{
@@ -38,6 +35,14 @@ public class InsSetParzialiPanel extends JPanel{
     private InsRisPanel2 old;
     private MainFrame f;
     
+    /**
+     * Costruttore del pannello di inserimento dei risultati parziali
+     * @param c struttura dati in cui inserire i risultati
+     * @param panelUp pannello da cui recuperare le squadre in competizione
+     * @param num_set numero di set giocati nella partita
+     * @param old  vecchio pannello utile per tornare indietro
+     * @param f  frame in cui inserire  i vari pannelli
+     */
     public InsSetParzialiPanel(Campionato c, InsRisPanelUP panelUp, JComboBox num_set,  InsRisPanel2 old, MainFrame f) {
        
         Font font =  new Font("sans-serif", Font.PLAIN, 18);
@@ -111,7 +116,9 @@ public class InsSetParzialiPanel extends JPanel{
     
     
     
-    
+    /**
+     * Metodo per riempire le combo box dei possibili risultati dei set
+     */
     public void riempi(){
           for(int i=0; i<n*2; i++){
               ris[i] = new JComboBox();

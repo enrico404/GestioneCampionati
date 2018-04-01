@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.menuBar;
 
 import gestionecampionati.grafica.AboutFrame;
@@ -10,7 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
+ * Listener della menu bar, che crea il frame about indicante informazioni 
+ * riguardo lo sviluppatore del software
  * @author Enrico
  */
 public class AboutFrameListener implements ActionListener{

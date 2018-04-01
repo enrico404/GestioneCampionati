@@ -6,7 +6,6 @@
 package gestionecampionati.grafica.inserimento_risultati.InsRis;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.Pair;
 import gestionecampionati.Partita;
 import gestionecampionati.Punteggio;
 import gestionecampionati.Squadra;
@@ -18,7 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
+ * Listener del bottone inserisci della funzionalità di inserimento dei risultati
  * @author Enrico
  */
 public class InserisciActionListener implements ActionListener {
@@ -30,7 +29,15 @@ public class InserisciActionListener implements ActionListener {
     private ErrorPanel err;
     private ConfirmPanel confirm;
     private MainFrame f;
+    
 
+    /**
+     * Costruttore con parametri del listener, prende in input il riferimento
+     * al campionato e il pannello scheletro "inserimento risulati
+     * @param c struttura dati in cui inserire il nuuovo risultato
+     * @param parent pannello scheletro da cui recuperare le due square contendenti 
+     * selezionate dall'utente
+     */
     public InserisciActionListener(Campionato c, InsRisPanel parent) {
         this.c = c;
         this.parent = parent;

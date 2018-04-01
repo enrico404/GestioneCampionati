@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
@@ -15,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello scheletro della schermata gestione calendario.
  * @author enrico
  */
 public class GestCSk extends JPanel {
@@ -27,7 +23,13 @@ public class GestCSk extends JPanel {
     private MainFrame f;
     private Campionato c;
   
-
+/**
+ * Pannello scheletro per la gestione del calendario, da cui è possibile recuperare 
+ * tutti i pannelli che si occupano delle funzionalità della gestione del calendario
+ * @param f frame in cui inserire il pannello
+ * @param c struttura dati da cui recuperare i dati necessari
+ * @param menuP  pannello menu, per tornare indietro alla selezione delle funzioni
+ */
     public GestCSk(MainFrame f, Campionato c, JPanel menuP) {
         super();
         
@@ -40,14 +42,11 @@ public class GestCSk extends JPanel {
         this.c = c;
         this.f = f;
         
-        
-        
+
         panelUp = new SkPanelUp(menuP, this, f, c);
         panelCenter = new SkPanelCenter(c,f,this );
         panelDown = new SkPanelDown(c, this, f);
 
-        
-       
         
         this.add(Box.createRigidArea(new Dimension(0, 10)));
         this.add(panelUp);

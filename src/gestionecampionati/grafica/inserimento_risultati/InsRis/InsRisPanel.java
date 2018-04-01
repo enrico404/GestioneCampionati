@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.inserimento_risultati.InsRis;
 
 import gestionecampionati.Campionato;
@@ -14,7 +10,8 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
 /**
- *
+ * Scheletro del pannello per l'inserimento dei risulati nel caso degli sport: calcio, basket
+ * utile per gestire al meglio il layout della schermata e recuperare i vari dati necessari
  * @author Enrico
  */
 public class InsRisPanel extends JPanel {
@@ -26,7 +23,12 @@ public class InsRisPanel extends JPanel {
     private InsRisPanelDown panelDown;
  
     
-
+    /**
+     * Costruttore del pannello scheletro inserimento risultati
+     * @param menu pannello menu, per il pulsante indietro
+     * @param c struttura dati da aggiornare
+     * @param f  frame in cui inserire i vari pannelli
+     */
     public InsRisPanel(JPanel menu, Campionato c, MainFrame f) {
         super();
         this.menu = menu;
@@ -76,9 +78,7 @@ public class InsRisPanel extends JPanel {
     }
     
     
-    
-    
-    
+
     @Override
         public void paint(Graphics g){
         super.paint(g);

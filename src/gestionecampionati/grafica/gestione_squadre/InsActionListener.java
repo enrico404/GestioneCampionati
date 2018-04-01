@@ -1,22 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_squadre;
 
 
-import gestionecampionati.grafica.gestione_squadre.ApriLogoActionListener;
 import gestionecampionati.Campionato;
 import gestionecampionati.Squadra;
 import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
-import gestionecampionati.grafica.gestione_squadre.InsSqPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 
 /**
- *
+ *  Listener del pulsante inserisci nel pannello di inserimento squadre. Prima di inserire la 
+ * squadra nel campionato verifica che siano stati inseriti sia nome della squadra che citta
  * @author enrico
  */
 public class InsActionListener implements ActionListener {
@@ -25,6 +20,14 @@ public class InsActionListener implements ActionListener {
     private InsSqPanel panel;
     private DefaultListModel<String> listmodel;
     private ApriLogoActionListener apri;
+    
+    /**
+     * Costruttore con parametri del listener, recupera in vari dati
+     * @param c struttura dati in cui inserire la nuova squadra
+     * @param panel pannello da cui recuperare nome e citta inseriti dall'utente
+     * @param listmodel lista delle squadre partecipanti al campionato
+     * @param apri  lister aprilogo da cui recuperare il path del logo se inserito dall'utente
+     */
     public InsActionListener(Campionato c, InsSqPanel panel, DefaultListModel<String> listmodel, ApriLogoActionListener apri) {
         this.c = c;
         this.panel = panel;
@@ -34,13 +37,9 @@ public class InsActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        
-        
+        ErrorPanel err;
         Squadra sq;
-        
-    
-        
+
                if(!(apri.getPath().isEmpty())){ 
                
                     sq= new Squadra(panel.getTnome().getText(), panel.getTcitta().getText(), apri.getPath());  
@@ -50,12 +49,15 @@ public class InsActionListener implements ActionListener {
         
         if(c == null )System.out.print("campionato non inizializzato");
         if(sq == null ) System.out.print("squadra non inizializzata");
-        //System.out.println(c.get_numSquadre());
+
         
         if(!(panel.getTnome().getText().isEmpty())){
             if(!(panel.getTcitta().getText().isEmpty())){
            
-               c.inserisci_squadra(sq);
+               if(!(c.inserisci_squadra(sq))){
+                   err = new ErrorPanel(9); 
+                   return;
+               };
                listmodel.addElement("- " + sq.getNome());
                
                System.out.println("Nome : "+ sq.getNome());
@@ -65,19 +67,15 @@ public class InsActionListener implements ActionListener {
                panel.getTnome().setText("");
                panel.getTcitta().setText("");
                
-               
-               
-               
+    
             }
         }    
         else {
-            ErrorPanel err = new ErrorPanel(5);
-            
+             err = new ErrorPanel(5);
+             
             
             }
-        
-        
-        
+
     }
     
 }

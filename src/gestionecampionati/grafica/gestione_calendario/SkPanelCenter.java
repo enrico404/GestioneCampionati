@@ -1,27 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.text.View;
 
 /**
- *
+ *  Pannello centrale (scheletro) della gestione del calendario, permette la ricerca di un
+ * incontro tra due squadre differenti
  * @author enrico
  */
 public class SkPanelCenter extends JPanel {
@@ -33,7 +23,12 @@ public class SkPanelCenter extends JPanel {
     private Font font;
     private GestCSk p;
     
-    
+    /**
+     * Costruttore con parametri del pannello
+     * @param c Struttura dati in cui ricercare l'incontro
+     * @param f frame in cui aggiungere il nuovo pannello
+     * @param p pannello scheletro da cui recuperare il pannello da sostituire
+     */
     public SkPanelCenter(Campionato c, MainFrame f, GestCSk p) {
         super();
         this.p = p;
@@ -50,16 +45,10 @@ public class SkPanelCenter extends JPanel {
         
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
-        this.add(panelA, font);
-       
+        this.add(panelA, font); 
         this.add(panelB, font);
        
-        
-        
-        
-        
-        
-        
+
         
     }
     

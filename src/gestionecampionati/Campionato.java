@@ -98,11 +98,12 @@ public class Campionato {
      */
     public boolean inserisci_squadra(Squadra sq){
         
-       if(!squadre.contains(sq)){
-            this.squadre.add(sq);
-            return true;
-       }else
-           return false;
+       for(int i=0; i<squadre.size(); i++){
+           if(squadre.get(i).getNome().equals(sq.getNome())) return false;
+       
+       }
+       squadre.add(sq);
+       return true;
     
     }
     

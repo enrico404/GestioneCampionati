@@ -18,7 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello in basso di inserimento risultati, contiene i bottoni per l'inserimento 
+ * del risultato e per tornare indietro
  * @author Enrico
  */
 public class InsRisPanelDown extends JPanel{
@@ -30,7 +31,13 @@ public class InsRisPanelDown extends JPanel{
 
     
     
-
+    /**
+     * Costruttore con parametri del pannello 
+     * @param c struttura dati da aggiornare 
+     * @param parent pannello scheletro (inserimento risultati), utile per gestire cambi pannello
+     * @param menu pannello menu vecchio
+     * @param f  frame in cui inserire i pannelli
+     */
     public InsRisPanelDown(Campionato c, InsRisPanel parent, JPanel menu, MainFrame f) {
         super();
         this.c = c;

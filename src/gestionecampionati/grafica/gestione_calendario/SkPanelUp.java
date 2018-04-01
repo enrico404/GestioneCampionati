@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 
@@ -21,7 +17,8 @@ import java.awt.Graphics;
 
 
 /**
- *
+ * Pannello in alto della gestione del calendario, impolenta diversi bottoni:
+ * ritorno al menu, calendario completo e la ricerca di una squadra con tutte le sue partite.
  * @author enrico
  */
 public class SkPanelUp extends JPanel {
@@ -35,6 +32,14 @@ public class SkPanelUp extends JPanel {
     private MainFrame f;
     private Campionato c;
     
+    
+    /**
+     * Costruttore con parametri del pannello 
+     * @param menuP pannello menu, utile per tornare nella pagina precedente
+     * @param sk pannello scheletro da cui recuparare la posizione in cui inserire il nuovo pannello
+     * @param f frame principale
+     * @param c  struttura dati
+     */
     public SkPanelUp(JPanel menuP, GestCSk sk, MainFrame f, Campionato c) {
         super();
         this.menuP = menuP;

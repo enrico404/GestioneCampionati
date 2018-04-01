@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
@@ -13,7 +9,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JPanel;
 
 /**
- *
+ * Listener del bottone per la gestione del calendario
  * @author enrico
  */
 public class GestCalActionListener implements ActionListener {
@@ -22,6 +18,12 @@ public class GestCalActionListener implements ActionListener {
     private Campionato c;
     private DefaultListModel<String> listmodel;
 
+    /** 
+     * Costruttore con parametri del listener, in cui passsare i vari dati necessari
+     * @param f frame in cui inserire il nuovo pannello
+     * @param oldPanel vecchio pannell da sostituire
+     * @param c  struttura dati da cui recuperare il calendario
+     */
     public GestCalActionListener(MainFrame f, JPanel oldPanel, Campionato c) {
         this.f = f;
         this.oldPanel = oldPanel;
@@ -47,7 +49,7 @@ public class GestCalActionListener implements ActionListener {
             GestCSk sk = new GestCSk(f, c, oldPanel); 
             f.remove(oldPanel);
             f.add(sk);
-  ;
+  
             f.validate();
             f.repaint();
         

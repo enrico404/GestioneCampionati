@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.inserimento_risultati.InsRis2;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Home.MenuPanel;
 import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.grafica.inserimento_risultati.InsRis.InsRisPanelUP;
@@ -23,7 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Secondo pannello scheletro di inserimento dei risultati, utile per lo sport della pallavolo
+ * che prevede l'inserimento di più set, in base ai risultati dei set si calcola 
+ * il risultato finale della partita.
  * @author Enrico
  */
 public class InsRisPanel2 extends JPanel{
@@ -36,6 +33,15 @@ public class InsRisPanel2 extends JPanel{
     private JComboBox num_set;
     private JButton vai, indietro;
     
+    
+    /**
+     * Costruttore con parametri del pannello scheletro (secondo ) di inserimento 
+     * dei risultati. utile per per gestire bene il lalyout e recupare i vari dati
+     * dai pannelli che contiene.
+     * @param old panello vecchio menu, utile per il bottone indietro
+      * @param c  struttura dati in cui inserire i risultati
+     * @param f  frame in cui inserire i vari pannelli
+     */
     public InsRisPanel2(JPanel old, Campionato c, MainFrame f) {
         this.old = old;
         this.c = c;
@@ -99,7 +105,9 @@ public class InsRisPanel2 extends JPanel{
         
     }
     
-    
+    /**
+     * Metodo per riempire le combo box dei possibili set giocati nella pallavolo
+     */
     public void riempi(){
           for(int i=3; i<6; i++){
                   

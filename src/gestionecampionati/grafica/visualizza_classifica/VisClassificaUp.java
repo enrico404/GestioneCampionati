@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
@@ -16,13 +12,20 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello upper della classifica, inserisce le label delle posizione 
+ * dei primi calssificati
  * @author enrico
  */
 public class VisClassificaUp extends JPanel{
 
     private JLabel primo,secondo,terzo;
-    private Campionato c; 
+    private Campionato c;
+    
+    /**
+     * Costruttore con parametri, in base al numero di squadre decide quante label
+     * inserire nel pannello
+     * @param c struttura dati da cui recuperare il numero delle squadre nel campionato
+     */
     public VisClassificaUp(Campionato c) {
         this.c=c;
         primo = new JLabel("1º"); // altgr+shift+m per i gradi 

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
@@ -19,8 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.text.View;
 
+
 /**
- *
+ * Pannello "a" centrale della gestione calendario
  * @author Enrico
  */
 public class SkPanelCenterSqB extends JPanel {
@@ -34,7 +31,13 @@ public class SkPanelCenterSqB extends JPanel {
     private Font font;
     private GestCSk p;
  
-    
+    /**
+     * Costruttore con parametri del pannello centrale b.
+     * @param c struttura dati in cui ricercare l'incontro
+     * @param font font scelto
+     * @param f frame in cui inserire il pannello
+     * @param p  pannello scheletro da cui recuperare il pannello da sostituire
+     */
     public SkPanelCenterSqB(Campionato c, Font font, MainFrame f, GestCSk p) {
         super();
         this.c = c;

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.popMenu;
 
 import gestionecampionati.Campionato;
@@ -16,7 +12,8 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
 /**
- *
+ *  Pannello scheletro della finestra fluttuante di inserimento dei risultati
+ * nel caso degli sport calcio e basket
  * @author Enrico
  */
 public class InsRisPop extends JPanel {
@@ -29,6 +26,14 @@ public class InsRisPop extends JPanel {
     private JFrame f;
     
 
+    /**
+     * Costruttore del pannello scheletro di modifica dei risultati
+     * @param f frame in cui inserire il pannello
+     * @param tipo codice del tipo di girone in cui mi trovo
+     * @param c struttura dati da modificare
+     * @param tabella jtable da cui recuperare la riga e quindi la giornata da modificare
+     * @param tab table modelò da modificare
+     */
     public InsRisPop( JFrame f,int tipo, Campionato c, JTable tabella, AbstractTableModel tab) {
         super();
         
@@ -43,9 +48,7 @@ public class InsRisPop extends JPanel {
         panelUp = new InsRisPopUp(tipo, c, tabella);
         panelDown = new InsRisPopDown(f,tipo, c, tabella, panelUp,tab);
        
-       
-       
-        
+ 
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         
         this.add(Box.createRigidArea(new Dimension(0, 20)));

@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_squadre;
 
-import gestionecampionati.grafica.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -20,13 +15,20 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 /**
- *
+ * Listener che si occupa di caricare in memoria il logo di una squadra, se il logo non è presente nel database 
+ * dei loghi allora ne fa una copia e se lo salva.
  * @author enrico
  */
 public class ApriLogoActionListener implements ActionListener{
     private JFrame fr;
     private String path;
+    
+    
 
+    /**
+     * Costruttore del listener, prende in input il frame padre.
+     * @param f frame principale del programma
+     */
     public ApriLogoActionListener(JFrame f) {
         this.fr = fr;
         this.path = new String("");

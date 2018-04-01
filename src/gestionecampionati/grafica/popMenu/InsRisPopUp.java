@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.popMenu;
 
 import gestionecampionati.Campionato;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JComboBox;
@@ -19,7 +14,8 @@ import javax.swing.JTable;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello in alto della finestra di modifica dei risultati del calendario
+ * 
  * @author Enrico
  */
 public class InsRisPopUp extends JPanel{
@@ -31,6 +27,14 @@ public class InsRisPopUp extends JPanel{
     private JComboBox p1,p2;
     
     
+    
+    /**
+     * Costruttore del pannello di modifica dei risultati
+     * @param tipo codice girone
+     * @param c struttura dati in cui recupare le squadre
+     * 
+     * @param tabella jtable utile per recuperare la giornata
+     */
     public InsRisPopUp(int tipo,Campionato c, JTable tabella) {
         this.c = c;
         this.tabella = tabella;
@@ -82,7 +86,10 @@ public class InsRisPopUp extends JPanel{
     
     
     
-    
+    /**
+     * funzione per riempire le combo box con i possibili risultati
+     * @param n numero max risultato
+     */
     public void riempi(int n){
             for(int i=0; i<n;  i++) {
                 p1.addItem(i);

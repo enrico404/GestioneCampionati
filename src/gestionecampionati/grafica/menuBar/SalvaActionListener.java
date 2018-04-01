@@ -1,29 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.menuBar;
 
 import gestionecampionati.Calendario;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- *
+ * Listener della menu bar che permette di salvare in un file l'intero calendario
+ * o solo le squadre, e ricaricare in memoria il tutto in un secondo momento.
  * @author enrico
  */
 public class SalvaActionListener implements ActionListener {
@@ -36,7 +30,13 @@ public class SalvaActionListener implements ActionListener {
      */
     private int tipo; 
     
-    
+    /**
+     * Costruttore con parametri del listener, prende in input il codice per capire
+     * se deve salvare il calendario completo o solo le squadre 
+     * @param c struttura dati
+     * @param fr frame di riferimento per il jfile chooser
+     * @param tipo  codice per capire che tipo di savatagggio si tratta
+     */
     public SalvaActionListener(Campionato c, MainFrame fr, int tipo) {
        this.c = c;
        this.fr = fr;

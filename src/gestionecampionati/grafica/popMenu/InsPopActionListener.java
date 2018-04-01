@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.popMenu;
 
 import gestionecampionati.Campionato;
@@ -14,7 +10,8 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
 /**
- *
+ * Listener di "inserisci" del pop menu visualizzato all'interno del pannello
+ * gestione calendario
  * @author Enrico
  */
 public class InsPopActionListener implements ActionListener {
@@ -27,7 +24,14 @@ public class InsPopActionListener implements ActionListener {
     /** variabile che indica in quale girone mi trovo */
     private int tipo;
    
-
+    /**
+     * Costruttore, prende in input la tabella da cui recuperare la riga selezionata
+     * il campionato da modificare e la table model da aggiornare
+     * @param tabella  jtable da cui recupare le due squadre contendenti
+     * @param c struttura dati in cui inserire i risultati 
+     * @param tipo variabile che indica il tipo di girone in cui mi trovo
+     * @param tab tablemodel da modificare
+     */
     public InsPopActionListener(JTable tabella, Campionato c, int tipo, AbstractTableModel tab) {
         this.tipo = tipo;
         this.tabella = tabella;

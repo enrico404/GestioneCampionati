@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
 import javax.swing.table.AbstractTableModel;
 
 /**
- *
+ * TableModel per gestire la tabella inerente alla classifica al termine del campioanato
  * @author enrico
  */
 public class ClassificaTableModel extends AbstractTableModel{
@@ -19,8 +15,14 @@ public class ClassificaTableModel extends AbstractTableModel{
     /** variabile che indica la posizione in classifica della squadra */
     private int cont;
     
-
+    /** nomi delle varie colonne */
     String[] colName = {"Posizione","Squadra", "Punteggio", "Set Vinti"};
+    
+    
+    /**
+     * Costruttore del table model per la creazione della tabella della classifica
+     * @param c  struttura dati utile al recupero dei risultati
+     */
     public ClassificaTableModel(Campionato c) {
         this.c = c;
         if(c.getSport().equals("pallavolo"))

@@ -20,7 +20,7 @@ public class MyThread implements Runnable {
     
     /**
      * Costruttore di default del thread
-     * @param pFrame 
+     * @param pFrame riferimento al frame, che va chiuso quando la progress bar arriva al 100%
      */
     public MyThread(ProgressBarFrame pFrame) {
         this.panel=pFrame.getPpanel();

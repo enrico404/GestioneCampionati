@@ -25,10 +25,10 @@ public class GenPActionListener implements ActionListener {
     
 /**
  * Costruttore con parametri del listener, in cui si recuperano i vari dati
- * @param f frame 
- * @param oldPanel
- * @param c
- * @param menuP 
+ * @param f frame in cui inserire i pannelli
+ * @param oldPanel pannello da sostituire 
+ * @param c struttura dati da cui prendere le squadre
+ * @param menuP  pannello menu centrale
  */
     public GenPActionListener(MainFrame f, GestCalPanel oldPanel, Campionato c, JPanel menuP) {
         this.f = f;

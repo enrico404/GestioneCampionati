@@ -62,7 +62,7 @@ public class MainPanel extends JPanel {
         
         JList<String> lista = new JList<>(listmodel);
 
-        menu = new MenuBar(c, f, this, listmodel, centP );
+        menu = new MenuBar(c, f, listmodel, centP );
         
         /** creazione del pop menu per la gestione delle squadre */
         popMenu = new JPopupMenu();

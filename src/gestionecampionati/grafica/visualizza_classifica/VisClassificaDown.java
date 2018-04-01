@@ -4,7 +4,6 @@ package gestionecampionati.grafica.visualizza_classifica;
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.ChiudiActionListener;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import gestionecampionati.grafica.gestione_calendario.StampaActionListener;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -17,7 +16,9 @@ import javax.swing.JTable;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello in basso della visualizzazione della classifica, contiene la tabella 
+ * degli utimi classificati, il bottone per tornare indietro e il bottone per stampare la classifica
+ * con la stampante oppure pdf.
  * @author enrico
  */
 public class VisClassificaDown extends JPanel{
@@ -30,7 +31,13 @@ public class VisClassificaDown extends JPanel{
     private VisClassificaSk sk;
     
     
-
+    /**
+     * Costruttore con parametri del pannello
+     * @param c struttura dati per 
+     * @param menu menu che offre le funzionalità principali del programma
+     * @param f frame in cui inserire i vari pannelli
+     * @param sk  pannello da stampare  
+     */
     public VisClassificaDown(Campionato c, JPanel menu, MainFrame f, VisClassificaSk sk) {
         this.sk = sk;
         this.c = c;

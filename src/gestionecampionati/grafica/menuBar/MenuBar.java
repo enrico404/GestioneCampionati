@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.menuBar;
 import gestionecampionati.grafica.Home.MainPanel;
 import gestionecampionati.grafica.Home.MenuPanel;
@@ -18,8 +14,13 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+
+
+
 /**
- *
+ * Classe menu bar, è la menu bar ricorrente in tutto il programma. Offre funzionalità 
+ * utili come caricamento del calendario, importazione di squadre, esportazione di calendario
+ * e squadre, informazioni sullo sviluppatore etc..
  * @author enrico
  */
 public class MenuBar extends JMenuBar{
@@ -36,11 +37,16 @@ public class MenuBar extends JMenuBar{
     
  
     
-    
-    public MenuBar(Campionato c, MainFrame fr, MainPanel panel, DefaultListModel lista, MenuPanel centerPanel ) {
+    /**
+     * Costruttore con parametri della menu bar
+     * @param c struttura dati che modifica in caso di azzeramento del campionato
+     * @param fr fame in inserire i vari pannelli
+     * @param lista lista delle squadre partecipanti al campioanto da aggiornare
+     * @param centerPanel  pannello menu
+     */
+    public MenuBar(Campionato c, MainFrame fr, DefaultListModel lista, MenuPanel centerPanel ) {
         this.c = c;
         this.lista = lista;
-        this.panel = panel;
         this.centerPanel = centerPanel;
         this.fr = fr;
         Font f = new Font("sans-serif", Font.PLAIN, 12);

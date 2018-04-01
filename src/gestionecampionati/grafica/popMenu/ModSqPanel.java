@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.popMenu;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.MainFrame;
 import gestionecampionati.grafica.gestione_squadre.ApriLogoActionListener;
 import static java.awt.Component.CENTER_ALIGNMENT;
 import java.awt.Dimension;
@@ -25,7 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello principale ddel frame fluattuante modificare risultati di una giornata
+ * selezioanata dal calendario
  * @author Enrico
  */
 public class ModSqPanel extends JPanel {
@@ -33,7 +29,7 @@ public class ModSqPanel extends JPanel {
     private Campionato c;
     private JList lista;
     private DefaultListModel listModel;
-     private JLabel nome;
+    private JLabel nome;
     private JLabel citta;
     private TextField Tnome;
     private TextField Tcitta;
@@ -43,7 +39,13 @@ public class ModSqPanel extends JPanel {
     private JFrame f;
     
     
-    
+    /**
+     * Costruttore del pannello di modifica dei risultati di una giornata 
+     * @param c struttura dati principale
+     * @param lista lista da cui recuperare la giornata selezionata
+     * @param listModel listmodel da aggiornate
+     * @param f  frame in cui aggiungere il pannello
+     */
     public ModSqPanel(Campionato c, JList lista, DefaultListModel listModel, JFrame f) {
         this.c= c;
         this.lista=lista;
@@ -108,6 +110,9 @@ public class ModSqPanel extends JPanel {
     }
     
     
+    /** 
+     * Listener del bottone modifica risultati
+     */
     public class ModificaActionListener implements ActionListener{
         private Campionato c;
         private TextField Tnome;
@@ -115,6 +120,17 @@ public class ModSqPanel extends JPanel {
         private String squadra;
         private JFrame f;
         private ApriLogoActionListener apri;
+        
+        /**
+         * Costruttore del listener, recupera i dati inseriti dall'utente e li inserisce 
+         * nella struttura dati
+         * @param f frame fluttuante di riferimento 
+         * @param c struttura dati principale
+         * @param Tnome campo di testo del nome 
+         * @param Tcitta campo di testo della citta
+         * @param squadra nome della squadra
+         * @param apri  listener per recuperare il path del logo
+         */
         public ModificaActionListener(JFrame f, Campionato c, TextField Tnome, TextField Tcitta, String squadra, ApriLogoActionListener apri) {
             this.c = c;
             this.Tnome = Tnome;

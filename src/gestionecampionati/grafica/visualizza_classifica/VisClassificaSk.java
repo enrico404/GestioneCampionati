@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -18,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello scheletro della classifica
  * @author Enrico
  */
 public class VisClassificaSk extends JPanel {
@@ -31,7 +26,12 @@ public class VisClassificaSk extends JPanel {
     private JPanel menu;
     private MainFrame f;
     
-    
+    /**
+     * Costruttore del pannello scheletro, il pannello menu serve per tornare indietro
+     * @param c struttura dati principale da passare agli altri pannelli 
+     * @param menu pannello menu per tornare indietro
+     * @param f  frame in cui inserire i pannelli
+     */
     public VisClassificaSk(Campionato c, JPanel menu, MainFrame f) {
         this.c = c;
         this.menu = menu;

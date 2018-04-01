@@ -38,6 +38,8 @@ public class ErrorPanel extends JPanel{
                     break;         
             case 8: JOptionPane.showMessageDialog(this, "Alcuni risultati non sono corretti (possibile parità)!", "Attenzione!" ,JOptionPane.ERROR_MESSAGE);
                     break;   
+            case 9: JOptionPane.showMessageDialog(this, "La squadra inserita è già presente nel campionato!", "Attenzione!" ,JOptionPane.ERROR_MESSAGE);
+                    break;  
         }
     
     }

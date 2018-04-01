@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.inserimento_risultati.InsRis;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -18,20 +13,25 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- *
+ * Pannello in alto di inserimento dei risultati, contiene le combo box in cui
+ * selezionare le due squadre contendenti
+ * 
  * @author Enrico
  */
 public class InsRisPanelUP extends JPanel{
         private Campionato c;
         private JComboBox sqa, sqb;
         private JLabel vs,casa,trasferta;
+     
         
+    /**
+     * Costruttore del pannello, prende in input la struttura dati da cui
+     * recuperare le varie squadre all'interno del campionato
+     * @param c struttura dati principale
+     */
     public InsRisPanelUP(Campionato c) {
         this.c = c;
-        
-        
-        
-        
+
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         
         Dimension d = new Dimension(180 , 30);

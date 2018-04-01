@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.grafica.popMenu.InsPopActionListener;
@@ -29,7 +25,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello in basso della gestione del calendario, implementa le due tabelle che 
+ * mostrano le varie giornate di incontri tra le squadre.
  * @author enrico.
  */
 public class SkPanelDown extends JPanel{
@@ -48,6 +45,12 @@ public class SkPanelDown extends JPanel{
     private MainFrame f;
    
 
+    /**
+     * Costruttore con parametri del pannello
+     * @param c struttura dati per generare le tabelle
+     * @param sk pannello scheletro per recuperare la posizione in cui inserire il nuovo pannello
+     * @param f  frame in cui inserire i pannelli
+     */
     public SkPanelDown(Campionato c, GestCSk sk, MainFrame f) {
         super();
         tab1 = new CalTableModel(c);

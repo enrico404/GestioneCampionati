@@ -1,22 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
 import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
-import gestionecampionati.grafica.visualizza_classifica.VisClassificaSk;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 
 /**
- *
+ * Listener del bottone visualizza classifica, se tutte le partite sono state giocate
+ * allora viene generata dinamicamente la classifica
  * @author Enrico
  */
 public class VisualizzaClassificaActionListener implements ActionListener {
@@ -25,6 +20,13 @@ public class VisualizzaClassificaActionListener implements ActionListener {
     private MainFrame f;
     private ErrorPanel err;
     private VisClassificaSk panel;
+    
+    /**
+     * Costruttore del listener che recupera i vari dati
+     * @param c struttura dati principale
+     * @param old pannello men, utile per tornare indietro
+     * @param f  frame in cui inserire i vari pannelli
+     */
     public VisualizzaClassificaActionListener(Campionato c, JPanel old, MainFrame f) {
         this.c = c;
         this.old = old;
@@ -69,9 +71,7 @@ public class VisualizzaClassificaActionListener implements ActionListener {
         }catch(Exception ex){
            
             err = new ErrorPanel(3);
-        
-
-          
+             
         }
         
     }

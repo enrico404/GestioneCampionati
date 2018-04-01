@@ -1,21 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.gestione_squadre;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.gestione_squadre.InsSqPanel;
 import gestionecampionati.grafica.MainFrame;
-import gestionecampionati.grafica.Home.MenuPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.JPanel;
 
 /**
- *
+ * Listener del bottone "inserisci squadre", si occupa di sostituire i pannelli
  * @author enrico
  */
 public class InsSqActionLitener implements ActionListener {
@@ -24,6 +18,16 @@ public class InsSqActionLitener implements ActionListener {
     private JPanel panelOld;
     private Campionato c;
     private DefaultListModel<String> listmodel;
+    
+    /**
+     * Costruttore del listener, prende in input il vecchio pannello e quello nuovo. Prende anche
+     * in input la lista di squadre partecipanti al campionato, in modo che se l'inserimento è 
+     * avvenuto con successo, la aggiorna.
+     * @param f frame in cui inserire il nuovo pannello 
+     * @param panelOld vecchio pannello da sostituire
+     * @param c struttura dati da aggiornare 
+     * @param listmodel  list model da aggiornare 
+     */
     public InsSqActionLitener(MainFrame f, JPanel panelOld, Campionato c, DefaultListModel<String> listmodel) {
         
         this.f = f;

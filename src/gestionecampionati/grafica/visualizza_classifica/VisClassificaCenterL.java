@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gestionecampionati.grafica.visualizza_classifica;
 
 import gestionecampionati.Campionato;
@@ -11,8 +7,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -22,7 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.text.View;
 
 /**
- *
+ * Pannello centrale della visualizzazione della classifica, contiene i loghi 
+ * delle prime squadre classificate all'interno del campionato
  * @author enrico
  */
 public class VisClassificaCenterL extends JPanel {
@@ -30,7 +25,10 @@ public class VisClassificaCenterL extends JPanel {
     private Campionato c;
     
     
-    
+    /**
+     * Costruttore del pannello centrale della calssifica, dal campionato recupera i vari loghi
+     * @param c struttura dati principale del programma
+     */
     public VisClassificaCenterL(Campionato c) {
         this.c = c;
         BufferedImage[] bf = new BufferedImage[3];

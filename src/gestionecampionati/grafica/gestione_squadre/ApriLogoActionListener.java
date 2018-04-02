@@ -60,7 +60,7 @@ public class ApriLogoActionListener implements ActionListener{
                             dest = new FileOutputStream(f2).getChannel();
 
                             if(source != null && dest != null ){
-                                System.out.print("fefefefef");
+                           
                                 dest.transferFrom(source, 0, source.size());
                                 source.close();
                                 dest.close();

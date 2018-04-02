@@ -145,8 +145,8 @@ public class CercaSquadraActionListener implements ActionListener {
             sk.getPanelDown().removeAll();
             sk.getPanelDown().add(Box.createRigidArea(new Dimension(30, 40)));
             sk.getPanelDown().add(err);
-            sk.validate();
-            sk.repaint();
+            sk.getPanelDown().revalidate();
+            sk.getPanelDown().repaint();
         }
         
     }

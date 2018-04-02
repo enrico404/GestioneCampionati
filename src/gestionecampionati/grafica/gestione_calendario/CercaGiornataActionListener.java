@@ -91,10 +91,10 @@ public class CercaGiornataActionListener implements ActionListener {
                         bf2 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getB().getLogo()));
                         icoB = new JLabel(new ImageIcon(bf2));
                         
-                        icoA.setMaximumSize(new Dimension(120, 160));
-                        icoB.setMaximumSize(new Dimension(120, 160));
-                        icoA.setMinimumSize(new Dimension(120, 160));
-                        icoB.setMinimumSize(new Dimension(120, 160));
+                        icoA.setMaximumSize(new Dimension(140, 160));
+                        icoB.setMaximumSize(new Dimension(140, 160));
+                        icoA.setMinimumSize(new Dimension(140, 160));
+                        icoB.setMinimumSize(new Dimension(140, 160));
                        
                         if(c.getC().getGironeAndata().get(i).isGiocata()){
                             puntA = new JLabel(""+tmpA);
@@ -121,7 +121,9 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 100)));
                         p.getPanelDown().add(stampa);
                         
-                        f.repaint();
+                        p.getPanelDown().revalidate();
+                        p.getPanelDown().repaint();
+                        
                           } catch (IOException ex) {
                         Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -144,10 +146,10 @@ public class CercaGiornataActionListener implements ActionListener {
                         icoA = new JLabel(new ImageIcon(bf1));
                         bf2 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getB().getLogo()));
                         icoB = new JLabel(new ImageIcon(bf2));
-                        icoA.setMaximumSize(new Dimension(120, 160));
-                        icoB.setMaximumSize(new Dimension(120, 160));
-                        icoA.setMinimumSize(new Dimension(120, 160));
-                        icoB.setMinimumSize(new Dimension(120, 160));
+                        icoA.setMaximumSize(new Dimension(140, 160));
+                        icoB.setMaximumSize(new Dimension(140, 160));
+                        icoA.setMinimumSize(new Dimension(140, 160));
+                        icoB.setMinimumSize(new Dimension(140, 160));
                         if(c.getC().getGironeAndata().get(i).isGiocata()){
                             puntA = new JLabel(""+tmpA);
                             puntB = new JLabel(""+ tmpB);
@@ -171,7 +173,8 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().add(new CercaGiornataPanelBottom(puntA, puntB));
                         p.getPanelDown().add(Box.createRigidArea(new Dimension(0, 100)));
                         p.getPanelDown().add(stampa);
-                        f.repaint();
+                        p.getPanelDown().revalidate();
+                        p.getPanelDown().repaint();
                     } catch (IOException ex) {
                         Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -179,7 +182,7 @@ public class CercaGiornataActionListener implements ActionListener {
                 }
             
             }
-            p.getPanelDown().validate();
+         
             
           
         }else err = new ErrorPanel(4);

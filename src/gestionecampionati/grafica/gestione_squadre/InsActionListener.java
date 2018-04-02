@@ -39,13 +39,19 @@ public class InsActionListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         ErrorPanel err;
         Squadra sq;
-
+        String nomesq = panel.getTnome().getText().toLowerCase();
+        String nomesqF = nomesq.substring(1, nomesq.length()).toLowerCase();
+        nomesq = nomesq.substring(0, 1).toUpperCase() + nomesqF;
+        
+        String cittasq = panel.getTcitta().getText().toLowerCase();
+        String cittasqF = cittasq.substring(1, cittasq.length()).toLowerCase();
+        cittasq = cittasq.substring(0,1).toUpperCase()+cittasqF;
                if(!(apri.getPath().isEmpty())){ 
                
-                    sq= new Squadra(panel.getTnome().getText(), panel.getTcitta().getText(), apri.getPath());  
+                    sq= new Squadra(nomesq, cittasq, apri.getPath());  
                     apri.setPath("");
                }
-               else sq= new Squadra(panel.getTnome().getText(), panel.getTcitta().getText());
+               else sq= new Squadra(nomesq, cittasq);
         
         if(c == null )System.out.print("campionato non inizializzato");
         if(sq == null ) System.out.print("squadra non inizializzata");

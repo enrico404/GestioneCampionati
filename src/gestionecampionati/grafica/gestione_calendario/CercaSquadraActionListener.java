@@ -84,8 +84,13 @@ public class CercaSquadraActionListener implements ActionListener {
         boolean esiste= false;
         sk.getPanelDown().setLayout(new BoxLayout(sk.getPanelDown(), View.Y_AXIS));
         int i;
+      
+        String nomesq = cerca.getText().toLowerCase();
+        String nomesqF = nomesq.substring(1, nomesq.length()).toLowerCase();
+        nomesq = nomesq.substring(0, 1).toUpperCase() + nomesqF;
+       
         for(i=0; i<c.get_numSquadre(); i++)
-            if(c.getC().getSquadre().get(i).getNome().equals(cerca.getText())){
+            if(c.getC().getSquadre().get(i).getNome().equals(nomesq)){
                 esiste=true;
                 sqnome.setText(c.getC().getSquadre().get(i).getNome());
                 sqcitta.setText(c.getC().getSquadre().get(i).getCitta());
@@ -106,7 +111,9 @@ public class CercaSquadraActionListener implements ActionListener {
                 Logger.getLogger(CercaSquadraActionListener.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            model = new CercaSqTableModel(cerca.getText(), c);
+           
+             model = new CercaSqTableModel(nomesq, c);
+            
             tabella = new JTable(model);
             JScrollPane sc = new JScrollPane(tabella);
             

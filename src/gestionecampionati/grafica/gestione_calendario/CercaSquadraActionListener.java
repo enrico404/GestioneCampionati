@@ -103,8 +103,8 @@ public class CercaSquadraActionListener implements ActionListener {
             try {
                 bf = ImageIO.read(new File(c.getC().getSquadre().get(i).getLogo()));
                 logo = new JLabel(new ImageIcon(bf));
-                 logo.setMaximumSize(new Dimension(120, 160));
-                 logo.setMinimumSize(new Dimension(120, 160));
+                 logo.setMaximumSize(new Dimension(140, 160));
+                 logo.setMinimumSize(new Dimension(140, 160));
                  logo.setAlignmentX(Component.CENTER_ALIGNMENT);
                 
             } catch (IOException ex) {

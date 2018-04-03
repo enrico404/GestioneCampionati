@@ -89,6 +89,8 @@ public class ApriActionListener implements ActionListener {
             if(tipo == 1){
                
                 c.importa_squadre(path);
+                c.getC().ricalcolaPathLoghi();
+                c.setSquadre(c.getC().getSquadre());
                 listmodel.removeAllElements();
                 listmodel.addElement("Squadre: ");
                

@@ -125,7 +125,7 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().repaint();
                         
                           } catch (IOException ex) {
-                        Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                              System.out.println("Logo 1 non caricato");
                     }
 
             
@@ -176,7 +176,7 @@ public class CercaGiornataActionListener implements ActionListener {
                         p.getPanelDown().revalidate();
                         p.getPanelDown().repaint();
                     } catch (IOException ex) {
-                        Logger.getLogger(CercaGiornataActionListener.class.getName()).log(Level.SEVERE, null, ex);
+                        System.out.println("Logo 2 non caricato");                   
                     }
 
                 }

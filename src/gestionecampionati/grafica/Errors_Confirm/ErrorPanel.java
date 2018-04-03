@@ -40,7 +40,7 @@ public class ErrorPanel extends JPanel{
                     break;   
             case 9: JOptionPane.showMessageDialog(this, "La squadra inserita è già presente nel campionato!", "Attenzione!" ,JOptionPane.ERROR_MESSAGE);
                     break;  
-            case 10: JOptionPane.showMessageDialog(this, "Provare a ricaricare il calendario per risolvere il problema", "Attenzione!" ,JOptionPane.ERROR_MESSAGE);
+            case 10: JOptionPane.showMessageDialog(this, "Ricaricare il calendario, se il problema persiste il calendario non è stato generato correttamente", "Attenzione!" ,JOptionPane.ERROR_MESSAGE);
                     break;
         }
     

@@ -53,32 +53,16 @@ public class Squadra implements Serializable{
                    
                         try{
                             BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".jpg"));
-                             this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".jpg"; 
-                        
-                        }catch(Exception ex){
-                            try{
-                                BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".png"));
-                                this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".png"; 
-                        
-                             }catch(Exception ex1){
-                                 try{
-                                    BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".png"));
-                                    this.logo = "../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".png"; 
-                                    
+                             this.logo = "../GestioneCampionati/media/loghi/"+this.nome; 
+ 
+                        }catch(Exception ex3){
+                                       this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                        }
+                         
+
                                  
-                                 }catch(Exception ex2){
-                                     try{
-                                    
-                                         BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".jpg"));
-                                          this.logo = "../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".jpg"; 
-                                    
-                                    }catch(Exception ex3){
-                                       this.logo = "../GestioneCampionati/media/loghi/default.jpg";}
-                                    }
 
-                                 }
-
-                            }
+                            
 
                     this.punteggio = 0;
     }

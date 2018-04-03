@@ -89,8 +89,10 @@ public class ApriActionListener implements ActionListener {
             if(tipo == 1){
                
                 c.importa_squadre(path);
-                c.getC().ricalcolaPathLoghi();
-                c.setSquadre(c.getC().getSquadre());
+                /** ricalcolo i loghi delle squadre */
+                for(int i=0; i<c.get_numSquadre(); i++){
+                    c.getSquadre().get(i).ricalcolaLogo();
+                }
                 listmodel.removeAllElements();
                 listmodel.addElement("Squadre: ");
                

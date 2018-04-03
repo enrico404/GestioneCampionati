@@ -2,6 +2,7 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import gestionecampionati.grafica.MainFrame;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -41,8 +42,12 @@ public class SkPanelCenter extends JPanel {
         panelA.riempi();
         panelB.riempi();
         
+        try{
         panelB.getSqb().setSelectedIndex(1);
-        
+        }catch(Exception e){
+            ErrorPanel err = new ErrorPanel(3);
+           
+        }
         this.setLayout(new BoxLayout(this, View.X_AXIS));
         
         this.add(panelA, font); 

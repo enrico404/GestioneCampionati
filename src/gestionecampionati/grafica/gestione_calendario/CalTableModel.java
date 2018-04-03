@@ -29,6 +29,7 @@ public class CalTableModel extends AbstractTableModel{
    
     @Override
     public int getRowCount() {
+        
         return (c.getC().getGironeAndata().size());
                 
     }

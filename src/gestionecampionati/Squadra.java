@@ -61,7 +61,13 @@ public class Squadra implements Serializable{
                                 this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".png"; 
                         
                              }catch(Exception ex1){
-                                 this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                                 try{
+                                     BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".PNG"));
+                                    this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".PNG"; 
+                                 }catch(Exception ex2 ){
+                                     this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                                 }
+                                 
                              }
                          }
 
@@ -113,7 +119,7 @@ public class Squadra implements Serializable{
     }
     
     public void ricalcolaLogo(){
-          try{
+            try{
                             BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".jpg"));
                              this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".jpg"; 
                         
@@ -123,10 +129,16 @@ public class Squadra implements Serializable{
                                 this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".png"; 
                         
                              }catch(Exception ex1){
-                                 this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                                 try{
+                                     BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".PNG"));
+                                    this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".PNG"; 
+                                 }catch(Exception ex2 ){
+                                     this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                                 }
+                                 
                              }
                          }
-    
+
     
     }
      public String getNome() {

@@ -39,13 +39,15 @@ public class InsActionListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         ErrorPanel err;
         Squadra sq;
-        String nomesq = panel.getTnome().getText().toLowerCase();
-        String nomesqF = nomesq.substring(1, nomesq.length()).toLowerCase();
-        nomesq = nomesq.substring(0, 1).toUpperCase() + nomesqF;
-        
-        String cittasq = panel.getTcitta().getText().toLowerCase();
-        String cittasqF = cittasq.substring(1, cittasq.length()).toLowerCase();
-        cittasq = cittasq.substring(0,1).toUpperCase()+cittasqF;
+        if(!(panel.getTnome().getText().isEmpty())){
+            if(!(panel.getTcitta().getText().isEmpty())){
+                String nomesq = panel.getTnome().getText().toLowerCase();
+                String nomesqF = nomesq.substring(1, nomesq.length()).toLowerCase();
+                nomesq = nomesq.substring(0, 1).toUpperCase() + nomesqF;
+
+                String cittasq = panel.getTcitta().getText().toLowerCase();
+                String cittasqF = cittasq.substring(1, cittasq.length()).toLowerCase();
+                cittasq = cittasq.substring(0,1).toUpperCase()+cittasqF;
                if(!(apri.getPath().isEmpty())){ 
                
                     sq= new Squadra(nomesq, cittasq, apri.getPath());  
@@ -54,8 +56,7 @@ public class InsActionListener implements ActionListener {
                else sq= new Squadra(nomesq, cittasq);
      
  
-        if(!(panel.getTnome().getText().isEmpty())){
-            if(!(panel.getTcitta().getText().isEmpty())){
+        
            
                if(!(c.inserisci_squadra(sq))){
                    err = new ErrorPanel(9); 
@@ -70,14 +71,14 @@ public class InsActionListener implements ActionListener {
                panel.getTnome().setText("");
                panel.getTcitta().setText("");
                
-    
+               return;
             }
         }    
-        else {
+        
              err = new ErrorPanel(5);
              
             
-            }
+            
 
     }
     

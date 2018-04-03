@@ -3,6 +3,7 @@ package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.grafica.popMenu.InsPopActionListener;
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import gestionecampionati.grafica.Home.InsRis2ActionListener;
 import gestionecampionati.grafica.MainFrame;
 import java.awt.Dimension;
@@ -53,9 +54,12 @@ public class SkPanelDown extends JPanel{
      */
     public SkPanelDown(Campionato c, GestCSk sk, MainFrame f) {
         super();
-        tab1 = new CalTableModel(c);
-        tab2 = new Cal2TableModel(c);
-        
+        try{
+            if(!(c.getC().getGironeAndata().isEmpty())){
+              tab1 = new CalTableModel(c);
+              tab2 = new Cal2TableModel(c);
+            }
+        }catch(Exception ex){ ErrorPanel err = new ErrorPanel(3); }
         this.f = f;
         this.sk = sk;
         Font font = new Font("sans-serif", Font.BOLD, 16);

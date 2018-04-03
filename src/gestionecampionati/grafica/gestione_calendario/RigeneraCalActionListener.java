@@ -3,6 +3,7 @@ package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Calendario;
 import gestionecampionati.Campionato;
+import gestionecampionati.grafica.Errors_Confirm.ErrorPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,11 +30,14 @@ public class RigeneraCalActionListener implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+     
         Calendario cal = new Calendario(c.getSquadre());
         cal.genera_calendario();
         c.setC(cal);
+        try{
         panelDown.getTab1().fireTableDataChanged();
         panelDown.getTab2().fireTableDataChanged();
+        }catch(Exception ex){ ErrorPanel err = new ErrorPanel(10);}
         
         
     }

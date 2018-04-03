@@ -49,7 +49,7 @@ public class Squadra implements Serializable{
         this.nome = nome;
         this.citta = citta;
         this.punteggioParziale = 0;
-        /** vado a cercare l'immagine in vari formati */
+        /** di default vado a cercare l'immagine in vari formati, se non la trovo setto il logo di default */
                    
                         try{
                             BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".jpg"));
@@ -61,39 +61,9 @@ public class Squadra implements Serializable{
                                 this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".png"; 
                         
                              }catch(Exception ex1){
-                                 try{
-                                    BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".png"));
-                                    this.logo = "../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".png"; 
-                                    
-                                 
-                                 }catch(Exception ex2){
-                                     try{
-                                    
-                                         BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".jpg"));
-                                          this.logo = "../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".jpg"; 
-                                    
-                                    }catch(Exception ex3){
-                                        try{
-                                            BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".PNG"));
-                                            this.logo = "../GestioneCampionati/media/loghi/"+this.nome.toLowerCase()+".PNG"; 
-                                        
-                                        }catch(Exception ex4){
-                                            try{
-                                                BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".PNG"));
-                                                this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".PNG"; 
-                                            
-                                            }catch(Exception ex5){
-                                            
-                                                this.logo = "../GestioneCampionati/media/loghi/default.jpg";
-                                            }
-                                        }
-                                       
-                                    }
-                                  }
-
-                                 }
-
-                            }
+                                 this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                             }
+                         }
 
                     this.punteggio = 0;
     }
@@ -142,6 +112,23 @@ public class Squadra implements Serializable{
     
     }
     
+    public void ricalcolaLogo(){
+          try{
+                            BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".jpg"));
+                             this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".jpg"; 
+                        
+                        }catch(Exception ex){
+                            try{
+                                BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".png"));
+                                this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".png"; 
+                        
+                             }catch(Exception ex1){
+                                 this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                             }
+                         }
+    
+    
+    }
      public String getNome() {
         return nome;
     }

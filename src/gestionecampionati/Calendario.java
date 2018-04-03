@@ -238,7 +238,22 @@ public class Calendario implements Serializable {
     
     }
     
+    /**
+     * Metodo necessario per rendere il software portabile tra i vari sistemi operativi
+     * differenti. Windows è case insensitive nella gestione dei formati dei file,
+     * mentre linux no, se inserisce una squadra su windows e il suo logo viene salvato
+     * come .png quando in realtà è .PNG allora, quando linux andrà ad aprire il 
+     * calendario con quel path salvato avrà problemi a leggere il file, perchè per linux
+     * .png e .PNG sono due formati differenti
+     */
+   public void ricalcolaPathLoghi(){
+       for(int i=0; i<squadre.size(); i++){
+           this.getSquadre().get(i).ricalcolaLogo();
+       
+       
+       }
    
+   }
 
     public ArrayList<Squadra> getSquadre() {
         return squadre;

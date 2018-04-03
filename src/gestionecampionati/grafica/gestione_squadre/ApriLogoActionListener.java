@@ -48,12 +48,13 @@ public class ApriLogoActionListener implements ActionListener{
             
         File f = chooser.getSelectedFile();
                 try{
-                this.path = f.getAbsolutePath();
+               
 
                 FileChannel source = null;
                 FileChannel dest = null;
 
                 File f2 = new File("../GestioneCampionati/media/loghi/"+ f.getName());
+                  this.path = f2.getAbsolutePath();
                 if(!(f2.exists())){
                         try {
                             source = new FileInputStream(f).getChannel();
@@ -61,7 +62,9 @@ public class ApriLogoActionListener implements ActionListener{
 
                             if(source != null && dest != null ){
                            
+                                System.out.println("nuovo logo:"+ path);
                                 dest.transferFrom(source, 0, source.size());
+                              
                                 source.close();
                                 dest.close();
 

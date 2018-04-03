@@ -154,7 +154,7 @@ public class ModSqPanel extends JPanel {
 
                     listModel.setElementAt("- "+Tnome.getText() , i+1);
                     
-                    if(!(apri.getPath().isEmpty())){ c.getSquadre().get(i).setLogo(apri.getPath()); System.out.println("Logo cambiato"+ apri.getPath());
+                    if(!(apri.getPath().isEmpty())){ c.getSquadre().get(i).setLogo(apri.getPath());
                     apri.setPath("");
                     }
                     

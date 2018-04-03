@@ -52,11 +52,8 @@ public class InsActionListener implements ActionListener {
                     apri.setPath("");
                }
                else sq= new Squadra(nomesq, cittasq);
-        
-        if(c == null )System.out.print("campionato non inizializzato");
-        if(sq == null ) System.out.print("squadra non inizializzata");
-
-        
+     
+ 
         if(!(panel.getTnome().getText().isEmpty())){
             if(!(panel.getTcitta().getText().isEmpty())){
            

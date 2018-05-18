@@ -76,7 +76,7 @@ public class CercaGiornataActionListener implements ActionListener {
          
             p.getPanelDown().removeAll();
                 
-            
+           // c.getC().ricalcolaPathLoghi();
             for(int i=0; i<c.getC().getGironeAndata().size(); i++){
                 if(sqa.equals(c.getC().getGironeAndata().get(i).getCoppia().getA().getNome()) && sqb.equals(c.getC().getGironeAndata().get(i).getCoppia().getB().getNome()))
                 {
@@ -86,11 +86,22 @@ public class CercaGiornataActionListener implements ActionListener {
                         tmpB =  c.getC().getGironeAndata().get(i).getP().getPb();
                         BufferedImage bf1, bf2;
                       
-                        bf1 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getA().getLogo()));
+                        try{
+                        bf1 = ImageIO.read(getClass().getResourceAsStream(c.getC().getGironeAndata().get(i).getCoppia().getA().getLogo()));
                         icoA = new JLabel(new ImageIcon(bf1));
-                        bf2 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getB().getLogo()));
+                        }catch(Exception ex){
+                                 bf1 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getA().getLogo()));
+                                 icoA = new JLabel(new ImageIcon(bf1));
+ 
+                                }
+                        try{
+                        bf2 = ImageIO.read(getClass().getResourceAsStream(c.getC().getGironeAndata().get(i).getCoppia().getB().getLogo()));
                         icoB = new JLabel(new ImageIcon(bf2));
+                        }catch(Exception ex2){
+                             bf2 = ImageIO.read(new File(c.getC().getGironeAndata().get(i).getCoppia().getB().getLogo()));
+                             icoB = new JLabel(new ImageIcon(bf2));
                         
+                        }
                         icoA.setMaximumSize(new Dimension(140, 160));
                         icoB.setMaximumSize(new Dimension(140, 160));
                         icoA.setMinimumSize(new Dimension(140, 160));
@@ -141,11 +152,22 @@ public class CercaGiornataActionListener implements ActionListener {
                         tmpA = c.getC().getGironeRitorno().get(i).getP().getPa();
                         tmpB =  c.getC().getGironeRitorno().get(i).getP().getPb();
                         BufferedImage bf1, bf2;
-                        
+                        try{
+                        bf1 = ImageIO.read(getClass().getResourceAsStream(c.getC().getGironeRitorno().get(i).getCoppia().getA().getLogo()));
+                        icoA = new JLabel(new ImageIcon(bf1));
+                        }catch(Exception ex2){
                         bf1 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getA().getLogo()));
                         icoA = new JLabel(new ImageIcon(bf1));
-                        bf2 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getB().getLogo()));
+  
+                        }
+                        try{
+                        bf2 = ImageIO.read(getClass().getResourceAsStream(c.getC().getGironeRitorno().get(i).getCoppia().getB().getLogo()));
                         icoB = new JLabel(new ImageIcon(bf2));
+                        }catch(Exception ex3){
+                            bf2 = ImageIO.read(new File(c.getC().getGironeRitorno().get(i).getCoppia().getB().getLogo()));
+                            icoB = new JLabel(new ImageIcon(bf2));
+                        
+                        }
                         icoA.setMaximumSize(new Dimension(140, 160));
                         icoB.setMaximumSize(new Dimension(140, 160));
                         icoA.setMinimumSize(new Dimension(140, 160));

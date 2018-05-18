@@ -6,7 +6,6 @@
 package gestionecampionati.grafica.gestione_calendario;
 
 import gestionecampionati.Campionato;
-import gestionecampionati.grafica.MainFrame;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -88,7 +87,7 @@ public class CercaSquadraActionListener implements ActionListener {
         String nomesq = cerca.getText().toLowerCase();
         String nomesqF = nomesq.substring(1, nomesq.length()).toLowerCase();
         nomesq = nomesq.substring(0, 1).toUpperCase() + nomesqF;
-       
+      //  c.getC().ricalcolaPathLoghi();
         for(i=0; i<c.get_numSquadre(); i++)
             if(c.getC().getSquadre().get(i).getNome().equals(nomesq)){
                 esiste=true;
@@ -101,14 +100,24 @@ public class CercaSquadraActionListener implements ActionListener {
         if( esiste==true){
          
             try {
-                bf = ImageIO.read(new File(c.getC().getSquadre().get(i).getLogo()));
+                
+                
+                bf = ImageIO.read(getClass().getResourceAsStream(c.getC().getSquadre().get(i).getLogo()));
                 logo = new JLabel(new ImageIcon(bf));
                  logo.setMaximumSize(new Dimension(140, 160));
                  logo.setMinimumSize(new Dimension(140, 160));
                  logo.setAlignmentX(Component.CENTER_ALIGNMENT);
                 
-            } catch (IOException ex) {
-                Logger.getLogger(CercaSquadraActionListener.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                try {
+                    bf = ImageIO.read(new File(c.getC().getSquadre().get(i).getLogo()));
+                    logo = new JLabel(new ImageIcon(bf));
+                    logo.setMaximumSize(new Dimension(140, 160));
+                    logo.setMinimumSize(new Dimension(140, 160));
+                    logo.setAlignmentX(Component.CENTER_ALIGNMENT);
+                } catch (IOException ex1) {
+                    Logger.getLogger(CercaSquadraActionListener.class.getName()).log(Level.SEVERE, null, ex1);
+                }
             }
             
            

@@ -47,7 +47,9 @@ public class ApriLogoActionListener implements ActionListener{
             chooser.showOpenDialog(fr);
             
         File f = chooser.getSelectedFile();
-                try{
+         this.path = f.getAbsolutePath();
+        /**
+        try{
                
 
                 FileChannel source = null;
@@ -83,7 +85,7 @@ public class ApriLogoActionListener implements ActionListener{
             System.out.println("Logo non inserito");
             
         }
-  
+  */
         
     }       
 

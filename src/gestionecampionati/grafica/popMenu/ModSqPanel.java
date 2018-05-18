@@ -153,11 +153,11 @@ public class ModSqPanel extends JPanel {
                     c.getSquadre().get(i).setCitta(Tcitta.getText());
 
                     listModel.setElementAt("- "+Tnome.getText() , i+1);
-                    
+                   
                     if(!(apri.getPath().isEmpty())){ c.getSquadre().get(i).setLogo(apri.getPath());
                     apri.setPath("");
                     }
-                    
+                     System.out.println("logo nuovo : "+c.getSquadre().get(i).getLogo());
                     
                     f.dispose();
               

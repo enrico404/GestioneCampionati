@@ -52,20 +52,20 @@ public class Squadra implements Serializable{
         /** di default vado a cercare l'immagine in vari formati, se non la trovo setto il logo di default */
                    
                         try{
-                            BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".jpg"));
-                             this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".jpg"; 
+                            BufferedImage image = ImageIO.read(getClass().getResourceAsStream("/loghi/"+this.nome+".jpg"));
+                             this.logo = "/loghi/"+this.nome+".jpg"; 
                         
                         }catch(Exception ex){
                             try{
-                                BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".png"));
-                                this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".png"; 
+                                BufferedImage image =  ImageIO.read(getClass().getResourceAsStream("/loghi/"+this.nome+".png"));
+                                this.logo = "/loghi/"+this.nome+".png"; 
                         
                              }catch(Exception ex1){
                                  try{
-                                     BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".PNG"));
-                                    this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".PNG"; 
+                                     BufferedImage image =  ImageIO.read(getClass().getResourceAsStream("/loghi/"+this.nome+".PNG"));
+                                    this.logo = "/loghi/"+this.nome+".PNG"; 
                                  }catch(Exception ex2 ){
-                                     this.logo = "../GestioneCampionati/media/loghi/default.jpg";
+                                     this.logo = "/loghi/default.jpg";
                                  }
                                  
                              }
@@ -119,26 +119,35 @@ public class Squadra implements Serializable{
     }
     
     public void ricalcolaLogo(){
-            try{
-                            BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".jpg"));
-                             this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".jpg"; 
+          
+                             try{
+                            BufferedImage image = ImageIO.read(getClass().getResourceAsStream("/loghi/"+this.nome+".jpg"));
+                             this.logo = "/loghi/"+this.nome+".jpg"; 
                         
                         }catch(Exception ex){
                             try{
-                                BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".png"));
-                                this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".png"; 
+                                BufferedImage image =  ImageIO.read(getClass().getResourceAsStream("/loghi/"+this.nome+".png"));
+                                this.logo = "/loghi/"+this.nome+".png"; 
                         
                              }catch(Exception ex1){
                                  try{
-                                     BufferedImage image =  ImageIO.read(new File("../GestioneCampionati/media/loghi/"+this.nome+".PNG"));
-                                    this.logo = "../GestioneCampionati/media/loghi/"+this.nome+".PNG"; 
+                                     BufferedImage image =  ImageIO.read(getClass().getResourceAsStream("/loghi/"+this.nome+".PNG"));
+                                    this.logo = "/loghi/"+this.nome+".PNG"; 
                                  }catch(Exception ex2 ){
-                                     this.logo = "../GestioneCampionati/media/loghi/default.jpg";
-                                 }
-                                 
-                             }
-                         }
+                                         try{
+                                              BufferedImage image = ImageIO.read(new File(this.getLogo()));
+                                               this.logo = this.getLogo(); 
 
+                                                   }catch(Exception ex3){
+                                                        this.logo = "/loghi/default.jpg";
+                                                   
+                                                   }
+
+                                               }
+                             } 
+                                
+                             
+                        }
     
     }
      public String getNome() {

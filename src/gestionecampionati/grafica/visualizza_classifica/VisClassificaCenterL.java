@@ -34,10 +34,16 @@ public class VisClassificaCenterL extends JPanel {
         BufferedImage[] bf = new BufferedImage[3];
         JLabel[] ico = new JLabel[3];
         int i =0;
+      //  c.getC().ricalcolaPathLoghi();
         try {   
            while(i<c.get_numSquadre() && i<3){
-                bf[i] = ImageIO.read(new File(c.getCls().getClassifica().get(i).getLogo()));
+               try{
+                bf[i] = ImageIO.read(getClass().getResourceAsStream(c.getCls().getClassifica().get(i).getLogo()));
                 ico[i]  = new JLabel(new ImageIcon(bf[i]));
+               }catch(Exception e){
+                   bf[i] = ImageIO.read(new File(c.getCls().getClassifica().get(i).getLogo()));
+                   ico[i]  = new JLabel(new ImageIcon(bf[i]));
+               }
                 i++;
               
                 }

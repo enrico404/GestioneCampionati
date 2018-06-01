@@ -48,7 +48,7 @@ public class Classifica_basket extends Classifica {
             
         }
         
-         /** assegnamento dei punt i nel girone di ritorno */
+         /** assegnamento dei punti nel girone di ritorno */
         for(int i=0; i< getCampionato().getC().getGironeRitorno().size(); i++){
             
             if(getCampionato().getC().getGironeRitorno().get(i).isGiocata()){

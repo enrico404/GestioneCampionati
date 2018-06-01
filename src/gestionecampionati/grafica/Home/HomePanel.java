@@ -63,7 +63,7 @@ public class HomePanel extends JPanel implements ActionListener{
             calcio.setAlignmentX(CENTER_ALIGNMENT);
             calcio.setPreferredSize(button);
             calcio.setMaximumSize(button);
-             calcio.setMinimumSize(button);
+            calcio.setMinimumSize(button);
             basket.setAlignmentX(CENTER_ALIGNMENT);
             basket.setPreferredSize(button);
             basket.setMaximumSize(button);

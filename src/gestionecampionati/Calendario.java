@@ -212,7 +212,7 @@ public class Calendario implements Serializable {
   
     
     /** Metodo per il salvataggio del calendario su file.
-     * @deprecated  ****METODO DEPRECATO****
+     * @deprecated  ****METODO DEPRECATO**** vedi salvaActionListener nel package menubar
      * @param nomeFile nome del file
      * @return true in caso di salvataggio avvenuto con successo
      */

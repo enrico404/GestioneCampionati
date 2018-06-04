@@ -34,20 +34,27 @@ public class Classifica_pallavolo extends Classifica{
          for(int i=0; i< getCampionato().getC().getGironeAndata().size(); i++){
              pa = getCampionato().getC().getGironeAndata().get(i).getP().getPa();
              pb =  getCampionato().getC().getGironeAndata().get(i).getP().getPb();
-             
+             getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().incParz(pa);
+             getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().incParz(pb);
              if(pa > pb){
                   
                 if(pa == 3 && pb == 2){
                            getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(2);
                            getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(1);
+                           
                        }
-                else getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(3);
+                else getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(3); 
+                     
+                
              } else {
                  if(pa==pb){err = new ErrorPanel(8); return;}
                  if(pb == 3 && pa == 2){
                      getCampionato().getC().getGironeAndata().get(i).getCoppia().getA().inc(1);
                      getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(2);
+                    
                  }else getCampionato().getC().getGironeAndata().get(i).getCoppia().getB().inc(3);
+                        
+                 
              }
          }
          
@@ -55,19 +62,27 @@ public class Classifica_pallavolo extends Classifica{
          for(int i=0; i< getCampionato().getC().getGironeRitorno().size(); i++){
              pa = getCampionato().getC().getGironeRitorno().get(i).getP().getPa();
              pb =  getCampionato().getC().getGironeRitorno().get(i).getP().getPb();
-             
+             getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().incParz(pa);       
+             getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().incParz(pb);
              if(pa > pb){
                   
                 if(pa == 3 && pb == 2){
                            getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().inc(2);
                            getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().inc(1);
+                           
                        }
                 else getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().inc(3);
+                       
+                
              } else {
                  if(pb == 3 && pa == 2){
                      getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().inc(1);
                      getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().inc(2);
+                    
+                       
                  }else getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().inc(3);
+                       
+                    
              }
          }
          

@@ -105,6 +105,7 @@ public class Squadra implements Serializable{
     }
     public void reset_p(){
         this.punteggio=0;
+        this.punteggioParziale=0;
     
     }
     

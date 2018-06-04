@@ -95,11 +95,7 @@ public class Inserisci2ActionListener implements ActionListener{
                             c.getC().getGironeAndata().get(i).setP(p);
                             c.getC().getGironeAndata().get(i).setGiocata(true);
                             
-                          
-                                c.getC().getGironeAndata().get(i).getCoppia().getA().incParz(p.getPa());
-                            
-                                c.getC().getGironeAndata().get(i).getCoppia().getB().incParz(p.getPb());
-                            
+
                         }
 
                     }
@@ -109,9 +105,7 @@ public class Inserisci2ActionListener implements ActionListener{
                             c.getC().getGironeRitorno().get(i).setP(p);
                             c.getC().getGironeRitorno().get(i).setGiocata(true);
                          
-                                 c.getC().getGironeRitorno().get(i).getCoppia().getA().incParz(p.getPa());
-                           
-                               c.getC().getGironeRitorno().get(i).getCoppia().getB().incParz(p.getPb());
+                                
                         }
 
                     }

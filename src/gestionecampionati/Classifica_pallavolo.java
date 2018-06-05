@@ -75,6 +75,7 @@ public class Classifica_pallavolo extends Classifica{
                        
                 
              } else {
+                 if(pa==pb){err = new ErrorPanel(8); return;}
                  if(pb == 3 && pa == 2){
                      getCampionato().getC().getGironeRitorno().get(i).getCoppia().getA().inc(1);
                      getCampionato().getC().getGironeRitorno().get(i).getCoppia().getB().inc(2);

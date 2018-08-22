@@ -1,5 +1,5 @@
 # GestioneCampionati
-Progetto per l'esame di programmazione a oggetti (Unimore)
+Project for the exam of object oriented proggramming at University of Modena and Reggio Emilia
 
 # Run
 

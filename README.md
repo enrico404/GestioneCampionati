@@ -1,5 +1,5 @@
 # GestioneCampionati
-Project for the exam of object oriented proggramming at University of Modena and Reggio Emilia
+Project for the exam of object oriented programming at University of Modena and Reggio Emilia
 
 # Run
 
